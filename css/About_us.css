@@ -4,8 +4,11 @@
   margin: auto;
   text-align: center;
   font-family: arial;
+  
 }
-
+.row{
+    margin-top:85px ;
+}
 .title {
   color: blue;
   font-size: 18px;
