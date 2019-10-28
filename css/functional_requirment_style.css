@@ -1,0 +1,14 @@
+ 
+header {
+  padding: 156px 0 100px;
+}
+
+section {
+  padding: 150px 0;
+}
+ 
+.customstyle h1{
+  font-family:'Courier New', Courier, monospace ;
+  font-weight: bold; 
+  font-size: 100px;
+}
