@@ -9,13 +9,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
+        <link href="css/home.css" rel="stylesheet">
         <title>Home</title>
     </head>
     <body>
     <!-- Home Page -->
         
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+        <nav id="naav" class="navbar navbar-expand-lg navbar-dark fixed-top">
             <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -38,8 +39,16 @@
             </div>
         </nav>
         
+        <header class="bg-primary text-white">
+            <div class="container text-center customstyle">
+                <h1>Quizzer</h1>
+                <p class="lead">The Easiest way to create your Online Quiz</p>
+      
+            </div>
+        </header>
+        
         <!-- carousel -->
-        <div id="demo" class="carousel slide" data-ride="carousel" style="margin: auto; margin-top: 30px; height: 400px; width: 600px;">
+        <div id="carou" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -78,6 +87,43 @@
                 <span class="carousel-control-next-icon"></span>
             </a>
         </div>
+        
+        
+        <!-- section About Quizzer -->
+        <section id="about" class="bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1>About Quizzer</h1>
+                        <p class="lead">Quizzer is a web application,that Make it easy for Instructor to create his online quiz easily and Students Can enroll into quiz , this will help instructor get accurate quiz result.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- section Want to Contribute -->
+        <section id="Contribute" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1>Want to Contribute <b>!!!</b></h1>
+                        <p class="lead"> if You Want to be updated with our source code and how we work Or if you want to Contribute Every Contribution is WELCOMED , you can easily view our
+                            <a href="https://github.com/khaledabdelfatah/quizzer" target="_blank">Reposotiry on GITHUb</a>
+                            and share your Knowledge with us.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy;  Quizzer 2019</p>
+            </div>
+            <!-- /.container -->
+        </footer>
+        
         
     </body>
 </html>
