@@ -1,5 +1,5 @@
 body {font-family: Arial, Helvetica, sans-serif;
-background-color: ##d8d9e0d0; 
+background-color: #d8d9e0d0; 
 
 }
 * {box-sizing: border-box; display: block;}
@@ -42,7 +42,7 @@ input[type=submit]:hover {
 h3{
   text-align:center; color: white;margin: 10px;
 }
-img
+.image
 {
   width: 30%; border:
   solid 1px black;
