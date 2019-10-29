@@ -1,0 +1,7 @@
+In order to run bootstrap offline please include this links in the html file :
+
+ <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
