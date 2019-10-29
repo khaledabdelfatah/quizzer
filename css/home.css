@@ -24,10 +24,17 @@ header h1{
 #carou{
     margin: auto; 
     margin-top: 30px; 
-    height: 400px; 
-    width: 600px ;  
- }
+/*    height: 400px; */
+    height: 50%;
+/*    width: 600px;*/
+    width: 60%;
 
+}
+
+img{
+    height: inherit;
+    width: inherit;
+}
 
 section {
 /*
