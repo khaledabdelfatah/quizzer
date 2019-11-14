@@ -1,0 +1,97 @@
+.about_area{
+    background-color:white;
+    }
+  .about_area {
+      padding: 100px 0 100px 0;
+    }
+    
+     
+    .about_area .single_about_info {
+      position: relative;
+    }
+    
+    .about_area .single_about_info h3 {
+      font-size: 46px;
+      line-height: 56px;
+      font-weight: 400;
+    }
+    
+    .community__venn {
+        width: 100%;
+        height: 100%;
+        min-height: 250px;
+        margin: 0 auto;
+        position: relative;
+        display: block;
+      }
+      .community__venn .circle {
+        position: absolute;
+        width: 55%;
+        height: 55%;
+        border-radius: 50%;
+      }
+      .community__venn .circle p.circle__header {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+        width: 100%;
+        max-width: 170px;
+        text-align: center;
+        font-size: 22px;
+        color: white;
+      }
+      
+      
+      .community__venn .circle-title {
+        position: absolute;
+        max-width: 50%;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+      }
+      .community__venn .circle-title p.circle__header {
+        width: 100%;
+        display: block;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1.1;
+        color: white;
+        font-size: 46px;
+      }
+      .community__venn .top-left {
+        left: 2%;
+        top: 5%;
+        
+      }
+      .community__venn .top-right {
+        right: 0;
+        top: 5%;
+      }
+      
+      .community__venn .bottom {
+        left: 50%;
+        bottom: 0;
+        -webkit-transform: translatex(-50%);
+                transform: translatex(-50%);
+      }
+      
+      .community__venn .blue {
+        background: rgba(12, 98, 137, 0.7);
+      }
+      .community__venn .green {
+        background: rgba(0, 178, 112, 0.8);
+      }
+      .community__venn .light-blue {
+        background: rgba(28, 189, 199, 0.7);
+      }
+      @media screen and (max-width: 587px) {
+       #hs{
+          display: none;
+       }
+      }
+    
+    
