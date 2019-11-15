@@ -1,2 +1,2 @@
 # Quizzer
-An online Quiz App-- The Easyiest way to generate your online quiz
+An online Quiz App-- The Easiest way to generate your online quiz
