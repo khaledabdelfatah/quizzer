@@ -49,7 +49,7 @@ transition: 0.3s;}
 
 /*  */
  .test{ 
-    background-image: url("../../img/bradcam.png");
+    background-image: url("../../img/background/bradcam.png");
     background-size: cover;
     background-position: center     ;
     background-repeat: no-repeat;
