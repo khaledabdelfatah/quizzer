@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="script/script.js"></script>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <title>profile</title>
+    <!-- offline bootstrap links -->
+    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Online Links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Css Files -->
+    <link rel="stylesheet" href="../css/Profile.css">
+    <link rel="stylesheet" href="../Header/css/headerstyl.css">
+
+</head>
+
+<body>
+    <div class="test">
+        <div class="header-area-style ">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark bg-transparent   ">
+                <a class="navbar-brand" href="#">
+                    <img src="../img/favicon.png" style="width: 120px;" alt="personal photo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                    <ul class="navbar-nav" style="margin-right: 200px;">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Html-pages/Contact_us.html">Contact-Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Html-pages/About_us.html">About-Us</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav" style="float: left; margin-left: 0px;">
+                        <li>
+                            <a class="boxed_btn_orange nav-item" href="#">
+                                <span>Register</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="boxed_btn_orange nav-item" href="#">
+                                <span>Log-in</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <hr>
+
+        <!-- Start img :) -->
+
+        <div class="center set-title " style="justify-content: center; text-align: center;">
+            <h1>Profile Page</h1>
+        </div>
+    </div>
+    <div id="all">
+        <div class="container profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12 left-side">
+                        <!-- left side-->
+                        <div class="list-group ">
+                            <div class="profile-image">
+                                <!-- personal image -->
+                                <img src="../img/profile/test.png" class="rounded-circle" alt="personal-image" />
+                                <div class="file btn btn-lg btn-primary">
+                                    Change Photo
+                                    <input type="file" name="file" />
+                                </div>
+                                <label>mahmoud-said</label>
+                            </div>
+                            <div>
+                                <a href="#title-information"
+                                    class="list-group-item list-group-item-action active">Personal-Information</a>
+                                <a href="#" class="list-group-item list-group-item-action">Quizs</a>
+                                <a href="#" class="list-group-item list-group-item-action">Used</a>
+                                <a href="#" class="list-group-item list-group-item-action">Media</a>
+                                <a href="#" class="list-group-item list-group-item-action">New</a>
+                                <a href="#" class="list-group-item list-group-item-action">Comments</a>
+                                <a href="#" class="list-group-item list-group-item-action">Reports</a>
+                                <a href="#" class="list-group-item list-group-item-action">Settings</a>
+                            </div>
+                        </div>
+                    </div> <!-- end of the left side-->
+                    <div class="col-md-9 col-sm-6 col-xs-12">
+                        <!-- right side-->
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div style="margin-left: auto; margin-right: auto;" class="tab-pane fade show active"
+                                role="tabpanel" aria-labelledby="home-tab">
+                                <div id="title-information">
+                                    <!-- personal information -->
+                                    <h1>Personal Information</h1>
+                                    <hr>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-xs-9">
+                                        <label>First-name</label>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-6 col-sm-9 col-xs-12">
+                                        <p>Mahmoud</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-xs-9">
+                                        <label>Second-name</label>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-6 col-sm-9 col-xs-12">
+                                        <p>Said</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-xs-9">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-6 col-sm-9 col-xs-12">
+                                        <p>Ma7mouds3id0@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-xs-9">
+                                        <label>Phone</label>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-6 col-sm-9 col-xs-12">
+                                        <p>+201093630314</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-xs-9">
+                                        <label>Profession</label>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-6 col-sm-9 col-xs-12">
+                                        <p>Web Developer and Designer</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-xs-9">
+                                        <label>Address:</label>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-6 col-sm-9 col-xs-12">
+                                        <p>Qaluib meet-halfa (Al-Eslah)</p> <!-- end of the personal information -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end of the right side-->
+                </div> <!-- end of the row -->
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
