@@ -1,0 +1,91 @@
+#all
+{
+    background: white;
+    padding-top: 3%;
+    min-height: 100%;
+}
+#myTabContent
+{
+    margin-left: 10%;
+}
+.profile .left-side
+{
+    border-right: 1px solid rgb(170, 167, 167);
+    padding: 1px;
+} 
+.profile{
+    padding: 3%;
+    border: 1px black solid;
+    background: #fff;
+    height: auto;
+}
+.profile .profile-image
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profile .profile-image img
+{
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profile .profile-image .file
+{
+    position: relative;
+    overflow: hidden;
+    margin-top: -7%;
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    display: inherit;
+    text-align: center;
+}
+.profile .profile-image .file:hover
+{
+    background-color: rgb(138, 83, 163);
+}
+.profile .profile-image .file input
+{
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+    background: #1f58f7;
+}
+.profile .profile-image label
+{
+    margin: 5px auto ;
+    display:block;
+    text-align:center;
+}
+.profile .profile-image section
+{
+    position: absolute;
+    left: auto;
+    right: auto;
+}
+.profile #tag
+{
+    margin: 5px auto 0px;
+}
+.profile .profile-tab
+{
+    margin-top: 10px ;
+    margin-left: 20px;
+}
+.profile .profile-tab label
+{
+    font-weight: 600;
+}
+.profile .profile-tab p
+{
+    font-weight: 600;
+    color: #0062cc;
+}
