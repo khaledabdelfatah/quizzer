@@ -68,10 +68,9 @@
     background-position: center     ;
     background-repeat: no-repeat;
     background-position: center;
-    height: 80vh;      
+    height: 50vh;      
     /* Full height */
-    height: 100%;
-    width: 100%;
+     width: 100%;
 }
  .set-title h1{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
