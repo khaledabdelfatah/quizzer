@@ -65,10 +65,9 @@
  .test{ 
     background-image: url("../../img/background/bradcam.png");
     background-size: cover;
-    background-position: center     ;
     background-repeat: no-repeat;
     background-position: center;
-    height: 50vh;      
+    height: 75px;      
     /* Full height */
      width: 100%;
 }
