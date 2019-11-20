@@ -1,10 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Quizzer :: Regestraion</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
+	<!--Js Files -->
+	<script type="text/javascript"
+src="../js/REGISTER.js"></script>
  <!-- Css Files -->
 <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
 <link href="../css/REGISTER.css" rel="stylesheet" type="text/css" media="all"/>
@@ -39,26 +41,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../index.html">Home</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Profile</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html-page/profile.html">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Html-pages/Contact_us.html">Contact-Us</a>
+                            <a class="nav-link" href="../html-page/Contact_us.html">Contact-Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Html-pages/About_us.html">About-Us</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav" style="float: left; margin-left: 0px;">
-                        <li>
-                            <a class="boxed_btn_orange nav-item" href="#">
-                                <span>Register</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="boxed_btn_orange nav-item" href="#">
-                                <span>Log-in</span>
-                            </a>
+                            <a class="nav-link" href="../html-page/About_us.html">About-Us</a>
                         </li>
                     </ul>
                 </div>
@@ -82,57 +72,65 @@
 							<label>First Name</label>
 							<div class="input-group">
 								<span><i class="fa fa-user" aria-hidden="true"></i></span>
-								<input type="text" placeholder="First Name" required=""> 
+								<input id="Fname"  maxlength="12" onfocusout="validationFname()" type="text" placeholder="First Name" required=""> 
 							</div>
+							<span id="errFname" class="text-danger font-weight-bold"></span>
 						</div>
 						<div class="left">
 							<label>Last Name</label>
 							<div class="input-group">
 								<span><i class="fa fa-user" aria-hidden="true"></i></span>
-								<input type="text" placeholder="Last Name" required=""> 
+								<input id="Lname" maxlength="12" onfocusout="validationLname()" type="text" placeholder="Last Name" required=""> 
 							</div>
+							<span id="errLname" class="text-danger font-weight-bold"></span>
 						</div>
 						<div class="left margin">
 							<label>Email Address</label>
 							<div class="input-group">
 								<span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-								<input type="email" placeholder="Email" required=""> 
+								<input id="Email" maxlength="30" onfocusout="validationEmail()" type="email" placeholder="Email" required=""> 
 							</div>
+							<span id="errEmail" class="text-danger font-weight-bold"></span>
 						</div>
 						<div class="left">
 							<label>Phone Number</label>
 							<div class="input-group">
 								<span><i class="fa fa-phone" aria-hidden="true"></i></span>
-								<input type="text" placeholder="Phone Number" required="">
+								<input id="Phone" maxlength="12" onfocusout="validationPhone()" type="text" placeholder="Phone Number" required="">
 							</div>
+							<span id="errPhone" class="text-danger font-weight-bold"></span>
 						</div>
 						<div class="left margin">
 							<label>Password</label>
 							<div class="input-group">
 								<span><i class="fa fa-lock" aria-hidden="true"></i></span>
-								<input type="Password" placeholder="Password" required="">
+								<input id="Password" maxlength="30" onfocusout="ValidationPass()" type="Password" placeholder="Password" required="">
 							</div>
-						</div>
+				            <span id="errPassword" class="text-danger font-weight-bold"></span>
+			             </div>
 						<div class="left">
 							<label>Confirm Password</label>
 							<div class="input-group">
 								<span><i class="fa fa-lock" aria-hidden="true"></i></span>
-								<input type="Password" placeholder="Confirm Password" required="">
+								<input id="RePassword" maxlength="30" onfocusout="ValidationRePass()"  type="Password" placeholder="Confirm Password" required="">
 							</div>
+							 <span id="errRePassword" class="text-danger font-weight-bold"></span>
 						</div>
 						<div class="left margin">
 							<label>Address</label>
 							<div class="input-group">
 								<span><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
-								<input type="text" placeholder="Address" required=""> 
+								<input id="Address" type="text" placeholder="Address" required=""> 
 							</div>
+							<span id="errAddress" class="text-danger font-weight-bold"></span>
 						</div>
 						<div class="left">
 							<label>City</label>
 							<div class="input-group">
 								<span><i class="fa fa-institution" aria-hidden="true"></i></span>
-								<input type="text" placeholder="City" required="">
+								<input id="City" type="text" placeholder="City" required="">
 							</div>
+							<span id="errCity" class="text-danger font-weight-bold"></span>
 						</div>
 						<div class="clear"></div>
 							<input type="checkbox" value="remember-me" /> <h4> I agree to the terms & contidions </h4>        
@@ -145,33 +143,19 @@
 					<h3>Profile pic</h3>
 					<div id="profile-container">
                        <image id="profileImage" src="../img/REGISTER/profile.png"/>
-                          <input id="imageUpload" type="file" 
+                          <input id="imageUpload" type="file" onclick="UploadPic()"
                              name="profile_photo" placeholder="Photo" required="" capture>
                     </div>
 					<hr>
-					<a href="#" class="btn">Login <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                    <h3 style="text-align: center;">-- or --</h3>
+                    <h3 style="text-align: center;">You already have an account</h3>
+					<a href="login_form.html" class="btn">Login Here <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
 				</div>
 			</div>
 			<div class="clear"></div>
 			</div>
 		</div>
 	</div>
-		<script>
-		$("#profileImage").click(function(e) {
-    $("#imageUpload").click();
-});
-
-function fasterPreview( uploader ) {
-    if ( uploader.files && uploader.files[0] ){
-          $('#profileImage').attr('src', 
-             window.URL.createObjectURL(uploader.files[0]) );
-    }
-}
-		
-
-$("#imageUpload").change(function(){
-    fasterPreview( this );
-});
-		</script>
+	
 	</body>
 </html>
