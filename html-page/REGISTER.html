@@ -96,7 +96,7 @@ src="../js/REGISTER.js"></script>
 							<label>Phone Number</label>
 							<div class="input-group">
 								<span><i class="fa fa-phone" aria-hidden="true"></i></span>
-								<input id="Phone" maxlength="12" onfocusout="validationPhone()" type="text" placeholder="Phone Number" required="">
+								<input id="Phone" maxlength="11" onfocusout="validationPhone()" type="text" placeholder="Phone Number" required="">
 							</div>
 							<span id="errPhone" class="text-danger font-weight-bold"></span>
 						</div>
@@ -104,15 +104,15 @@ src="../js/REGISTER.js"></script>
 							<label>Password</label>
 							<div class="input-group">
 								<span><i class="fa fa-lock" aria-hidden="true"></i></span>
-								<input id="Password" maxlength="30" onfocusout="ValidationPass()" type="Password" placeholder="Password" required="">
+								<input id="Password" maxlength="15" onfocusout="ValidationPass()" onchange="ValidationRePass()" type="Password" placeholder="Password" required="">
 							</div>
-				            <span id="errPassword" class="text-danger font-weight-bold"></span>
+				            <span id="errPassword" class="font-weight-bold"></span>
 			             </div>
 						<div class="left">
 							<label>Confirm Password</label>
 							<div class="input-group">
 								<span><i class="fa fa-lock" aria-hidden="true"></i></span>
-								<input id="RePassword" maxlength="30" onfocusout="ValidationRePass()"  type="Password" placeholder="Confirm Password" required="">
+								<input id="RePassword" maxlength="15" onfocusout="ValidationRePass()"  type="Password" placeholder="Confirm Password" required="">
 							</div>
 							 <span id="errRePassword" class="text-danger font-weight-bold"></span>
 						</div>
@@ -120,7 +120,7 @@ src="../js/REGISTER.js"></script>
 							<label>Address</label>
 							<div class="input-group">
 								<span><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
-								<input id="Address" type="text" placeholder="Address" required=""> 
+								<input id="Address" maxlength="25" type="text" placeholder="Address" required="" onfocusout="ValidationAdress()"> 
 							</div>
 							<span id="errAddress" class="text-danger font-weight-bold"></span>
 						</div>
@@ -128,13 +128,13 @@ src="../js/REGISTER.js"></script>
 							<label>City</label>
 							<div class="input-group">
 								<span><i class="fa fa-institution" aria-hidden="true"></i></span>
-								<input id="City" type="text" placeholder="City" required="">
+								<input id="City" maxlength="25" onfocusout="ValidationCity()"type="text" placeholder="City" required="">
 							</div>
 							<span id="errCity" class="text-danger font-weight-bold"></span>
 						</div>
 						<div class="clear"></div>
-							<input type="checkbox" value="remember-me" /> <h4> I agree to the terms & contidions </h4>        
-							<button id="Register" class="btn btn-danger btn-block" type="submit">Register Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button > 
+							<input type="checkbox"  value="remember-me" /> <h4> I agree to the terms & contidions </h4>        
+							<button id="Register" disabled class="btn btn-danger btn-block" onmouseover="ValidationFinal()" type="submit">Register Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button > 
 							
 					</form>
 			</div>
