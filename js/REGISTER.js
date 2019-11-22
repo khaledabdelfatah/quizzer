@@ -43,6 +43,7 @@ function validationFname() {
 	else{
 		finalCheck[0]="ok";
 				document.getElementById('errFname').style.display="none";
+		return true;
 	}
 }
 function validationLname() {
@@ -61,6 +62,7 @@ function validationLname() {
 	else{
 		finalCheck[1]="ok";
 				document.getElementById('errLname').style.display="none";
+		return true;
 	}
 }
 function validationEmail() {
@@ -84,6 +86,7 @@ function validationEmail() {
 				document.getElementById('errEmail').innerHTML =divs[4];
 				return false;
 			}else{finalCheck[2]="ok";
+				  return true;
 				document.getElementById('errEmail').style.display="none";}
 }
 function validationPhone() {
@@ -104,6 +107,7 @@ function validationPhone() {
 		return false;
 		}
 	else{finalCheck[3]="ok";
+		 return true;
 		document.getElementById('errPhone').style.display="none";}
 }
 function ValidationPass()  {
@@ -125,6 +129,7 @@ function ValidationPass()  {
 	else{document.getElementById('errPassword').style.display="block";
 		document.getElementById("errPassword").style.color = "green";
 		document.getElementById('errPassword').innerHTML =divs[9];
+		 return true;
 		finalCheck[4]="ok";}
 }
 function ValidationRePass() {
@@ -140,7 +145,8 @@ function ValidationRePass() {
 		document.getElementById('errRePassword').innerHTML =divs[11];
 		return false;
 			} 
-	else{document.getElementById('errRePassword').style.display="none"
+	else{document.getElementById('errRePassword').style.display="none";
+		 return true;
 		finalCheck[5]="ok";}
 }
 function ValidationAdress() {
@@ -153,6 +159,7 @@ function ValidationAdress() {
 	}
 	else{finalCheck[6]="ok";
 				document.getElementById('errAddress').style.display="none";
+		 return true;
 	}
 }
 function ValidationCity() {
@@ -165,19 +172,16 @@ function ValidationCity() {
 	}
 	else{finalCheck[7]="ok";
 				document.getElementById('errCity').style.display="none";
+		 return true;
 	}
 }
 function ValidationFinal(){
-	var count=0;
-	for(i=0; i<finalCheck.length;i++){
-		if(finalCheck[i]=="ok"){
-			count++;
-		}
-		if(count==8){
-			 document.getElementById("Register").disabled = false;
-		}
+	
+		
+			 document.getElementById("Register").disabled = true;
+		
 	}
-}
+
 
 
 
