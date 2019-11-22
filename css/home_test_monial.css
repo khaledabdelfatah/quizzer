@@ -1,7 +1,8 @@
 .test-monial{
     background-color: rgb(139, 139, 189);
     width: 100%;
-    background-image: url("../img/background/banner.png");
-    background-size: 100%;
+    height: 40vh;
+     background-size: 100%;
+     background-color: #5491AC;
    
 }
