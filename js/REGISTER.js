@@ -112,7 +112,7 @@ function validationPhone() {
 }
 function ValidationPass()  {
 	var pass = document.getElementById('Password').value;
-	var paswd= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+	var paswd= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/; //error
 	divPass[0]=pass;
 	if(pass == ""){
 		document.getElementById('errPassword').style.display="block"
@@ -121,16 +121,18 @@ function ValidationPass()  {
 		return false;
 			}
 	else if(!pass.match(paswd)) {
+		document.getElementById('errPassword').style.display="block" 
 		document.getElementById('errPassword').style.color="red";
 		document.getElementById('errPassword').innerHTML =divs[10];
 		
 		return false;	
 			}
-	else{document.getElementById('errPassword').style.display="block";
-		document.getElementById("errPassword").style.color = "green";
+	else{
+		document.getElementById('errPassword').style.display="non"; 
 		document.getElementById('errPassword').innerHTML =divs[9];
-		 return true;
-		finalCheck[4]="ok";}
+		finalCheck[4]="ok";
+		return true;
+	}
 }
 function ValidationRePass() {
 	var Repass = document.getElementById('RePassword').value;
