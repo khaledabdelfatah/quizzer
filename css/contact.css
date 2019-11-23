@@ -1,52 +1,68 @@
-body {font-family: Arial, Helvetica, sans-serif;
-background-color: #d8d9e0d0; 
-
+body
+{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff; 
 }
-* {box-sizing: border-box; display: block;}
-
-input[type=text], select, textarea, #country {
+*
+{
+  box-sizing: border-box;
+  display: block;
+}
+input[type=text], select, textarea, #country
+{
   width: 100%;
   padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #1f58f7;
+  border-radius: 10px;
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
  
 }
-
-input[type=submit] {
-  background-color: #4CAF50;
+input[type=submit]
+{
+  background-color: #1f58f7;
   color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
-
-input[type=submit]:hover {
-  background-color: #45a049;
+input[type=submit]:hover
+{
+  background-color: rgb(138, 83, 163);
 }
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
+.container
+{
+  border: #1f58f7 solid 1px;
+  border-radius: 10px;
+  background-color: #ffffff;
   padding: 20px;
-  
+  margin-top: 3%;
+  margin-bottom: 20px;
+  position: static;
 }
 .container1
 {
     padding: 20px;
 }
-h3{
-  text-align:center; color: white;margin: 10px;
-}
-.image
+#image
 {
-  width: 30%; border:
-  solid 1px black;
+  width: 90%;
+  border: solid 1px #1f58f7;
+  border-radius: 10px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  top: 20%;
+  align-self: center;
+}
+h1{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 70px;
+  color: black;
+  margin: 10px auto;
+  text-align: center;
 }

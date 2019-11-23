@@ -1,20 +1,26 @@
 //when the user click edit
 function toEdit(id) {
-    var sps = ["span-first-name", "span-second-name", "span-email", "span-phone", "span-profession", "span-address", "span-password"]
+    var sps = ["span-first-name", "span-second-name", "span-email",
+                "span-phone", "span-profession", "span-address",
+                "span-city", "span-university", "span-specialty",
+                "span-universityinst", "span-specialtyinst", "span-password"]; //;
     document.getElementById(id).style.display = "none";
     document.getElementById("span-" + id).style.display = "table-row";
     for (i in sps) {
         if (sps[i] !== ("span-" + id)) {
             document.getElementById(sps[i]).style.display = "none";
             document.getElementById(sps[i].slice(5)).style.display = "table-row";
-            if (sps[i] !== "span-password") {
-                var child1 = document.getElementById(sps[i]).childNodes[3];
-                var child11 = child1.childNodes;
-                child11[1].value = "";
-                child11[5].style.display = "none";
-            }
+            clear(sps[i]);
         }
     }
+}
+//clear the input text 
+function clear(id)
+{
+    var child1 = document.getElementById(id).childNodes[3];
+    var child11 = child1.childNodes;
+    child11[1].value = "";
+    child11[5].style.display = "none";
 }
 //Under construction... to change active class on the side par
 function changing(id) {
@@ -57,6 +63,7 @@ function toSaveChanges(id) {
             document.getElementById("efname").innerHTML = document.getElementById("Fname").value;
             document.getElementById("first-name").style.display = "table-row";
             document.getElementById("span-first-name").style.display = "none";
+            clear("span-first-name");
         }
     }
     else if (id === "Lname") {
@@ -64,6 +71,7 @@ function toSaveChanges(id) {
             document.getElementById("elname").innerHTML = document.getElementById("Lname").value;
             document.getElementById("second-name").style.display = "table-row";
             document.getElementById("span-second-name").style.display = "none";
+            clear("span-second-name");
         }
     }
     else if (id === "Email") {
@@ -72,6 +80,7 @@ function toSaveChanges(id) {
             document.getElementById("email").style.display = "table-row";
             document.getElementById("span-email").style.display = "none";
             document.getElementById("eemail").setAttribute("href", document.getElementById("Email").value);
+            clear("span-email");
         }
     }
     else if (id === "Phone") {
@@ -79,6 +88,7 @@ function toSaveChanges(id) {
             document.getElementById("ephone").innerHTML = document.getElementById("Phone").value;
             document.getElementById("phone").style.display = "table-row";
             document.getElementById("span-phone").style.display = "none";
+            clear("span-phone");
         }
     }
     //Under construction...
@@ -91,18 +101,61 @@ function toSaveChanges(id) {
     //         document.getElementById("span-profession").style.display = "none";
     //     }
     // }
-    else if (id === "Password") {
-        if (ValidationPass()) {
-            // document.getElementById("epassword").innerHTML = document.getElementById("Password").value;
-            document.getElementById("password").style.display = "table-row";
-            document.getElementById("span-password").style.display = "none";
-        }
-    }
     else if (id === "Address") {
         if (ValidationAdress()) {
             document.getElementById("eaddress").innerHTML = document.getElementById("Address").value;
             document.getElementById("address").style.display = "table-row";
             document.getElementById("span-address").style.display = "none";
+            clear("span-address");
         }
     }
+    else if (id === "City") {
+        if (ValidationCity()) {
+            document.getElementById("ecity").innerHTML = document.getElementById("City").value;
+            document.getElementById("city").style.display = "table-row";
+            document.getElementById("span-city").style.display = "none";
+            clear("span-city");
+        }
+    }
+    else if (id === "University") {
+        if (ValidationUniversity()) {
+            document.getElementById("euniversity").innerHTML = document.getElementById("University").value;
+            document.getElementById("university").style.display = "table-row";
+            document.getElementById("span-university").style.display = "none";
+            clear("span-university");
+        }
+    }
+    else if (id === "Specialty") {
+        if (ValidationSpecialty()) {
+            document.getElementById("especialty").innerHTML = document.getElementById("Specialty").value;
+            document.getElementById("specialty").style.display = "table-row";
+            document.getElementById("span-specialty").style.display = "none";
+            clear("span-specialty");
+        }
+    }
+    else if (id === "Universityinst") {
+        if (ValidationUniversityinst()) {
+            document.getElementById("euniversityinst").innerHTML = document.getElementById("Universityinst").value;
+            document.getElementById("universityinst").style.display = "table-row";
+            document.getElementById("span-universityinst").style.display = "none";
+            clear("span-universityinst");
+        }
+    }
+    else if (id === "Specialtyinst") {
+        if (ValidationSpecialtyinst()) {
+            document.getElementById("especialtyinst").innerHTML = document.getElementById("Specialtyinst").value;
+            document.getElementById("specialtyinst").style.display = "table-row";
+            document.getElementById("span-specialtyinst").style.display = "none";
+            clear("span-specialtyinst");
+        }
+    }
+    else if (id === "Password") {
+        if (ValidationPass()) {
+            // document.getElementById("epassword").innerHTML = document.getElementById("Password").value;
+            document.getElementById("password").style.display = "table-row";
+            document.getElementById("span-password").style.display = "none";
+            clear("span-password");
+        }
+    }
+    
 }
