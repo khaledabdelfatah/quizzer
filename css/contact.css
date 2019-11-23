@@ -3,11 +3,11 @@ body
   font-family: Arial, Helvetica, sans-serif;
   background-color: #ffffff; 
 }
-*
+/* *
 {
   box-sizing: border-box;
   display: block;
-}
+} */
 input[type=text], select, textarea, #country
 {
   width: 100%;
