@@ -1,5 +1,5 @@
 var divs = new Array();
-divs[0] = "** Please fill this field or is one character";
+divs[0] = "** Please fill this field or it not vaild";
 divs[1] = "** only characters are allowed";
 divs[2] = "** Please fill the email field";
 divs[3] = "** @ Invalid Position";
@@ -26,7 +26,6 @@ $("#imageUpload").change(function () {
     fasterPreview(this);
 });
 	}
-
 function validationFname() {
 	var Fuser = document.getElementById('Fname').value;
 	var regName = /^[A-Za-z]+$/;
@@ -112,7 +111,7 @@ function validationPhone() {
 }
 function ValidationPass()  {
 	var pass = document.getElementById('Password').value;
-	var paswd= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/; //error
+	var paswd= /^(?=.*[0-9])(?=.*[!@#$%^&*_+/-])[a-zA-Z0-9!@#$%^&*_+/-]{7,15}$/;
 	divPass[0]=pass;
 	if(pass == ""){
 		document.getElementById('errPassword').style.display="block"
@@ -121,18 +120,16 @@ function ValidationPass()  {
 		return false;
 			}
 	else if(!pass.match(paswd)) {
-		document.getElementById('errPassword').style.display="block" 
 		document.getElementById('errPassword').style.color="red";
 		document.getElementById('errPassword').innerHTML =divs[10];
 		
 		return false;	
 			}
-	else{
-		document.getElementById('errPassword').style.display="non"; 
+	else{document.getElementById('errPassword').style.display="block";
+		document.getElementById("errPassword").style.color = "green";
 		document.getElementById('errPassword').innerHTML =divs[9];
-		finalCheck[4]="ok";
-		return true;
-	}
+		 return true;
+		finalCheck[4]="ok";}
 }
 function ValidationRePass() {
 	var Repass = document.getElementById('RePassword').value;
@@ -153,7 +150,9 @@ function ValidationRePass() {
 }
 function ValidationAdress() {
 	var addrees = document.getElementById('Address').value;
-	if (addrees == ""){
+	var regaddrees = /^[a-zA-Z0-9]+$/;
+	var number=/^[0-9]/;
+	if (!isNaN(addrees) ||!addrees.match(regaddrees)){
 						document.getElementById('errAddress').style.display="block";
 
 				document.getElementById('errAddress').innerHTML =divs[0];
@@ -166,17 +165,78 @@ function ValidationAdress() {
 }
 function ValidationCity() {
 	var city = document.getElementById('City').value;
-	if (city == ""){
-						document.getElementById('errCity').style.display="block";
-
-				document.getElementById('errCity').innerHTML =divs[0];
+	var regcity = /^[a-zA-Z0-9]+$/;
+	if (!isNaN(city) ||!city.match(regcity)){
+			document.getElementById('errCity').style.display="block";
+            document.getElementById('errCity').innerHTML =divs[0];
 			return false;
 	}
-	else{finalCheck[7]="ok";
-				document.getElementById('errCity').style.display="none";
+	else{document.getElementById('errCity').style.display="none";
 		 return true;
 	}
 }
+function ValidationUniversity() {
+	var University = document.getElementById('University').value;
+	var regUniversity = /^[a-zA-Z0-9]+$/;
+	if (!isNaN(University)||!University.match(regUniversity)){
+			document.getElementById('errUniversity').style.display="block";
+            document.getElementById('errUniversity').innerHTML =divs[0];
+			return false;
+	}
+	else{document.getElementById('errUniversity').style.display="none";
+		 return true;
+	}
+}
+function Validationspecialty(){
+	var specialty = document.getElementById('specialty').value;
+	var regspecialty = /^[a-zA-Z0-9]+$/;
+	if (!isNaN(specialty)||!specialty.match(regspecialty)){
+			document.getElementById('errspecialty').style.display="block";
+            document.getElementById('errspecialty').innerHTML =divs[0];
+			return false;
+	}
+	else{document.getElementById('errspecialty').style.display="none";
+		 return true;
+	}
+}
+function ValidationUniversityinst() {
+	var University = document.getElementById('Universityinst').value;
+	var regUniversity = /^[a-zA-Z0-9]+$/;
+	if (!isNaN(University)||!University.match(regUniversity)){
+			document.getElementById('errUniversityinst').style.display="block";
+            document.getElementById('errUniversityinst').innerHTML =divs[0];
+			return false;
+	}
+	else{document.getElementById('errUniversityinst').style.display="none";
+		 return true;
+	}
+}
+function Validationspecialtyinst(){
+	var specialty = document.getElementById('specialtyinst').value;
+	var regspecialty = /^[a-zA-Z0-9]+$/;
+	if (!isNaN(specialty)||!specialty.match(regspecialty)){
+			document.getElementById('errspecialtyinst').style.display="block";
+            document.getElementById('errspecialtyinst').innerHTML =divs[0];
+			return false;
+	}
+	else{document.getElementById('errspecialtyinst').style.display="none";
+		 return true;
+	}
+}
+function showHide(){
+   hideAll();
+  var val = document.getElementById("dropdown").value;
+
+  if(val == "instructor")
+   document.getElementById("instructorInfo").style.display = 'block';
+  else if(val == "student")
+   document.getElementById("studentInfo").style.display = 'block';
+ }
+function hideAll(){
+      document.getElementById("studentInfo").style.display = 'none';
+      document.getElementById("instructorInfo").style.display = 'none';
+      }
+
 function ValidationFinal(){
 	
 		
