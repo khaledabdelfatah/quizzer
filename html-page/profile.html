@@ -81,7 +81,7 @@
         </div>
     </div>
     <div class="container profile">
-        <form method="GET" style="position: relative;">
+        <form method="POST" style="position: relative;">
             <div class="row">
                 <div class="sidebar">
                     <a onclick="changing('myTabContent')" class="active">Personal-Information</a>
@@ -223,6 +223,96 @@
                                 </td>
                             </tr>
 
+                            <tr class="element" id="city">
+                                <th>City</th>
+                                <td id="ecity">Al-Eslah</td>
+                                <td class="td2">
+                                    <a onclick="toEdit('city')">
+                                        <img src="../img/profile/edit.png" alt="edit">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="elementspan" id="span-city">
+                                <th>City</th>
+                                <td>
+                                    <input type="text" id="City" value="">
+                                    <input type="button" onclick="toSaveChanges('City')" value="save">
+                                    <span id="errCity" class="text-danger font-weight-bold"></span>
+                                </td>
+                            </tr>
+
+                            <tr class="element" id="university">
+                                <th>University</th>
+                                <td id="euniversity">Future Academy</td>
+                                <td class="td2">
+                                    <a onclick="toEdit('university')">
+                                        <img src="../img/profile/edit.png" alt="edit">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="elementspan" id="span-university">
+                                <th>University</th>
+                                <td>
+                                    <input type="text" id="University" value="">
+                                    <input type="button" onclick="toSaveChanges('University')" value="save">
+                                    <span id="errUniversity" class="text-danger font-weight-bold"></span>
+                                </td>
+                            </tr>
+
+                            <tr class="element" id="specialty">
+                                <th>Specialty</th>
+                                <td id="especialty">System Analysis</td>
+                                <td class="td2">
+                                    <a onclick="toEdit('specialty')">
+                                        <img src="../img/profile/edit.png" alt="edit">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="elementspan" id="span-specialty">
+                                <th>Specialty</th>
+                                <td>
+                                    <input type="text" id="Specialty" value="">
+                                    <input type="button" onclick="toSaveChanges('Specialty')" value="save">
+                                    <span id="errSpecialty" class="text-danger font-weight-bold"></span>
+                                </td>
+                            </tr>
+
+                            <tr class="element" id="universityinst">
+                                <th>Universityinst</th>
+                                <td id="euniversityinst">Ain Shams</td>
+                                <td class="td2">
+                                    <a onclick="toEdit('universityinst')">
+                                        <img src="../img/profile/edit.png" alt="edit">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="elementspan" id="span-universityinst">
+                                <th>Universityinst</th>
+                                <td>
+                                    <input type="text" id="Universityinst" value="">
+                                    <input type="button" onclick="toSaveChanges('Universityinst')" value="save">
+                                    <span id="errUniversityinst" class="text-danger font-weight-bold"></span>
+                                </td>
+                            </tr>
+
+                            <tr class="element" id="specialtyinst">
+                                <th>Specialtyinst</th>
+                                <td id="especialtyinst">System Analysis</td>
+                                <td class="td2">
+                                    <a onclick="toEdit('specialtyinst')">
+                                        <img src="../img/profile/edit.png" alt="edit">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="elementspan" id="span-specialtyinst">
+                                <th>Specialtyinst</th>
+                                <td>
+                                    <input type="text" id="Specialtyinst" value="">
+                                    <input type="button" onclick="toSaveChanges('Specialtyinst')" value="save">
+                                    <span id="errSpecialtyinst" class="text-danger font-weight-bold"></span>
+                                </td>
+                            </tr>
+
                             <tr class="element" id="password">
                                 <th>
                                     <Address>Password</Address>
@@ -246,23 +336,41 @@
                         </table>
                     </div>
                 </div>
-                <div class="tab-content profile-tab" id="quizzesContent" style="margin-left: 200px; display: none;">
+                <div class="tab-content profile-tab" id="quizzesContent">
                     <div style="margin: 15px 10px 0px 15px">
-                        <!--kerolos! put your link here..................................-->
-                        <a href="Create_Quiz.html" style="color: black; margin-left: 200px;">
-                            <img src="../img/profile/add.png" alt="create a new Quiz"
-                                style="width: 10px; height: 10px;">
-                        </a>
-                        <h5 style="display: inline;">Create A New Quiz...</h5>
+                        <table role="presentation">
+                            <tr id="title-information">
+                                <th class="general" colspan="2">Quizzes Information</th>
+                            </tr>
+                            <tr>
+                                <th colspan="2" style="padding: 0px;">
+                                    <div style="margin: 15px;">
+                                        <a href="Create_Quiz.html" style="color: black;">
+                                            <img src="../img/profile/add.png" alt="create a new Quiz"
+                                                style="width: 10px; height: 10px;">
+                                            Create A New Quiz...
+                                        </a>
+                                    </div>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2" style="padding: 0px;">
+                                    <div style="margin: 15px;">
+                                        <a href="Databasequiz.html" style="color: black;">Databasequiz</a>
+                                    </div>
+                                </th>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                <div class="tab-content profile-tab" id="reviewContent" style="margin-left: 200px; display: none;">
+                <div class="tab-content profile-tab" id="reviewContent">
                     <p><b> Under construction...</b></p>
                 </div>
-                <div class="tab-content profile-tab" id="mediaContent" style="margin-left: 200px; display: none;">
+                <div class="tab-content profile-tab" id="mediaContent">
                     <p><b> Under construction also... 😂</b></p>
                 </div>
-                <div class="tab-content profile-tab" id="newsContent" style="margin-left: 200px; display: none;">
+                <div class="tab-content profile-tab" id="newsContent">
                     <p><b> Under construction also also...😂😂😂</b></p>
                 </div>
             </div>
