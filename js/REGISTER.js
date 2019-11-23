@@ -146,7 +146,7 @@ function ValidationRePass() {
 			} 
 	else{document.getElementById('errRePassword').style.display="none";
 		 return true;
-		finalCheck[5]="ok";}
+		}
 }
 function ValidationAdress() {
 	var addrees = document.getElementById('Address').value;
@@ -185,7 +185,7 @@ function ValidationUniversity() {
 	}
 	else{document.getElementById('errUniversity').style.display="none";
 		 return true;
-	}
+}
 }
 function Validationspecialty(){
 	var specialty = document.getElementById('specialty').value;
@@ -199,7 +199,7 @@ function Validationspecialty(){
 		 return true;
 	}
 }
-function ValidationUniversity() {
+function ValidationUniversityinst() {
 	var University = document.getElementById('Universityinst').value;
 	var regUniversity = /^[a-zA-Z0-9]+$/;
 	if (!isNaN(University)||!University.match(regUniversity)){
@@ -237,12 +237,20 @@ function hideAll(){
       document.getElementById("instructorInfo").style.display = 'none';
       }
 
-function ValidationFinal(){
-	
-		
-			 document.getElementById("Register").disabled = true;
-		
+function ValidationFinal()
+	{
+	if((validationFname() && validationLname() && validationEmail() &&validationPhone()&&
+	  ValidationPass() && ValidationRePass() && ValidationAdress() && ValidationCity()
+	  )&& ((ValidationUniversity() && Validationspecialty() ) || 
+          (ValidationUniversityinst() && Validationspecialtyinst() )
+          )     ){
+		document.getElementById('sbmuterr').innerHTML ="all good";
+	}else{
+		document.getElementById('sbmuterr').innerHTML ="some fild is missing";
+    }
 	}
+		
+	
 
 
 
