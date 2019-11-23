@@ -1,8 +1,15 @@
-.test-monial{
-    background-color: rgb(139, 139, 189);
-    width: 100%;
-    height: 40vh;
-     background-size: 100%;
-     background-color: #5491AC;
+.test-monial .orange-text{
+  color: orange;
    
 }
+     @font-face {
+        font-family: Orbitron;
+        src: url(../fonts/Pacifico/Orbitron-Regular.ttf);
+      }
+      .custom-font{
+          font-family:  Orbitron;
+      }
+
+      .test-monial{
+          background-color:rgba(140, 71, 230, 0.411) ; 
+             }
