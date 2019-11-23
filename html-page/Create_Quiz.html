@@ -1,0 +1,152 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quizzer :: Header template</title>
+    <!-- offline bootstrap links -->
+    <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="../Bootstrap/js/bootstrap.min.js"></script>
+    <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="../img/favicon.png" />
+    <!-- Online Links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Css Files -->
+    <link rel="stylesheet" href="../Header/css/headerstyl.css">
+    <link rel="stylesheet" href="../css/createquiz.css">
+    <!-- JavaScript Files -->
+    <script src="../js/createquiz.js"></script>
+
+</head>
+
+<body>
+    <div class="test" style="padding-bottom: 30px">
+        <div class="header-area-style">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark bg-transparent   ">
+                <a class="navbar-brand" href="#">
+                    <img src="../img/logo/1.png" style=" width: 120px;" alt="" srcset="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                    <ul class="navbar-nav  ">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact-Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About-Us</a>
+                        </li>
+                        <!-- </ul> -->
+                        <ul class="navbar-nav" style="padding-left: 200px;">
+                            <li>
+                                <a class="boxed_btn_orange nav-item" href="#">
+                                    <span>Register </span>
+                                </a>
+                            </li>
+                            <li style="padding-left: 5px;">
+                                <a class="boxed_btn_orange nav-item" href="#">
+                                    <span>Log-in </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <hr>
+
+        <!-- Start Image :) -->
+
+        <div class="center set-title " style="justify-content: center; text-align: center;">
+            <h1>Create Your Quiz</h1>
+            <!-- in the perivous line you need to change the title with your page title -->
+        </div>
+    </div>
+
+    <!--  quistions  -->
+    <div class="container mt-3" id="questions">
+
+        <!--   quistion 1     -->
+        <!--
+        <div class='p-2 flex-fill text-center Qusistion' id='question1'>
+
+            <label for="uname">Quistion 1</label>
+            <button type="button" onclick="this.parentNode.remove();" style="float: right">X</button>
+            <textarea class="form-control" rows="7" name="text" required></textarea>
+            <br />
+            <p class="collapse">3</p>
+            <div>
+                <div class="form-group form-check">
+                    <input type="checkbox">
+                    <input type="text" class="form-control-sm styleinput">
+                    <button type="button" onclick="this.parentNode.remove();delete_answer('question1');">X</button>
+                </div>
+
+                <div class="form-group form-check">
+                    <input type="checkbox">
+                    <input type="text" class="form-control-sm styleinput">
+                    <button type="button" onclick="this.parentNode.remove();delete_answer('question1');">X</button>
+                </div>
+
+                <div class="form-group form-check">
+                    <input type="checkbox">
+                    <input type="text" class="form-control-sm styleinput">
+                    <button type="button" onclick="this.parentNode.remove();delete_answer('question1');">X</button>
+                </div>
+            </div>
+            <button type="button" onclick="add_multi_Answer('question1')" class="btn btn-info" style="width: 20%">Add answer</button>
+        </div>
+
+
+
+
+           quistion2     
+
+        <div class="p-2 flex-fill text-center Qusistion" id="question2">
+
+            <label for="uname">Quistion 2</label>
+            <button type="button" onclick="this.parentNode.remove();" style="float: right">X</button>
+            <textarea class="form-control" rows="7" name="text" required></textarea>
+            <br />
+            <p class="collapse">2</p>
+            <div>
+                <div class="form-group form-check">
+                    <input type="radio" name="q2">
+                    <input type="text" class="form-control-sm styleinput">
+                    <button type="button" onclick="this.parentNode.remove();delete_answer('question2');">X</button>
+                </div>
+
+                <div class="form-group form-check">
+                    <input type="radio" name="q2">
+                    <input type="text" class="form-control-sm styleinput">
+                    <button type="button" onclick="this.parentNode.remove();delete_answer('question2');">X</button>
+                </div>
+            </div>
+            <button type="button" onclick="add_one_Answer('question2')" class="btn btn-info" style="width: 20%">Add answer</button>
+        </div>
+-->
+
+    </div>
+
+    <div class="p-2 flex-fill text-center">
+        <button type="button" class="btn btn-primary" onclick="add_one_question()" style="width: 40%">Add Quistion one answer</button>
+        <button type="button" class="btn btn-primary" onclick="add_multi_question()" style="width: 40%;">Add Quistion many answer</button>
+    </div>
+
+
+</body></html>
