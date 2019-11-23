@@ -105,9 +105,9 @@ function validationPhone() {
 		document.getElementById('errPhone').innerHTML =divs[7];
 		return false;
 		}
-	else{finalCheck[3]="ok";
+	else{document.getElementById('errPhone').style.display="none";
 		 return true;
-		document.getElementById('errPhone').style.display="none";}
+		}
 }
 function ValidationPass()  {
 	var pass = document.getElementById('Password').value;
@@ -199,7 +199,7 @@ function Validationspecialty(){
 		 return true;
 	}
 }
-function ValidationUniversityinst() {
+function ValidationUniversity() {
 	var University = document.getElementById('Universityinst').value;
 	var regUniversity = /^[a-zA-Z0-9]+$/;
 	if (!isNaN(University)||!University.match(regUniversity)){
