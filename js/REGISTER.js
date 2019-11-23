@@ -120,6 +120,7 @@ function ValidationPass()  {
 		return false;
 			}
 	else if(!pass.match(paswd)) {
+		document.getElementById('errPassword').style.display="block"; 				//
 		document.getElementById('errPassword').style.color="red";
 		document.getElementById('errPassword').innerHTML =divs[10];
 		
@@ -187,15 +188,15 @@ function ValidationUniversity() {
 		 return true;
 }
 }
-function Validationspecialty(){
-	var specialty = document.getElementById('specialty').value;
+function ValidationSpecialty(){                                                  //
+	var specialty = document.getElementById('Specialty').value;                  //
 	var regspecialty = /^[a-zA-Z0-9]+$/;
 	if (!isNaN(specialty)||!specialty.match(regspecialty)){
-			document.getElementById('errspecialty').style.display="block";
-            document.getElementById('errspecialty').innerHTML =divs[0];
+			document.getElementById('errSpecialty').style.display="block";      //
+            document.getElementById('errSpecialty').innerHTML =divs[0];         //
 			return false;
 	}
-	else{document.getElementById('errspecialty').style.display="none";
+	else{document.getElementById('errSpecialty').style.display="none";         	//
 		 return true;
 	}
 }
@@ -211,15 +212,15 @@ function ValidationUniversityinst() {
 		 return true;
 	}
 }
-function Validationspecialtyinst(){
-	var specialty = document.getElementById('specialtyinst').value;
+function ValidationSpecialtyinst(){                                           	//
+	var specialty = document.getElementById('Specialtyinst').value;           	//
 	var regspecialty = /^[a-zA-Z0-9]+$/;
 	if (!isNaN(specialty)||!specialty.match(regspecialty)){
-			document.getElementById('errspecialtyinst').style.display="block";
-            document.getElementById('errspecialtyinst').innerHTML =divs[0];
+			document.getElementById('errSpecialtyinst').style.display="block";	//
+            document.getElementById('errSpecialtyinst').innerHTML =divs[0];   	//
 			return false;
 	}
-	else{document.getElementById('errspecialtyinst').style.display="none";
+	else{document.getElementById('errSpecialtyinst').style.display="none";   	//
 		 return true;
 	}
 }
@@ -249,13 +250,3 @@ function ValidationFinal()
 		document.getElementById('sbmuterr').innerHTML ="some fild is missing";
     }
 	}
-		
-	
-
-
-
-
-
-
-
-
