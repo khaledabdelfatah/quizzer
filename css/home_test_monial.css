@@ -11,13 +11,13 @@
         }
 
         .test-monial{
-            /* background-color:rgba(140, 71, 230, 0.411) ;  */
-            height: 75vh;
-            padding-top:20px ;
-            background-repeat: no-repeat ;
-            background-position: center;
-            background-size: cover;
-            background-image: url("../img/home/testimonialbackground.jpg");
+          height: 75vh;
+          padding-top:20px ;
+          background-repeat: no-repeat ;
+          background-position: center;
+          background-size: cover;
+          background-image: url("../img/home/testimonialbackground.jpg");
+            /* background-image: url("../img/home/testimonialbackground.jpg"); */
             /* background-image: url("https://images.unsplash.com/photo-1456324410427-237b360bb9e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"); */
             /* background-image: url("https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"); */
               }
