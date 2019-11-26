@@ -1,23 +1,80 @@
-  .test-monial .orange-text{
-    color: orange;
-    
-  }
+  
       @font-face {
           font-family: Orbitron;
           src: url(../fonts/Pacifico/Orbitron-Regular.ttf);
         }
-        .custom-font{ 
-            font-family:  Orbitron;
+     
+        .testimonials {
+          overflow: hidden;
+          position: relative;
+          max-height: 300px;
         }
-
-        .test-monial{
-          height: 75vh;
-          padding-top:20px ;
-          background-repeat: no-repeat ;
-          background-position: center;
-          background-size: cover;
-          background-image: url("../img/home/testimonialbackground.jpg");
-            /* background-image: url("../img/home/testimonialbackground.jpg"); */
-            /* background-image: url("https://images.unsplash.com/photo-1456324410427-237b360bb9e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"); */
-            /* background-image: url("https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"); */
-              }
+        
+        .testimonials {
+          background: #161d25;
+        }
+        
+        .one-slide,
+        .testimonial,
+        .message {
+          border: none !important;
+          outline: none !important;
+        }
+        
+        .icon-overlay {
+          position: absolute;
+          opacity: 0.3;
+          right: 10%;
+          top: 0;
+          height: auto;
+          width: 100%;
+          max-width: 400px;
+        }
+        
+        .carousel-controls .control {
+          position: absolute;
+          transform: translateY(-50%);
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          border: 2px solid #fff;
+          z-index: 1;
+        }
+        
+        .prev {
+          left: -2.25rem;
+        }
+        
+        .next {
+          right: -2.25rem;
+        }
+        
+        @media screen and (max-width: 768px) {
+          .testimonials {
+            max-height: 700px;
+          }
+          .icon-overlay {
+            height: 300px;
+            top: calc(50% - 150px);
+          }
+          .carousel-controls .control {
+            width: 25px;
+            height: 25px;
+            top: inherit;
+          }
+          .prev {
+            left: 0;
+          }
+          .next {
+            right: 0;
+          }
+          .control i {
+            font-size: .7rem;
+          }
+          .testimonials .message {
+            font-size: 1rem;
+          }
+          .testimonials h2 {
+            font-size: 1.5rem;
+          }
+        }
