@@ -1,0 +1,32 @@
+.footer{
+    background: #222222;
+    color:white;
+    
+     
+    }  
+    .about-company i{
+      font-size: 25px;}
+      .about-company  a{
+        color:orange;
+        transition: color .2s;
+       }
+       .links{
+           color: orange;
+           text-decoration: none;
+       }
+       .links a:link{
+        text-decoration: none;
+        color: white;
+
+       }
+   
+    .location i{
+      font-size: 18px;}
+    
+    .copyright p
+    {border-top:1px solid rgba(255,255,255,.1);} 
+   
+
+  .orange-text{
+      color: orange;
+  }
