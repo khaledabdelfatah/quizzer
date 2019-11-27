@@ -22,13 +22,15 @@ function clear(id)
     child11[1].value = "";
     child11[5].style.display = "none";
 }
-//Under construction... to change active class on the side par
+//change active class on the side par
 function changing(id) {
     var conts = ["myTabContent", "quizzesContent", "reviewContent", "mediaContent", "newsContent"];
     document.getElementById(id).style.display = "block";
+    document.getElementById(id + "-caller").setAttribute("class", "active");
     for (i in conts) {
         if (conts[i] != id) {
             document.getElementById(conts[i]).style.display = "none";
+            document.getElementById(conts[i] + "-caller").setAttribute("class", "");
         }
     }
 }
