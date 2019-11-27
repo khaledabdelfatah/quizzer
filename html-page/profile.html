@@ -50,22 +50,20 @@
                             <a class="nav-link" href="#">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Html-pages/Contact_us.html">Contact-Us</a>
+                            <a class="nav-link" href="Contact_us.html">Contact-Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Html-pages/About_us.html">About-Us</a>
+                            <a class="nav-link" href="About_us.html">About-Us</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav" style="float: left; margin-left: 0px;">
-                        <li style="margin: 0px; padding: 0px;  height: 100%; min-width: 180px;">
-                            <button
-                                style="background-color: transparent; border: none; overflow: hidden; cursor:pointer;">
-                                <img class="rounded-circle photo" src="../img/profile/prof0.jpg"
-                                    style="width:30px; height:30px" alt="personal photo">
-                                mahmoud-said
+                        <li id="info-bar">
+                            <button id="general-button">
                                 <div class="dropdown">
+                                    <img class="rounded-circle photo" src="../img/profile/prof0.jpg"
+                                        style="width:30px; height:30px" alt="personal photo">
+                                    mahmoud-said
                                     <button onclick="myFunction()" class="dropbtn">
-                                        <img src="../img/profile/down-arrow.png" style="width: 10px; height: 10px;">
                                     </button>
                                     <div id="myDropdown" class="dropdown-content">
                                         <a href="#myTabContent" onclick="changing('myTabContent')">personal</a>
@@ -84,21 +82,22 @@
         <form method="POST" style="position: relative;">
             <div class="row">
                 <div class="sidebar">
-                    <a onclick="changing('myTabContent')" class="active">Personal-Information</a>
-                    <a onclick="changing('quizzesContent')" class="">Quizzes</a>
-                    <a onclick="changing('reviewContent')" class="">review</a>
-                    <a onclick="changing('mediaContent')" class="">Media</a>
-                    <a onclick="changing('newsContent')" class="">News</a>
+                    <a id="myTabContent-caller" onclick="changing('myTabContent')"
+                        class="active">Personal-Information</a>
+                    <a id="quizzesContent-caller" onclick="changing('quizzesContent')" class="">Quizzes</a>
+                    <a id="reviewContent-caller" onclick="changing('reviewContent')" class="">review</a>
+                    <a id="mediaContent-caller" onclick="changing('mediaContent')" class="">Media</a>
+                    <a id="newsContent-caller" onclick="changing('newsContent')" class="">News</a>
                 </div>
 
                 <div class="tab-content profile-tab" id="myTabContent">
-                    <div style="margin: 15px 10px 0px 15px">
+                    <div class="main">
                         <table role="presentation">
                             <tr id="title-information">
                                 <th class="general" colspan="2">Personal Information</th>
                             </tr>
                             <tr>
-                                <th colspan="2" style="padding: 0px;">
+                                <th colspan="2">
                                     <div style="margin: 15px;">
                                         <img class="photo" src="../img/profile/prof0.jpg"
                                             style="width: 100px; height: 100px;">
@@ -337,13 +336,13 @@
                     </div>
                 </div>
                 <div class="tab-content profile-tab" id="quizzesContent">
-                    <div style="margin: 15px 10px 0px 15px">
+                    <div class="main">
                         <table role="presentation">
                             <tr id="title-information">
                                 <th class="general" colspan="2">Quizzes Information</th>
                             </tr>
                             <tr>
-                                <th colspan="2" style="padding: 0px;">
+                                <th colspan="2">
                                     <div style="margin: 15px;">
                                         <a href="Create_Quiz.html" style="color: black;">
                                             <img src="../img/profile/add.png" alt="create a new Quiz"
@@ -355,7 +354,7 @@
                             </tr>
 
                             <tr>
-                                <th colspan="2" style="padding: 0px;">
+                                <th colspan="2">
                                     <div style="margin: 15px;">
                                         <a href="Databasequiz.html" style="color: black;">Databasequiz</a>
                                     </div>
@@ -365,13 +364,21 @@
                     </div>
                 </div>
                 <div class="tab-content profile-tab" id="reviewContent">
-                    <p><b> Under construction...</b></p>
+                    <div class="main">
+                        <p><b> Under construction...</b></p>
+                    </div>
                 </div>
                 <div class="tab-content profile-tab" id="mediaContent">
-                    <p><b> Under construction also... 😂</b></p>
+                    <div class="main">
+                        <p><b> Under construction also... 😂</b></p>
+                    </div>
+
                 </div>
                 <div class="tab-content profile-tab" id="newsContent">
-                    <p><b> Under construction also also...😂😂😂</b></p>
+                    <div class="main">
+                        <p><b> Under construction also also...😂😂😂</b></p>
+                    </div>
+
                 </div>
             </div>
         </form>
