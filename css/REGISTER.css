@@ -290,6 +290,8 @@
  .w3l_form {
      padding: 0px;
      flex-basis: 35%;
+      box-sizing: border-box;
+     padding: 4em;
      -webkit-flex-basis: 35%;
      background: #603ac7;
  }
@@ -534,7 +536,7 @@
      }
 
      .w3_info {
-         padding: 2em;
+         padding: 3em 2em;
      }
 
      h1 {
