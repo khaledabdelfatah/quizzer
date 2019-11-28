@@ -8,6 +8,10 @@ body
   box-sizing: border-box;
   display: block;
 } */
+label
+{
+  margin: 0px;
+}
 input[type=text], select, textarea, #country
 {
   width: 100%;
@@ -15,12 +19,11 @@ input[type=text], select, textarea, #country
   border: 1px solid #1f58f7;
   border-radius: 10px;
   box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
+  margin-top: 2px;
+  margin-bottom: 10px;
   resize: vertical;
- 
 }
-input[type=submit]
+input[type=button]
 {
   background-color: #1f58f7;
   color: white;
@@ -29,7 +32,7 @@ input[type=submit]
   border-radius: 4px;
   cursor: pointer;
 }
-input[type=submit]:hover
+input[type=button]:hover
 {
   background-color: rgb(138, 83, 163);
 }
@@ -65,4 +68,8 @@ h1{
   color: black;
   margin: 10px auto;
   text-align: center;
+}
+span
+{
+  margin-bottom: 10px;;
 }
