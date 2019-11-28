@@ -10,10 +10,9 @@ divs[7] = "** Mobile Number must be 11 digits only";
 divs[8] = "** Please fill the password field";
 divs[9] = "Strong Password";
 divs[10]= "Poor Password it must have 7 to 15 characters which contain at least one numeric digit and a special character";
-divs[11]=" ** Password does not match the confirm password";
+divs[11]=" ** Password does not match";
 var divPass = new Array();
-var finalCheck=new Array();
-function UploadPic(){
+function UploadPic() {
 $("#profileImage").click(function (e) {
     $("#imageUpload").click();
 });
@@ -40,8 +39,7 @@ function validationFname() {
 				return false;
 			}
 	else{
-		finalCheck[0]="ok";
-				document.getElementById('errFname').style.display="none";
+		document.getElementById('errFname').style.display="none";
 		return true;
 	}
 }
@@ -49,9 +47,8 @@ function validationLname() {
 	var Luser = document.getElementById('Lname').value;
 	var regName = /^[A-Za-z]+$/;
 	if(Luser == "" ||Luser.length<2){
-						document.getElementById('errLname').style.display="block";
-
-				document.getElementById('errLname').innerHTML =divs[0];
+       document.getElementById('errLname').style.display="block";
+       document.getElementById('errLname').innerHTML =divs[0];
 			return false;
 	}else if(!Luser.match(regName)){
 		document.getElementById('errLname').style.display="block";
@@ -59,8 +56,7 @@ function validationLname() {
 				return false;
 			}
 	else{
-		finalCheck[1]="ok";
-				document.getElementById('errLname').style.display="none";
+		document.getElementById('errLname').style.display="none";
 		return true;
 	}
 }
@@ -68,15 +64,13 @@ function validationEmail() {
 	var emails = document.getElementById('Email').value;
 	
 			if(emails == ""){
-								document.getElementById('errEmail').style.display="block";
-
+				document.getElementById('errEmail').style.display="block";
 				document.getElementById('errEmail').innerHTML =divs[2];
 				return false;
 			}
 		else if(emails.indexOf('@') <= 0 ){
-							document.getElementById('errEmail').style.display="block";
-
-				document.getElementById('errEmail').innerHTML =divs[3];
+            document.getElementById('errEmail').style.display="block";
+            document.getElementById('errEmail').innerHTML =divs[3];
 				return false;
 			}
 
@@ -84,9 +78,10 @@ function validationEmail() {
 				document.getElementById('errEmail').style.display="block";
 				document.getElementById('errEmail').innerHTML =divs[4];
 				return false;
-			}else{finalCheck[2]="ok";
+			}else{
+                  document.getElementById('errEmail').style.display="none";
 				  return true;
-				document.getElementById('errEmail').style.display="none";}
+				}
 }
 function validationPhone() {
 	var phone= document.getElementById('Phone').value;
@@ -111,8 +106,9 @@ function validationPhone() {
 }
 function ValidationPass()  {
 	var pass = document.getElementById('Password').value;
-	var paswd= /^(?=.*[0-9])(?=.*[!@#$%^&*_+/-])[a-zA-Z0-9!@#$%^&*_+/-]{7,15}$/;
+	var paswd= /^(?=.*[0-9])(?=.*[!@#$%.^&*_+/-])[a-zA-Z0-9!@#$%^.&*_+/-]{7,15}$/;
 	divPass[0]=pass;
+    ValidationRePass();
 	if(pass == ""){
 		document.getElementById('errPassword').style.display="block"
 		document.getElementById('errPassword').style.color="red";
@@ -130,7 +126,7 @@ function ValidationPass()  {
 		document.getElementById("errPassword").style.color = "green";
 		document.getElementById('errPassword').innerHTML =divs[9];
 		 return true;
-		finalCheck[4]="ok";}
+		}
 }
 function ValidationRePass() {
 	var Repass = document.getElementById('RePassword').value;
@@ -140,7 +136,7 @@ function ValidationRePass() {
 		document.getElementById('errRePassword').innerHTML =divs[8];
 		return false;
 			}
-		else if(divPass[1]!=divPass[0]){
+		else if(divPass[1]!==divPass[0]){
 			document.getElementById('errRePassword').style.display="block"
 		document.getElementById('errRePassword').innerHTML =divs[11];
 		return false;
@@ -159,7 +155,7 @@ function ValidationAdress() {
 				document.getElementById('errAddress').innerHTML =divs[0];
 			return false;
 	}
-	else{finalCheck[6]="ok";
+	else{;
 				document.getElementById('errAddress').style.display="none";
 		 return true;
 	}
@@ -188,7 +184,7 @@ function ValidationUniversity() {
 		 return true;
 }
 }
-function ValidationSpecialty(){                                                  //
+function ValidationSpecialty() {                                                  //
 	var specialty = document.getElementById('Specialty').value;                  //
 	var regspecialty = /^[a-zA-Z0-9]+$/;
 	if (!isNaN(specialty)||!specialty.match(regspecialty)){
@@ -212,7 +208,7 @@ function ValidationUniversityinst() {
 		 return true;
 	}
 }
-function ValidationSpecialtyinst(){                                           	//
+function ValidationSpecialtyinst() {                                           	//
 	var specialty = document.getElementById('Specialtyinst').value;           	//
 	var regspecialty = /^[a-zA-Z0-9]+$/;
 	if (!isNaN(specialty)||!specialty.match(regspecialty)){
@@ -228,24 +224,42 @@ function showHide(){
    hideAll();
   var val = document.getElementById("dropdown").value;
 
-  if(val == "instructor")
+  if(val == "instructor"){
    document.getElementById("instructorInfo").style.display = 'block';
-  else if(val == "student")
+    document.getElementById('University').value="";
+    document.getElementById('Specialty').value="";  
+  }
+  else if(val == "student"){
    document.getElementById("studentInfo").style.display = 'block';
+    document.getElementById('Universityinst').value="";
+    document.getElementById('Specialtyinst').value="";
+  }
  }
+function degree(){
+    var deg= document.getElementById("degree level").value;
+    if(deg == ""){
+        return false;
+    }else return true;
+}
+function exprienc(){
+    var exp= document.getElementById("exprienc").value;
+    if(exp == ""){
+        return false;
+    }else return true;
+}
 function hideAll(){
       document.getElementById("studentInfo").style.display = 'none';
       document.getElementById("instructorInfo").style.display = 'none';
       }
-
-function ValidationFinal()
-	{
-	if((validationFname() && validationLname() && validationEmail() &&validationPhone()&&
-	  ValidationPass() && ValidationRePass() && ValidationAdress() && ValidationCity()
-	  )&& ((ValidationUniversity() && Validationspecialty() ) || 
-          (ValidationUniversityinst() && Validationspecialtyinst() )
-          )     ){
+function ValidationFinal(){
+	if((validationFname() && validationLname() && validationEmail() && validationPhone() 
+      && ValidationPass() && ValidationRePass() && ValidationAdress() && ValidationCity()) 
+      && ((ValidationUniversity() && ValidationSpecialty()) || 
+           (ValidationUniversityinst() && ValidationSpecialtyinst() && degree() && exprienc())) 
+      ){
+        
 		document.getElementById('sbmuterr').innerHTML ="all good";
+        window.location("login_form.html");
 	}else{
 		document.getElementById('sbmuterr').innerHTML ="some fild is missing";
     }
