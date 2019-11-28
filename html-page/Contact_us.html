@@ -10,11 +10,11 @@
      <!-- Fav Icon -->
     <link rel="shortcut icon" type="image/png" href="../img/favicon.png" />
     <!-- offline bootstrap links -->
-    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
-    <script src="Bootstrap/js/bootstrap.min.js"></script>
-    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="../Bootstrap/js/bootstrap.min.js"></script>
+    <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Online Links -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -23,14 +23,15 @@
     <!-- Css Files -->
     <link rel="stylesheet" href="../Header/css/headerstyl.css">
     <link rel="stylesheet" href="../css/contact.css">
-  
+    <script src="../js/contact.js"></script>
+    <script src="../js/REGISTER.js"></script>
 </head>
 <body>
     
  <div class="test">
     <div class="header-area-style ">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark bg-transparent ">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../index.html">
                 <img src="../img/logo/1.png" style=" width: 190px;" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -42,23 +43,23 @@
                         <a class="nav-link" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="Html-pages/Profile.html">Profile</a>
+                        <a class="nav-link" href="Profile.html">Profile</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item active" style="min-width: 96.016px;">
                         <a class="nav-link" href="#">Contact-Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Html-pages/About_us.html">About-Us</a>
+                        <a class="nav-link" style="min-width: 82.695px;" href="Html-pages/About_us.html">About-Us</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav" style="float: left; margin-left: 0px;">
                     <li>
-                        <a class="boxed_btn_orange nav-item" href="#">
+                        <a class="boxed_btn_orange nav-item" href="REGISTER.html">
                             <span>Register</span>
                         </a>
                     </li>
-                    <li>
-                        <a class="boxed_btn_orange nav-item" href="#">
+                    <li style="min-width: 116.458px;">
+                        <a class="boxed_btn_orange nav-item" href="login_form.html">
                             <span>Log-in</span>
                         </a>
                     </li>
@@ -77,11 +78,17 @@
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 container1">
             <form action="#">
-                <label for="fname">Full Name</label>
-                <input type="text" id="fname" name="fullname" placeholder="Your name..">
+                <label for="Fname">First Name</label>
+                <input type="text" id="Fname" name="fname" placeholder="first name..">
+                <span id="errFname" class="text-danger font-weight-bold"></span>
 
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" placeholder="Your Email..">
+                <label for="Lname">Last Name</label>
+                <input type="text" id="Lname" name="lname" placeholder="last name..">
+                <span id="errLname" class="text-danger font-weight-bold"></span>
+
+                <label for="Email">Email</label>
+                <input type="text" id="Email" name="email" placeholder="Email Address..">
+                <span id="errEmail" class="text-danger font-weight-bold"></span>
 
                 <label for="country">Country</label>
                 <div>
@@ -1422,10 +1429,13 @@
 
                         </select>
                     </div>
-                    <label for="message" style="display: block;">Message</label>
-                    <textarea id="message" name="message" placeholder="Write something.."
+                    <label for="Message" style="display: block;">Message</label>
+                    <textarea id="Message" name="message" placeholder="Write something.."
                         style="height:200px"></textarea>
-                    <input type="submit" value="Send">
+                    <span id="errMessage" class="text-danger font-weight-bold"></span>
+
+                    <input type="button" onclick="checkValidation()" value="Send">
+                </div>
             </form>
         </div>
     </div>
