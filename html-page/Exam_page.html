@@ -1,48 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Quizzer::EXAM Time</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Quizzer::EXAM Time</title>
 
 
-  <!-- Fav Icon -->
-  <link rel="shortcut icon" type="image/png" href="../img/favicon.png" />
+	<!-- Fav Icon -->
+	<link rel="shortcut icon" type="image/png" href="../img/favicon.png" />
+	<script src="../js/exam-page.js"></script>
 
-  <!-- Offline Bootstrap links -->
-  <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" />
-  <link href="../Bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
-  <script src="../Bootstrap/js/bootstrap.min.js"></script>
-  <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" />
-  <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../css/exam-page.css">
+	<script src="../js/exam-page.js"></script>
+	
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!------ Include the above in your HEAD tag ---------->
+<script>
+$(function () {
+	var loading = $('#loadbar').hide();
+	$(document)
+		.ajaxStart(function () {
+			loading.show();
+		}).ajaxStop(function () {
+			loading.hide();
+		});
 
-  <!-- online bootstrap links -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
+	$("label.btn").on('click', function () {
+		var choice = $(this).find('input:radio').val();
+		$('#loadbar').show();
+		$('#quiz').fadeOut();
+		setTimeout(function () {
+			$("#answer").html($(this).checking(choice));
+			$('#quiz').show();
+			$('#loadbar').fadeOut();
+			/* something else */
+		}, 1500);
+	});
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	$ans = 3;
 
+	$.fn.checking = function (ck) {
+		if (ck != $ans)
+			return 'INCORRECT';
+		else
+			return 'CORRECT';
+	};
+});	
 
-  <!-- Normalization and foundation files  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-  <link rel='stylesheet prefetch'
-      href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css'>
-  <!-- Font Awosem v5 icons -->
-  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</script>
 
 </head>
+
 <body>
-    
+
+
+	<div class="container-fluid bg-info">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3><span class="label label-warning" id="qid">1</span> THREE is CORRECT</h3>
+				</div>
+				<div class="modal-body">
+					<div class="col-xs-3 col-xs-offset-5">
+						<div id="loadbar" style="display: none;">
+							<div class="blockG" id="rotateG_01"></div>
+							<div class="blockG" id="rotateG_02"></div>
+							<div class="blockG" id="rotateG_03"></div>
+							<div class="blockG" id="rotateG_04"></div>
+							<div class="blockG" id="rotateG_05"></div>
+							<div class="blockG" id="rotateG_06"></div>
+							<div class="blockG" id="rotateG_07"></div>
+							<div class="blockG" id="rotateG_08"></div>
+						</div>
+					</div>
+
+					<div class="quiz" id="quiz" data-toggle="buttons">
+						<label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i
+									class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio"
+								name="q_answer" value="1">1 One</label>
+						<label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i
+									class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio"
+								name="q_answer" value="2">2 Two</label>
+						<label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i
+									class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio"
+								name="q_answer" value="3">3 Three</label>
+						<label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i
+									class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio"
+								name="q_answer" value="4">4 Four</label>
+					</div>
+				</div>
+				<div class="modal-footer text-muted">
+					<span id="answer"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 </body>
+
 </html>
