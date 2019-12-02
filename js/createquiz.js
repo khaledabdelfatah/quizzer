@@ -25,7 +25,7 @@ function add_multi_Answer(name_question) {
     let num_Of_Answer = num_question.getElementsByTagName("p")[0].innerHTML;
 
     if (num_Of_Answer == 0) {
-        let answer = "<div class='form-group form-check'><input type='checkbox'><input type='text'class='form-control-sm styleinput'><button type='button' onclick='this.parentNode.remove();delete_answer();'>X</button></div>";
+        let answer = "<div class='form-group form-check'><input type='checkbox'class='form-radio' ><input type='text'class='form-control-sm styleinput'><button type='button' class='closeButton' onclick='this.parentNode.remove();delete_answer();'>X</button></div>";
 
         div_of_questions.innerHTML = answer;
 
@@ -54,7 +54,7 @@ function add_one_Answer(name_question) {
 
     if (num_Of_Answer == 0) {
 
-        let answer = "<div class='form-group form-check'><input type='radio' name='q2'><input type='text' class='form-control-sm styleinput'><button type='button' onclick='this.parentNode.remove();delete_answer();'>X</button></div>";
+        let answer = "<div class='form-group form-check'><input type='radio' name='q2' class='form-radio'><input type='text' class='form-control-sm styleinput'><button type='button' class='closeButton' onclick='this.parentNode.remove();delete_answer();'>X</button></div>";
 
         div_of_questions.innerHTML = answer;
 
@@ -86,7 +86,7 @@ function delete_answer(name_question) {
 
 function add_multi_question() {
     num_Of_questions ++;
-    var str = "<div class=\"p-2 flex-fill text-center Qusistion\" id=\"question"+num_Of_questions+"\"><label for=\"uname\">Quistion " +num_Of_questions+"</label><button type=\"button\" onclick=\"this.parentNode.remove();\" style=\"float: right\">X</button><textarea class=\"form-control\" rows='7' name=\"text\" required></textarea><br /><p class=\"collapse\">3</p><div><div class=\"form-group form-check\"><input type=\"checkbox\"><input type=\"text\" class=\"form-control-sm styleinput\"><button type=\"button\" onclick=\"this.parentNode.remove();delete_answer('question"+num_Of_questions+"');\">X</button></div><div class=\"form-group form-check\"><input type=\"checkbox\"><input type=\"text\" class=\"form-control-sm styleinput\"><button type=\"button\" onclick=\"this.parentNode.remove();delete_answer('question"+num_Of_questions+"');\">X</button></div><div class=\"form-group form-check\"><input type=\"checkbox\"><input type=\"text\" class=\"form-control-sm styleinput\"><button type=\"button\" onclick=\"this.parentNode.remove();delete_answer('question"+num_Of_questions+"');\">X</button></div></div><button type=\"button\" onclick=\"add_multi_Answer('question"+num_Of_questions+"')\" class=\"btn btn-info\" style=\"width: 20%\">Add answer</button></div>";
+    var str = "<div class=\"p-2 flex-fill text-center Qusistion\" id=\"question"+num_Of_questions+"\"><label for=\"uname\">Quistion " +num_Of_questions+"</label><button type=\"button\" class=\"closeButton\" onclick=\"this.parentNode.remove();\" style=\"float: right\">X</button><textarea class=\"form-control textA\" rows='7' name=\"text\" required></textarea><br /><p class=\"collapse\">3</p><div><div class=\"form-group form-check\"><input type=\"checkbox\" class=\"form-radio\"><input type=\"text\" class=\"form-control-sm styleinput\"><button type=\"button\" class=\"closeButton\" onclick=\"this.parentNode.remove();delete_answer('question"+num_Of_questions+"');\">X</button></div><div class=\"form-group form-check\"><input type=\"checkbox\" class=\"form-radio\"><input type=\"text\" class=\"form-control-sm styleinput\"><button type=\"button\" class=\"closeButton\" onclick=\"this.parentNode.remove();delete_answer('question"+num_Of_questions+"');\">X</button></div><div class=\"form-group form-check\"><input type=\"checkbox\" class=\"form-radio\"><input type=\"text\" class=\"form-control-sm styleinput\"><button type=\"button\" class=\"closeButton\" onclick=\"this.parentNode.remove();delete_answer('question"+num_Of_questions+"');\">X</button></div></div><button type=\"button\" onclick=\"add_multi_Answer('question"+num_Of_questions+"')\" class=\"btn btn-info\" style=\"width: 20%\">Add answer</button></div>";
 
 
     var child = document.createElement('div');
@@ -96,7 +96,7 @@ function add_multi_question() {
 
 function add_one_question(){
     num_Of_questions ++;
-    var str = "<div class=\"p-2 flex-fill text-center Qusistion\" id=\"question"+num_Of_questions+"\"><label for=\"uname\">Quistion "+num_Of_questions+"</label><button type=\"button\" onclick=\"this.parentNode.remove();\" style=\"float: right\">X</button><textarea class=\"form-control\" rows=\"7\" name=\"text\" required></textarea><br /><p class=\"collapse\">2</p><div><div class=\"form-group form-check\"><input type=\"radio\" name=\"q"+num_Of_questions+"\"><input type=\"text\" class=\"form-control-sm styleinput\"><button type=\"button\" onclick=\"this.parentNode.remove();delete_answer('question"+num_Of_questions+"');\">X</button></div><div class=\"form-group form-check\"><input type=\"radio\" name=\"q"+num_Of_questions+"\"><input type=\"text\" class=\"form-control-sm styleinput\"><button type=\"button\" onclick=\"this.parentNode.remove();delete_answer('question"+num_Of_questions+"');\">X</button></div></div><button type=\"button\" onclick=\"add_one_Answer('question"+num_Of_questions+"')\" class=\"btn btn-info\" style=\"width: 20%\">Add answer</button></div>";
+    var str = "<div class=\"p-2 flex-fill text-center Qusistion\" id=\"question"+num_Of_questions+"\"><label for=\"uname\">Quistion "+num_Of_questions+"</label><button type=\"button\" class=\"closeButton\" onclick=\"this.parentNode.remove();\" style=\"float: right\">X</button><textarea class=\"form-control textA\" rows=\"7\" name=\"text\" required></textarea><br /><p class=\"collapse\">2</p><div><div class=\"form-group form-check\"><input type=\"radio\" name=\"q"+num_Of_questions+"\" class=\"form-radio\"><input type=\"text\" class=\"form-control-sm styleinput\"><button type=\"button\" class=\"closeButton\" onclick=\"this.parentNode.remove();delete_answer('question"+num_Of_questions+"');\">X</button></div><div class=\"form-group form-check\"><input type=\"radio\" name=\"q"+num_Of_questions+"\" class=\"form-radio\"><input type=\"text\" class=\"form-control-sm styleinput\"><button type=\"button\" class=\"closeButton\" onclick=\"this.parentNode.remove();delete_answer('question"+num_Of_questions+"');\">X</button></div></div><button type=\"button\" onclick=\"add_one_Answer('question"+num_Of_questions+"')\" class=\"btn btn-info\" style=\"width: 20%\">Add answer</button></div>";
 
 
     var child = document.createElement('div');
