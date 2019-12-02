@@ -88,45 +88,57 @@
             <br>
             <label>
                 time of quiz
-                <input type="number" style="margin: 15px" min="1" max="120">minutes
+                <!--                <input type="number" class="form-control" style="margin: 15px" min="1" max="120">minutes-->
+                <div class="def-number-input number-input safari_only">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                    <input class="quantity" min="1" name="quantity" value="1" type="number">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                </div>
+                minutes
             </label>
             <br>
             <label>
                 number of point for all question
-                <input type="number" style="margin: 15px" min="0.5" step="0.5">point
+                <!--                <input type="number" class="quantity" style="margin: 15px" min="0.5" step="0.5">point-->
+                <div class="def-number-input number-input safari_only">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                    <input class="quantity" min="0.5" name="quantity" value="0.5" step="0.5" type="number">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                </div>
             </label>
         </div>
     </div>
-    
+
     <!--  quistions  -->
     <div class="container mt-3" id="questions">
 
         <!--   quistion 1     -->
-        <!--
+
+<!--
         <div class='p-2 flex-fill text-center Qusistion' id='question1'>
 
             <label for="uname">Quistion 1</label>
-            <button type="button" onclick="this.parentNode.remove();" style="float: right">X</button>
-            <textarea class="form-control" rows="7" name="text" required></textarea>
+            <button type="button" class="closeButton" onclick="this.parentNode.remove();" style="float: right">X</button>
+            <textarea class="form-control textA" rows="7" name="text" required></textarea>
             <br />
             <p class="collapse">3</p>
             <div>
                 <div class="form-group form-check">
-                    <input type="checkbox">
+                    <input type="checkbox" class="form-radio">
                     <input type="text" class="form-control-sm styleinput">
-                    <button type="button" onclick="this.parentNode.remove();delete_answer('question1');">X</button>
+                    <button type="button" class="closeButton" onclick="this.parentNode.remove();delete_answer('question1');">X</button>
                 </div>
 
                 <div class="form-group form-check">
-                    <input type="checkbox">
+                    <input type="checkbox" class="form-radio">
                     <input type="text" class="form-control-sm styleinput">
-                    <button type="button" onclick="this.parentNode.remove();delete_answer('question1');">X</button>
+                    <button type="button" class="closeButton" onclick="this.parentNode.remove();delete_answer('question1');">X</button>
                 </div>
 
                 <div class="form-group form-check">
-                    <input type="checkbox">
+                    <input type="checkbox" class="form-radio">
                     <input type="text" class="form-control-sm styleinput">
-                    <button type="button" onclick="this.parentNode.remove();delete_answer('question1');">X</button>
+                    <button type="button" class="closeButton" onclick="this.parentNode.remove();delete_answer('question1');">X</button>
                 </div>
             </div>
             <button type="button" onclick="add_multi_Answer('question1')" class="btn btn-info" style="width: 20%">Add answer</button>
@@ -135,31 +147,32 @@
 
 
 
-           quistion2     
+                   quistion2     
 
         <div class="p-2 flex-fill text-center Qusistion" id="question2">
 
             <label for="uname">Quistion 2</label>
-            <button type="button" onclick="this.parentNode.remove();" style="float: right">X</button>
-            <textarea class="form-control" rows="7" name="text" required></textarea>
+            <button type="button" class="closeButton" onclick="this.parentNode.remove();" style="float: right">X</button>
+            <textarea class="form-control textA" rows="7" name="text" required></textarea>
             <br />
             <p class="collapse">2</p>
             <div>
                 <div class="form-group form-check">
-                    <input type="radio" name="q2">
+                    <input type="radio" name="q2" class="form-radio">
                     <input type="text" class="form-control-sm styleinput">
-                    <button type="button" onclick="this.parentNode.remove();delete_answer('question2');">X</button>
+                    <button type="button" class="closeButton" onclick="this.parentNode.remove();delete_answer('question2');">X</button>
                 </div>
 
                 <div class="form-group form-check">
-                    <input type="radio" name="q2">
+                    <input type="radio" name="q2" class="form-radio">
                     <input type="text" class="form-control-sm styleinput">
-                    <button type="button" onclick="this.parentNode.remove();delete_answer('question2');">X</button>
+                    <button type="button" class="closeButton" onclick="this.parentNode.remove();delete_answer('question2');">X</button>
                 </div>
             </div>
             <button type="button" onclick="add_one_Answer('question2')" class="btn btn-info" style="width: 20%">Add answer</button>
         </div>
 -->
+
 
     </div>
 
@@ -170,51 +183,49 @@
             many answer</button>
     </div>
 
-  <!-- Start Footer -->
-  <div>
-    <!--UN USed-->
+    <!-- Start Footer -->
+    <div>
+        <!--UN USed-->
 
-    <div class="mt-5 pt-5 pb-5 footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-xs-12 about-company">
-                    <h2 class="orange-text">Quizzer</h2>
-                    <p class="pr-5 text-white-50"> web Application that help Instructors to generate their custom
-                        Quiz <br>
-                        <span class="orange-text">Quizzer</span> Was made with <span
-                            style="color: red; font-size: 20px;">♥</span>
-                        by 5 Students as a part of Web-Programming
-                        Course
-                    </p>
+        <div class="mt-5 pt-5 pb-5 footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-xs-12 about-company">
+                        <h2 class="orange-text">Quizzer</h2>
+                        <p class="pr-5 text-white-50"> web Application that help Instructors to generate their custom
+                            Quiz <br>
+                            <span class="orange-text">Quizzer</span> Was made with <span style="color: red; font-size: 20px;">♥</span>
+                            by 5 Students as a part of Web-Programming
+                            Course
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-xs-12 links">
+                        <h4 class="mt-lg-0 mt-sm-3 orange-text">Quick Links</h4>
+                        <ul class="m-0 p-0">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="REGISTER.html">Register</a></li>
+                            <li><a href="login_form.html">Log IN</a></li>
+                            <li><a href="Contact_us.html">Contact Us</a></li>
+                            <li><a href="About_us.html">About US</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-xs-12 location">
+                        <h4 class="mt-lg-0 mt-sm-4 orange-text">Location</h4>
+                        <p><i class="fa fa-map-marker  mr-3"></i> Cairo,Egypt </p>
+                        <p><i class="fa fa-envelope-o mr-3 "></i>quizzer2019@gmail.com</p>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-xs-12 links">
-                    <h4 class="mt-lg-0 mt-sm-3 orange-text">Quick Links</h4>
-                    <ul class="m-0 p-0">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="REGISTER.html">Register</a></li>
-                        <li><a href="login_form.html">Log IN</a></li>
-                        <li><a href="Contact_us.html">Contact Us</a></li>
-                        <li><a href="About_us.html">About US</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-xs-12 location">
-                    <h4 class="mt-lg-0 mt-sm-4 orange-text">Location</h4>
-                    <p><i class="fa fa-map-marker  mr-3"></i> Cairo,Egypt </p>
-                    <p><i class="fa fa-envelope-o mr-3 "></i>quizzer2019@gmail.com</p>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col copyright">
-                    <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span
-                                class="orange-text">Quizzer</span>.</small></p>
+                <div class="row mt-5">
+                    <div class="col copyright">
+                        <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span class="orange-text">Quizzer</span>.</small></p>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 
-</div>
-
-<!-- End Footer  -->
+    <!-- End Footer  -->
 </body>
 
 </html>
