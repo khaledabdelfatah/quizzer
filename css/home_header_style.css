@@ -49,15 +49,14 @@ transition: 0.3s;}
 
 /*  */
  .home_header_style{ 
-    background-image: url("../img/background/banner.png");
+    background: url("../img/background/banner.png") ;
     background-size: cover;
     background-position: center     ;
     background-repeat: no-repeat;
     background-position: center;
-    /* height: 100vh auto;       */
+    /* height: 100vh auto;        */
     
    height: 100% auto;
-
+   min-height: 100vh;
  
-    width: 100%;
-}
+   }
