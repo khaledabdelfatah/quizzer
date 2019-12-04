@@ -1,0 +1,74 @@
+
+.testimonial {
+  border: 1px solid orange;
+  height: 300px;
+  padding: 25px;
+ 
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.testimonial p.testiname {
+  font-style: normal;
+  font-size: 18px;
+  display: block;
+  padding-bottom: 0;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.testimonial p.testiname strong {
+  font-weight: 600;
+  letter-spacing: -0.6px;
+}
+
+.testimonial img {
+  margin-right: 10px;
+  max-width: 40px;
+}
+
+.testimonial:after {
+  content: "\f10e";
+  padding: 10px;
+  font-family: FontAwesome;
+  position: absolute;
+  bottom: 0px;
+  color: orange;
+  font-size: 21px;
+  right: 10px;
+}
+
+.testimonial:before {
+  content: "\f10d";
+  padding: 10px;
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  color: orange;
+  font-size: 21px;
+  left: 10px;
+}
+
+.testimonial .rating {
+  margin-top: 20px;
+}
+
+.rating {
+  display: block;
+}
+
+.rating i {
+  color: #f4af0b !important;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  line-height: 1;
+  display: inline-block;
+  font-size: 15px;
+}
+
+
+
