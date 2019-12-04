@@ -15,7 +15,7 @@
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .08) 69%, rgba(0, 0, 0, .76) 100%);
     top: 0;
-    transition: all .5s ease 0s
+    transition: all .5s ease 0s;
 }
 
 .box .post,
@@ -26,12 +26,12 @@
 
 .box:hover:after {
     background: linear-gradient(to bottom, rgba(0, 0, 0, .01) 0, rgba(0, 0, 0, .09) 11%, rgba(0, 0, 0, .12) 13%, rgba(0, 0, 0, .19) 20%, rgba(0, 0, 0, .29) 28%, rgba(0, 0, 0, .29) 29%, rgba(0, 0, 0, .42) 38%, rgba(0, 0, 0, .46) 43%, rgba(0, 0, 0, .53) 47%, rgba(0, 0, 0, .75) 69%, rgba(0, 0, 0, .87) 84%, rgba(0, 0, 0, .98) 99%, rgba(0, 0, 0, .94) 100%);
-    background-color: rgba(77, 77, 77, .9)
+    background-color: rgba(105, 63, 219, .6)
 }
 
 .box img {
     width: 100%;
-    height: auto
+    height: auto;
 }
 
 .box .box-content {
@@ -114,11 +114,32 @@
     margin-right: 0
 }
 
-@media only screen and (max-width:990px) {
-    .box {
-        margin-bottom: 30px
-    }}
+.marg {
+    margin: 30px 0px;
+}
 
-.marg{
-    margin: 30px;
+.paragraph {
+    margin: auto 10px;
+    font-size: 19px;
+    font-family: 'Acme', sans-serif;
+
+}
+
+.paragraph strong {
+    font-size: 30px;
+    font-family: 'Lobster', cursive;
+}
+
+.top_title {
+    padding: 20px 0px;
+    margin-top: 20px;
+    font-family: 'Courgette', cursive;
+    background-color: rgba(105, 63, 219, 1);
+    color: #fff;
+    border-radius: 30px 30px 0 0;
+}
+
+.Meet_title {
+    font-family: 'Courgette', cursive;
+    font-size: 40px;
 }
