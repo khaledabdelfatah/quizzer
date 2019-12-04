@@ -1,6 +1,8 @@
+
 // check validation on the information of the e-mail
 function checkValidation()
 {
+    
     var messageValue= document.getElementById("Message").value;
     var isOk = [];
     var done = true;
@@ -26,13 +28,32 @@ function checkValidation()
     for(i in isOk)
     {
         if(!(isOk[i]))
+        {
             done = false;
             return false;
+        }
     }
     if(done)
     {
-        //under constructions
-        window.location("../index.html");
+        var anii = document.getElementById("mail-box");
+        anii.style.width = "150px";
+        anii.style.height = "150px";
+        anii.style.top = "-800px";
+        anii.style.webkitTransition = "top 5s";
+        anii.style.transition = "top 5s"
 
     }
 }
+
+
+function rotate()
+{
+    var ani = document.getElementById("mail-box");
+    ani.style.transform = "rotateY(180deg)";
+}
+function rotateback()
+{
+    var ani = document.getElementById("mail-box");
+    ani.style.transform = "rotateY(0deg)";
+}
+
