@@ -1,17 +1,16 @@
 body
 {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #ffffff; 
+  background-color: #ffffff;
+  position: relative;
+
 }
-/* *
-{
-  box-sizing: border-box;
-  display: block;
-} */
+
 label
 {
   margin: 0px;
 }
+
 input[type=text], select, textarea, #country
 {
   width: 100%;
@@ -23,6 +22,7 @@ input[type=text], select, textarea, #country
   margin-bottom: 10px;
   resize: vertical;
 }
+
 input[type=button]
 {
   background-color: #1f58f7;
@@ -32,10 +32,12 @@ input[type=button]
   border-radius: 4px;
   cursor: pointer;
 }
+
 input[type=button]:hover
 {
   background-color: rgb(138, 83, 163);
 }
+
 .container
 {
   border: #1f58f7 solid 1px;
@@ -46,11 +48,13 @@ input[type=button]:hover
   margin-bottom: 20px;
   position: static;
 }
+
 .container1
 {
     padding: 20px;
 }
-#image
+
+#mail-box
 {
   width: 90%;
   border: solid 1px #1f58f7;
@@ -58,17 +62,32 @@ input[type=button]:hover
   display: block;
   margin-left: auto;
   margin-right: auto;
+  align-self: center;
   position: relative;
   top: 20%;
-  align-self: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
-h1{
+
+.flip-card
+{
+  background-color: transparent;
+  perspective: 1000px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+h1
+{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 70px;
   color: black;
   margin: 10px auto;
   text-align: center;
 }
+
 span
 {
   margin-bottom: 10px;;
