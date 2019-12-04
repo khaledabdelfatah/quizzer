@@ -1,80 +1,27 @@
+ .last-part .testimonial img{
+
+  height: 400px;
+
   
-      @font-face {
-          font-family: Orbitron;
-          src: url(../fonts/Pacifico/Orbitron-Regular.ttf);
-        }
-     
-        .testimonials {
-          overflow: hidden;
-          position: relative;
-          max-height: 300px;
-        }
-        
-        .testimonials {
-          background: #161d25;
-        }
-        
-        .one-slide,
-        .testimonial,
-        .message {
-          border: none !important;
-          outline: none !important;
-        }
-        
-        .icon-overlay {
-          position: absolute;
-          opacity: 0.3;
-          right: 10%;
-          top: 0;
-          height: auto;
-          width: 100%;
-          max-width: 400px;
-        }
-        
-        .carousel-controls .control {
-          position: absolute;
-          transform: translateY(-50%);
-          width: 45px;
-          height: 45px;
-          border-radius: 50%;
-          border: 2px solid #fff;
-          z-index: 1;
-        }
-        
-        .prev {
-          left: -2.25rem;
-        }
-        
-        .next {
-          right: -2.25rem;
-        }
-        
-        @media screen and (max-width: 768px) {
-          .testimonials {
-            max-height: 700px;
-          }
-          .icon-overlay {
-            height: 300px;
-            top: calc(50% - 150px);
-          }
-          .carousel-controls .control {
-            width: 25px;
-            height: 25px;
-            top: inherit;
-          }
-          .prev {
-            left: 0;
-          }
-          .next {
-            right: 0;
-          }
-          .control i {
-            font-size: .7rem;
-          }
-          .testimonials .message {
-            font-size: 1rem;
-          }
-          .testimonials h2 {
-            font-size: 1.5rem;
-          }
-        }
+}
+.last-part .testimonial{
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+@font-face {
+  font-family: "orbitron";
+  src: url("../fonts/Pacifico/Orbitron-Regular.ttf");
+   
+  }
+
+.testimonial-text{
+font-family: "orbitron";
+font-weight: bold;
+font-size: 30px;
+color:white
+
+}
+.top-cont{
+  background-image: url("../img/testmonial.png");
+}
