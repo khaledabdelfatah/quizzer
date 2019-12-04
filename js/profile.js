@@ -26,11 +26,11 @@ function clear(id)
 function changing(id) {
     var conts = ["myTabContent", "quizzesContent", "reviewContent", "mediaContent", "newsContent"];
     document.getElementById(id).style.display = "block";
-    document.getElementById(id + "-caller").setAttribute("class", "active");
+    // document.getElementById(id + "-caller").setAttribute("class", "active");
     for (i in conts) {
         if (conts[i] != id) {
             document.getElementById(conts[i]).style.display = "none";
-            document.getElementById(conts[i] + "-caller").setAttribute("class", "");
+            // document.getElementById(conts[i] + "-caller").setAttribute("class", "");
         }
     }
 }
@@ -153,7 +153,6 @@ function toSaveChanges(id) {
     }
     else if (id === "Password") {
         if (ValidationPass()) {
-            // document.getElementById("epassword").innerHTML = document.getElementById("Password").value;
             document.getElementById("password").style.display = "table-row";
             document.getElementById("span-password").style.display = "none";
             clear("span-password");
@@ -161,3 +160,20 @@ function toSaveChanges(id) {
     }
     
 }
+
+//under construction
+function appear()
+{
+    document.getElementsByClassName("change-remove-icons")[0].style.display = "inline-block";
+    document.getElementsByClassName("change-remove-icons")[0].style.cursor = "pointer";
+    document.getElementsByClassName("change-remove-icons")[1].style.display = "inline-block";
+    document.getElementsByClassName("change-remove-icons")[1].style.cursor = "pointer";
+}
+function disappear()
+{
+    document.getElementsByClassName("change-remove-icons")[0].style.display = "none";
+    document.getElementsByClassName("change-remove-icons")[0].style.cursor = "context-menu";
+    document.getElementsByClassName("change-remove-icons")[1].style.display = "none";
+    document.getElementsByClassName("change-remove-icons")[1].style.cursor = "context-menu";
+}
+
