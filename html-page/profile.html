@@ -23,12 +23,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <!-- Css Files -->
     <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../Header/css/headerstyl.css">
-    <link rel="stylesheet" href="../css/home_footer_style.css">
     <!-- javascript Files -->
     <script src="../js/profile.js"></script>
     <script src="../js/REGISTER.js"></script>
@@ -50,7 +47,7 @@
                             <a class="nav-link" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="profile.html">Profile</a>
+                            <a class="nav-link" href="#">Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="min-width: 96.016px;" href="Contact_us.html">Contact-Us</a>
@@ -66,13 +63,6 @@
                                     <img class="rounded-circle photo" src="../img/profile/prof0.jpg"
                                         style="width:30px; height:30px" alt="personal photo">
                                     mahmoud-said
-                                    <button onclick="myFunction()" class="dropbtn">
-                                    </button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <a href="#myTabContent" onclick="changing('myTabContent')">personal</a>
-                                        <a href="#quizzesContent" onclick="changing('quizzesContent')">quizzes</a>
-                                        <a href="login_form.html">Sign out</a>
-                                    </div>
                                 </div>
                             </button>
                         </li>
@@ -81,18 +71,46 @@
             </nav>
         </div>
     </div>
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top " id="mainNav">
+        <div class="nav-container">
+            <button style="float: right;" class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
+                <ul class="navbar-nav" style="float: left;">
+                    <li class="nav-item active">
+                        <a id="myTabContent-caller" style="min-width: 160px;" data-toggle="collapse"
+                            data-target=".navbar-collapse.show" onclick="changing('myTabContent')" class="nav-link">
+                            Personal-Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="quizzesContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
+                            onclick="changing('quizzesContent')" class="nav-link">
+                            Quizzes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="reviewContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
+                            onclick="changing('reviewContent')" class="nav-link">
+                            review</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="mediaContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
+                            onclick="changing('mediaContent')" class="nav-link">
+                            Media</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="newsContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
+                            onclick="changing('newsContent')" class="nav-link">
+                            News</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container profile">
         <form method="POST" style="position: relative;">
             <div class="row">
-                <div class="sidebar">
-                    <a id="myTabContent-caller" onclick="changing('myTabContent')"
-                        class="active">Personal-Information</a>
-                    <a id="quizzesContent-caller" onclick="changing('quizzesContent')" class="">Quizzes</a>
-                    <a id="reviewContent-caller" onclick="changing('reviewContent')" class="">review</a>
-                    <a id="mediaContent-caller" onclick="changing('mediaContent')" class="">Media</a>
-                    <a id="newsContent-caller" onclick="changing('newsContent')" class="">News</a>
-                </div>
-
                 <div class="tab-content profile-tab" id="myTabContent">
                     <div class="main">
                         <table role="presentation">
@@ -101,14 +119,20 @@
                             </tr>
                             <tr>
                                 <th colspan="2">
-                                    <div style="margin: 15px;">
+                                    <div style="margin: 15px; position: relative;">
                                         <img class="photo" src="../img/profile/prof0.jpg"
-                                            style="width: 100px; height: 100px;">
-                                        <input type="button" onclick="removePhoto('photo')" value="Remove"
-                                            style="align-self: center; margin-bottom: 0px;">
-                                        <div class="file btn btn-lg btn-primary">
-                                            Change Photo
-                                            <input type="file" name="file" />
+                                            style="width: 150px; height: 150px; display: block;" onmouseover="appear()"
+                                            onmouseout="disappear()">
+
+                                        <div id="change">
+                                            <image id="profileImage" class="change-remove-icons"
+                                                src="../img/profile/change.png">
+                                                <input id="imageUpload" type="file" value="" style="display: none;"
+                                                    onclick="UploadPic()">
+                                        </div>
+                                        <div id="remove">
+                                            <img class="change-remove-icons" src="../img/profile/remove.png"
+                                                onclick="removePhoto('photo')">
                                         </div>
                                     </div>
                                 </th>
@@ -344,26 +368,69 @@
                             <tr id="title-information">
                                 <th class="general" colspan="2">Quizzes Information</th>
                             </tr>
-                            <tr>
-                                <th colspan="2">
-                                    <div style="margin: 15px;">
-                                        <a href="Create_Quiz.html" style="color: black;">
-                                            <img src="../img/profile/add.png" alt="create a new Quiz"
-                                                style="width: 10px; height: 10px;">
-                                            Create A New Quiz...
-                                        </a>
-                                    </div>
-                                </th>
-                            </tr>
-
-                            <tr>
-                                <th colspan="2">
-                                    <div style="margin: 15px;">
-                                        <a href="Databasequiz.html" style="color: black;">Databasequiz</a>
-                                    </div>
-                                </th>
-                            </tr>
                         </table>
+
+                        <div class="row" style="margin: 0%">
+                            <div class="col-md-6 col-sm-9 col-xs-12">
+                                <div class="card">
+                                    <div style="float: left;">
+                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
+                                            alt="quiz">
+                                        <img class="delete" src="../img/profile/delete.png" alt="delete">
+                                    </div>
+                                    <h2>Databasequiz</h2>
+                                    <h5><small>Instractor</small>: Diaa salama</h5>
+                                    <h5>time: 1 hour</h5>
+                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
+                                        class="btn btn-primary strquiz">start Quiz</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-9 col-xs-12">
+                                <div class="card">
+                                    <div style="float: left;">
+                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
+                                            alt="quiz">
+                                        <img class="delete" src="../img/profile/delete.png" alt="delete">
+                                    </div>
+                                    <h2>Databasequiz</h2>
+                                    <h5><small>Instractor</small>: Diaa salama</h5>
+                                    <h5>time: 1 hour</h5>
+                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
+                                        class="btn btn-primary strquiz">start Quiz</a>
+                                </div>
+                            </div>
+                        </div> <!-- end row -->
+
+                        <div class="row" style="margin: 0%">
+                            <div class="col-md-6 col-sm-9 col-xs-12">
+                                <div class="card">
+                                    <div style="float: left;">
+                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
+                                            alt="quiz">
+                                        <img class="delete" src="../img/profile/delete.png" alt="delete">
+                                    </div>
+                                    <h2>Databasequiz</h2>
+                                    <h5><small>Instractor</small>: Diaa salama</h5>
+                                    <h5>time: 1 hour</h5>
+                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
+                                        class="btn btn-primary strquiz">start Quiz</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-9 col-xs-12">
+                                <div class="card">
+                                    <div style="float: left;">
+                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
+                                            alt="quiz">
+                                        <img class="delete" src="../img/profile/delete.png" alt="delete">
+                                    </div>
+                                    <h2>Databasequiz</h2>
+                                    <h5><small>Instractor</small>: Diaa salama</h5>
+                                    <h5>time: 1 hour</h5>
+                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
+                                        class="btn btn-primary strquiz">start Quiz</a>
+                                </div>
+                            </div>
+                        </div> <!-- end row -->
                     </div>
                 </div>
                 <div class="tab-content profile-tab" id="reviewContent">
@@ -386,54 +453,19 @@
             </div>
         </form>
     </div>
-
-
-
-        <!-- Start Footer -->
-        <div>
-                <!--UN USed-->
-        
-                <div class="mt-5 pt-5 pb-5 footer">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-5 col-xs-12 about-company">
-                                <h2 class="orange-text">Quizzer</h2>
-                                <p class="pr-5 text-white-50"> web Application that help Instructors to generate their custom
-                                    Quiz <br>
-                                    <span class="orange-text">Quizzer</span> Was made with <span
-                                        style="color: red; font-size: 20px;">♥</span>
-                                    by 5 Students as a part of Web-Programming
-                                    Course
-                                </p>
-                            </div>
-                            <div class="col-lg-3 col-xs-12 links">
-                                <h4 class="mt-lg-0 mt-sm-3 orange-text">Quick Links</h4>
-                                <ul class="m-0 p-0">
-                                    <li><a href="../index.html">Home</a></li>
-                                    <li><a href="REGISTER.html">Register</a></li>
-                                    <li><a href="login_form.html">Log IN</a></li>
-                                    <li><a href="Contact_us.html">Contact Us</a></li>
-                                    <li><a href="About_us.html">About US</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 col-xs-12 location">
-                                <h4 class="mt-lg-0 mt-sm-4 orange-text">Location</h4>
-                                <p><i class="fa fa-map-marker  mr-3"></i> Cairo,Egypt </p>
-                                <p><i class="fa fa-envelope-o mr-3 "></i>quizzer2019@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col copyright">
-                                <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span
-                                            class="orange-text">Quizzer</span>.</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-            </div>
-        
-            <!-- End Footer  -->
+    <script>
+        $("#profileImage").click(function (e) {
+            $("#imageUpload").click();
+        });
+        function fasterPreview(uploader) {
+            if (uploader.files && uploader.files[0]) {
+                $('#profileImage').attr('src', window.URL.createObjectURL(uploader.files[0]));
+            }
+        }
+        $("#imageUpload").change(function () {
+            fasterPreview(this);
+        });
+    </script>
 </body>
 
 </html>
