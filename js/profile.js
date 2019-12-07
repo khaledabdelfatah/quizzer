@@ -177,3 +177,7 @@ function disappear()
     document.getElementsByClassName("change-remove-icons")[1].style.cursor = "context-menu";
 }
 
+function removeQuiz(id)
+{
+    document.getElementById(id).remove();
+}
