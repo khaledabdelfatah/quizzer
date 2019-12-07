@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148373129-1"></script>
-
-
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -75,44 +70,47 @@
                 </div>
             </nav>
         </div>
-    </div>
-    <nav class="navbar navbar-expand-md navbar-dark sticky-top " id="mainNav">
-        <div class="nav-container">
-            <button style="float: right;" class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
-                <ul class="navbar-nav" style="float: left;">
-                    <li class="nav-item active">
-                        <a id="myTabContent-caller" style="min-width: 160px;" data-toggle="collapse"
-                            data-target=".navbar-collapse.show" onclick="changing('myTabContent')" class="nav-link">
-                            Personal-Information</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="quizzesContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
-                            onclick="changing('quizzesContent')" class="nav-link">
-                            Quizzes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="reviewContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
-                            onclick="changing('reviewContent')" class="nav-link">
-                            review</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="mediaContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
-                            onclick="changing('mediaContent')" class="nav-link">
-                            Media</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="newsContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
-                            onclick="changing('newsContent')" class="nav-link">
-                            News</a>
-                    </li>
-                </ul>
+        <div class="header-area-style ">
+        <nav class="navbar navbar-expand-md navbar-dark sticky-top " id="mainNav">
+            <div class="nav-container">
+                <button style="float: right;" class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
+                    <ul class="navbar-nav" style="float: left;">
+                        <li class="nav-item active">
+                            <a id="myTabContent-caller" style="min-width: 160px;" data-toggle="collapse"
+                                data-target=".navbar-collapse.show" onclick="changing('myTabContent')" class="nav-link">
+                                Personal-Information</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="quizzesContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
+                                onclick="changing('quizzesContent')" class="nav-link">
+                                Quizzes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="reviewContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
+                                onclick="changing('reviewContent')" class="nav-link">
+                                review</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="mediaContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
+                                onclick="changing('mediaContent')" class="nav-link">
+                                Media</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="newsContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
+                                onclick="changing('newsContent')" class="nav-link">
+                                News</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
+    </div>
+    
     <div class="container profile">
         <form method="POST" style="position: relative;">
             <div class="row">
@@ -124,10 +122,10 @@
                             </tr>
                             <tr>
                                 <th colspan="2">
-                                    <div style="margin: 15px; position: relative;">
-                                        <img class="photo" src="../img/profile/prof0.jpg"
-                                            style="width: 150px; height: 150px; display: block;" onmouseover="appear()"
-                                            onmouseout="disappear()">
+                                    <!-- <div style="margin: 15px; position: relative; width: 150px;" onmouseover="appear()"
+                                        onmouseout="disappear()">
+                                        <img id="profile-image" class="photo" src="../img/profile/prof0.jpg"
+                                            style="width: 150px; height: 150px; display: block; margin: 0px;">
 
                                         <div id="change">
                                             <image id="profileImage" class="change-remove-icons"
@@ -139,9 +137,39 @@
                                             <img class="change-remove-icons" src="../img/profile/remove.png"
                                                 onclick="removePhoto('photo')">
                                         </div>
+                                    </div> -->
+                                    <div class="col-md-4 col-sm-6" style="padding-left: 0px;padding-right: 0px;">
+                                        <div class="box19">
+                                            <img src="../img/profile/prof0.jpg" id="profile-image" class="photo" alt="">
+                                            <div class="box-content">
+                                                <ul class="icon">
+
+                                                    <li>
+                                                        <a href="#">
+                                                            <i>
+                                                                <image id="profileImage"
+                                                                    src="../img/profile/change.png">
+                                                                    <input id="imageUpload" type="file" value=""
+                                                                        style="display: none;" onclick="UploadPic()">
+                                                            </i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <i>
+                                                                <img src="../img/profile/remove.png"
+                                                                    onclick="removePhoto('photo')">
+                                                            </i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <!-- <h3 class="title">willimson</h3> -->
+                                            </div>
+                                        </div>
                                     </div>
                                 </th>
                             </tr>
+
 
                             <tr class="element" id="first-name">
                                 <th>first-name</th>
@@ -216,7 +244,7 @@
                                 </td>
                             </tr>
 
-                            <tr class="element" id="profession">
+                            <!-- <tr class="element" id="profession">
                                 <th>Profession</th>
                                 <td id="eprofession">Web Developer and Designer</td>
                                 <td class="td2">
@@ -232,7 +260,7 @@
                                     <input type="button" onclick="toSaveChanges('Profession')" value="save">
                                     <span id="#" class="text-danger font-weight-bold"></span>
                                 </td>
-                            </tr>
+                            </tr> -->
 
                             <tr class="element" id="address">
                                 <th>
@@ -308,7 +336,7 @@
                                 </td>
                             </tr>
 
-                            <tr class="element" id="universityinst">
+                            <!-- <tr class="element" id="universityinst">
                                 <th>Universityinst</th>
                                 <td id="euniversityinst">Ain Shams</td>
                                 <td class="td2">
@@ -324,7 +352,7 @@
                                     <input type="button" onclick="toSaveChanges('Universityinst')" value="save">
                                     <span id="errUniversityinst" class="text-danger font-weight-bold"></span>
                                 </td>
-                            </tr>
+                            </tr> -->
 
                             <tr class="element" id="specialtyinst">
                                 <th>Specialtyinst</th>
@@ -373,15 +401,27 @@
                             <tr id="title-information">
                                 <th class="general" colspan="2">Quizzes Information</th>
                             </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <div style="margin: 15px;">
+                                        <a href="Create_Quiz.html" style="color: black;">
+                                            <img src="../img/profile/add.png" alt="create a new Quiz"
+                                                style="width: 10px; height: 10px;">
+                                            Create A New Quiz...
+                                        </a>
+                                    </div>
+                                </th>
+                            </tr>
                         </table>
 
                         <div class="row" style="margin: 0%">
-                            <div class="col-md-6 col-sm-9 col-xs-12">
+                            <div id="quiz1" class="col-md-6 col-sm-9 col-xs-12">
                                 <div class="card">
                                     <div style="float: left;">
                                         <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
                                             alt="quiz">
-                                        <img class="delete" src="../img/profile/delete.png" alt="delete">
+                                        <img class="delete" onclick="removeQuiz('quiz1')"
+                                            src="../img/profile/delete.png" alt="delete">
                                     </div>
                                     <h2>Databasequiz</h2>
                                     <h5><small>Instractor</small>: Diaa salama</h5>
@@ -390,51 +430,67 @@
                                         class="btn btn-primary strquiz">start Quiz</a>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-9 col-xs-12">
+                            <div id="quiz2" class="col-md-6 col-sm-9 col-xs-12">
                                 <div class="card">
                                     <div style="float: left;">
                                         <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
                                             alt="quiz">
-                                        <img class="delete" src="../img/profile/delete.png" alt="delete">
+                                        <img class="delete" onclick="removeQuiz('quiz2')"
+                                            src="../img/profile/delete.png" alt="delete">
                                     </div>
                                     <h2>Databasequiz</h2>
                                     <h5><small>Instractor</small>: Diaa salama</h5>
-                                    <h5>time: 1 hour</h5>
+                                    <h5>time: 2 hour</h5>
                                     <a href="databasequiz.html" style="width: 100px; text-align: center;"
                                         class="btn btn-primary strquiz">start Quiz</a>
                                 </div>
                             </div>
-                        </div> <!-- end row -->
+                            <div id="quiz3" class="col-md-6 col-sm-9 col-xs-12">
+                                <div class="card">
+                                    <div style="float: left;">
+                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
+                                            alt="quiz">
+                                        <img class="delete" onclick="removeQuiz('quiz3')"
+                                            src="../img/profile/delete.png" alt="delete">
+                                    </div>
+                                    <h2>Databasequiz</h2>
+                                    <h5><small>Instractor</small>: Diaa salama</h5>
+                                    <h5>time: 3 hour</h5>
+                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
+                                        class="btn btn-primary strquiz">start Quiz</a>
+                                </div>
+                            </div>
+                            <div id="quiz4" class="col-md-6 col-sm-9 col-xs-12">
+                                <div class="card">
+                                    <div style="float: left;">
+                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
+                                            alt="quiz">
+                                        <img class="delete" onclick="removeQuiz('quiz4')"
+                                            src="../img/profile/delete.png" alt="delete">
+                                    </div>
+                                    <h2>Databasequiz</h2>
+                                    <h5><small>Instractor</small>: Diaa salama</h5>
+                                    <h5>time: 4 hour</h5>
+                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
+                                        class="btn btn-primary strquiz">start Quiz</a>
+                                </div>
+                            </div>
+                            <div id="quiz5" class="col-md-6 col-sm-9 col-xs-12">
+                                <div class="card">
+                                    <div style="float: left;">
+                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
+                                            alt="quiz">
+                                        <img class="delete" onclick="removeQuiz('quiz5')"
+                                            src="../img/profile/delete.png" alt="delete">
+                                    </div>
+                                    <h2>Databasequiz</h2>
+                                    <h5><small>Instractor</small>: Diaa salama</h5>
+                                    <h5>time: 5 hour</h5>
+                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
+                                        class="btn btn-primary strquiz">start Quiz</a>
+                                </div>
+                            </div>
 
-                        <div class="row" style="margin: 0%">
-                            <div class="col-md-6 col-sm-9 col-xs-12">
-                                <div class="card">
-                                    <div style="float: left;">
-                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
-                                            alt="quiz">
-                                        <img class="delete" src="../img/profile/delete.png" alt="delete">
-                                    </div>
-                                    <h2>Databasequiz</h2>
-                                    <h5><small>Instractor</small>: Diaa salama</h5>
-                                    <h5>time: 1 hour</h5>
-                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
-                                        class="btn btn-primary strquiz">start Quiz</a>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-9 col-xs-12">
-                                <div class="card">
-                                    <div style="float: left;">
-                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
-                                            alt="quiz">
-                                        <img class="delete" src="../img/profile/delete.png" alt="delete">
-                                    </div>
-                                    <h2>Databasequiz</h2>
-                                    <h5><small>Instractor</small>: Diaa salama</h5>
-                                    <h5>time: 1 hour</h5>
-                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
-                                        class="btn btn-primary strquiz">start Quiz</a>
-                                </div>
-                            </div>
                         </div> <!-- end row -->
                     </div>
                 </div>
@@ -464,7 +520,7 @@
         });
         function fasterPreview(uploader) {
             if (uploader.files && uploader.files[0]) {
-                $('#profileImage').attr('src', window.URL.createObjectURL(uploader.files[0]));
+                $('#profile-image').attr('src', window.URL.createObjectURL(uploader.files[0]));
             }
         }
         $("#imageUpload").change(function () {
