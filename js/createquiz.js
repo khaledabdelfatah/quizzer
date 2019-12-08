@@ -1,6 +1,5 @@
 let num_Of_questions = 0;
-
-function f(s) {
+ function f(s) {
     var x = document.getElementById(s);
     var z = x.getElementsByTagName('textarea');
     var y = x.getElementsByTagName('input');

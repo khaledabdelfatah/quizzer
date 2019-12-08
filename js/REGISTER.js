@@ -25,6 +25,10 @@ $("#imageUpload").change(function () {
     fasterPreview(this);
 });
 	}
+
+	function test(){
+		print("Hlelo");
+	}
 function validationFname() {
 	var Fuser = document.getElementById('Fname').value;
 	var regName = /^[A-Za-z]+$/;

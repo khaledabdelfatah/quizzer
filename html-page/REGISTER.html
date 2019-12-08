@@ -30,6 +30,11 @@ src="../js/REGISTER.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
 </head>
 <body>
 	 <div class="test">
@@ -198,7 +203,7 @@ src="../js/REGISTER.js"></script>
 							<div style="padding-top: 2%">
 							<input type="checkbox"  value="remember-me"required /> <h4> I agree to the terms & contidions </h4>
 								</div>
-							<button id="Register"  class="btn btn-danger btn-block" onclick="ValidationFinal()" >Register Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button > 
+							<button id="Register"  class="btn btn-danger btn-block" onclick="creat_account();" >Register Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button > 
 							<span id="sbmuterr" class="text-danger font-weight-bold"></span>
 					</form>
 			</div>
@@ -277,5 +282,7 @@ $("#imageUpload").change(function () {
     fasterPreview(this);
 });
 	</script>
+
+	<script src="../app.js"></script>
 	</body>
 </html>
