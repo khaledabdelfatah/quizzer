@@ -26,10 +26,10 @@
     <link rel="stylesheet" href="../css/home_footer_style.css">
     <!-- JavaScript Files -->
     <script src="../js/createquiz.js"></script>
-    
-    
-    
-    
+
+
+
+
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
 
@@ -89,7 +89,7 @@
         <div class='p-2 flex-fill Qusistion'>
             <label>
                 name of quiz
-                <input type="text" style="margin: 15px">
+                <input type="text" style="margin: 15px" id="name_quiz">
             </label>
             <br>
             <label>
@@ -115,12 +115,12 @@
         </div>
     </div>
 
+    <!--    <form action="" method="post">-->
     <!--  quistions  -->
     <div class="container mt-3" id="questions">
 
         <!--   quistion 1     -->
-
-<!--
+        <!--
         <div class='p-2 flex-fill text-center Qusistion' id='question1'>
 
             <label for="uname">Quistion 1</label>
@@ -189,9 +189,10 @@
             many answer</button>
     </div>
     <div class="p-2 flex-fill text-center">
-        <button id="finish" class="btn btn-primary" onclick="on()" style="width: 40%;">Finish</button>
+        <div id="error" style="color: red; margin: 10px;font-size: large"></div>
+        <button id="finish" class="btn btn-primary" onclick="validation()" style="width: 40%;">Finish</button>
     </div>
-
+    <!--</form>-->
     <!-- Start Footer -->
     <div>
         <!--UN USed-->
@@ -235,8 +236,8 @@
     </div>
 
     <!-- End Footer  -->
-    
-    
+
+
     <script src="../app.js"></script>
 </body>
 
