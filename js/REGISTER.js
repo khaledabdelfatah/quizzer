@@ -259,7 +259,7 @@ function ValidationFinal(){
       ){
         
 		document.getElementById('sbmuterr').innerHTML ="all good";
-        window.location("login_form.html");
+		window.location.href = "../html-page/profile.html";
 	}else{
 		document.getElementById('sbmuterr').innerHTML ="some fild is missing";
     }
