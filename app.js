@@ -12,26 +12,26 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   var firestore=firebase.firestore();
   const docRef=firestore.collection("Hello").doc("namei");
-//   const testbutton=document.getElementById("getbu");
-//   testbutton.addEventListener("click",function(){
-//  console.log("Im here Finally***************************************");
-//  docRef.set({
-// name:"yarab"
-//  });
+  const testbutton=document.getElementById("getbutoon");
+  testbutton.addEventListener("click",function(){
+ console.log("Im here Finally***************************************");
+ docRef.set({
+name:"yarab"
+ });
 
 
-//   })
+  })
 
 //   
-var loadbu=document.getElementById("getbutoon");
-loadbu.addEventListener("click",function(){
-docRef.get().then(function(doc){
- if(doc&&doc.exists){
-     const mydata=doc.data();
-     console.log(mydata.name);
+// var loadbu=document.getElementById("getbutoon");
+// loadbu.addEventListener("click",function(){
+// docRef.get().then(function(doc){
+//  if(doc&&doc.exists){
+//      const mydata=doc.data();
+//      console.log(mydata.name);
      
- }   
-}
-    )
+//  }   
+// }
+//     )
 
-})
+// })
