@@ -19,6 +19,7 @@ function f(s) {
 }
 
 function validation() {
+
     let check = false;
     let checkans = false;
 
@@ -28,53 +29,56 @@ function validation() {
 
 
         for (i = 1; i <= num_Of_questions; i++) {
-
             let boolCheck = true;
 
             let name = "question" + i;
             var x = document.getElementById(name);
-            var z = x.getElementsByTagName('textarea');
-            var y = x.getElementsByTagName('input');
-            if (z[0].value.length == 0) {
-                z[0].style.border = "solid red";
-                check = true;
-            } else {
-                z[0].style.border = "";
-            }
+            if (x != null) {
 
-            for (j = 1; j < y.length; j += 2) {
-
-                if (y[j].value.length == 0) {
-                    y[j].style.border = "solid red";
+                var z = x.getElementsByTagName('textarea');
+                var y = x.getElementsByTagName('input');
+                if (z[0].value.length == 0) {
+                    z[0].style.border = "solid red";
                     check = true;
                 } else {
-                    y[j].style.border = "";
+                    z[0].style.border = "";
                 }
-            }
 
+                for (j = 1; j < y.length; j += 2) {
 
-
-
-            for (k = 0; k < y.length; k += 2) {
-                console.log(y[k].checked);
-
-                if (y[k].checked == true) {
-                    boolCheck = false;
+                    if (y[j].value.length == 0) {
+                        y[j].style.border = "solid red";
+                        check = true;
+                    } else {
+                        y[j].style.border = "";
+                    }
                 }
+
+
+
+
+                for (k = 0; k < y.length; k += 2) {
+                    console.log(y[k].checked);
+
+                    if (y[k].checked == true) {
+                        boolCheck = false;
+                    }
+                }
+
+                if (boolCheck) {
+                    checkans = true;
+                }
+
             }
-
-            if (boolCheck) {
-                checkans = true;
-            }
-
-
         }
 
         var na = document.getElementById("name_quiz");
         if (na.value.length == 0) {
             na.style.border = "solid red";
             check = true;
-        } else{ na.style.border = ""; }
+        } else {
+            na.style.border = "";
+        }
 
 
 
