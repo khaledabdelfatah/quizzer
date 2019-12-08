@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="../css/home_footer_style.css">
     <!-- JavaScript Files -->
     <script src="../js/createquiz.js"></script>
+    
+    
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
 
 </head>
 
@@ -182,6 +188,9 @@
         <button type="button" class="btn btn-primary" onclick="add_multi_question()" style="width: 40%;">Add Quistion
             many answer</button>
     </div>
+    <div class="p-2 flex-fill text-center">
+        <button id="finish" class="btn btn-primary" onclick="on()" style="width: 40%;">Finish</button>
+    </div>
 
     <!-- Start Footer -->
     <div>
@@ -226,6 +235,9 @@
     </div>
 
     <!-- End Footer  -->
+    
+    
+    <script src="../app.js"></script>
 </body>
 
 </html>
