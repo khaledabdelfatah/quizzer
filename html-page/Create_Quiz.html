@@ -19,6 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Css Files -->
     <link rel="stylesheet" href="../Header/css/headerstyl.css">
@@ -87,31 +88,33 @@
 
     <div class="container mt-3">
         <div class='p-2 flex-fill Qusistion'>
-            <label>
-                name of quiz
-                <input type="text" style="margin: 15px" id="name_quiz">
-            </label>
+            <label for="name_quiz">Name Of Quiz:- </label>
+            <input type="text" style="margin: 15px;" id="name_quiz">
+
+            <br>
+            <label for="time_id">
+                Time OF Quiz:- 
+                               <!-- <input type="number" class="form-control" style="margin: 15px" min="1" max="120">minutes -->
+            </label><br>
+            <div style="display: inline;" class="def-number-input number-input safari_only" id=time_id>
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                <input class="quantity" min="1" name="quantity" value="1" type="number">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+            </div>
+            Minutes
             <br>
             <label>
-                time of quiz
-                <!--                <input type="number" class="form-control" style="margin: 15px" min="1" max="120">minutes-->
-                <div class="def-number-input number-input safari_only">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                    <input class="quantity" min="1" name="quantity" value="1" type="number">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-                </div>
-                minutes
+                number of point for each question:- 
             </label>
-            <br>
-            <label>
-                number of point for all question
-                <!--                <input type="number" class="quantity" style="margin: 15px" min="0.5" step="0.5">point-->
-                <div class="def-number-input number-input safari_only">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+            <!-- <input type="number" class="quantity" style="margin: 15px" min="0.5" step="0.5">point -->
+            <br>    
+            <div  style="display: inline; " class="def-number-input number-input safari_only">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                        class="minus"></button>
                     <input class="quantity" min="0.5" name="quantity" value="0.5" step="0.5" type="number">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                        class="plus"></button>
                 </div>
-            </label>
         </div>
     </div>
 
@@ -204,7 +207,8 @@
                         <h2 class="orange-text">Quizzer</h2>
                         <p class="pr-5 text-white-50"> web Application that help Instructors to generate their custom
                             Quiz <br>
-                            <span class="orange-text">Quizzer</span> Was made with <span style="color: red; font-size: 20px;">♥</span>
+                            <span class="orange-text">Quizzer</span> Was made with <span
+                                style="color: red; font-size: 20px;">♥</span>
                             by 5 Students as a part of Web-Programming
                             Course
                         </p>
@@ -227,7 +231,8 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col copyright">
-                        <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span class="orange-text">Quizzer</span>.</small></p>
+                        <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span
+                                    class="orange-text">Quizzer</span>.</small></p>
                     </div>
                 </div>
             </div>
