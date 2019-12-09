@@ -1,22 +1,6 @@
 let num_Of_questions = 0;
 
-function f(s) {
-    var x = document.getElementById(s);
-    var z = x.getElementsByTagName('textarea');
-    var y = x.getElementsByTagName('input');
-    console.log(z[0].value);
-    for (i = 0; i < y.length; i += 2) {
-        console.log(y[i].checked);
-    }
-    for (i = 1; i < y.length; i += 2) {
-        console.log(y[i].value);
-    }
 
-    var xd = document.getElementById("question1");
-    var num = xd.getElementsByTagName("p")[0].innerHTML;
-    console.log(num);
-
-}
 
 function validation() {
 
@@ -90,6 +74,7 @@ function validation() {
             document.getElementById("error").innerHTML = "Please add correct answer in all Questions";
         } else {
             document.getElementById("error").innerHTML = "";
+            SaveData();
         }
 
 
@@ -98,7 +83,6 @@ function validation() {
 
     }
 }
-
 
 function add_multi_Answer(name_question) {
 
@@ -133,6 +117,7 @@ function add_one_Answer(name_question) {
     var new_answer = div_of_questions.getElementsByTagName("div")[0];
 
     var cln = new_answer.cloneNode(true);
+    cln.getElementsByTagName('input')[0].checked = false;
     cln.getElementsByTagName('input')[1].value = "";
 
     console.log(cln);
@@ -187,53 +172,128 @@ function add_one_question() {
 }
 
 
-
-
-
-
-//var firebaseConfig = {
-//    apiKey: "AIzaSyD0tMq6ZWGaJcG4VFWcmETbTxO7IOdDE3Q",
-//    authDomain: "quizzer-a0c6e.firebaseapp.com",
-//    databaseURL: "https://quizzer-a0c6e.firebaseio.com",
-//    projectId: "quizzer-a0c6e",
-//    storageBucket: "quizzer-a0c6e.appspot.com",
-//    messagingSenderId: "235551414761",
-//    appId: "1:235551414761:web:cb2e8ef047394bf666d378",
-//    measurementId: "G-GBG3VNHGE6"
-//};
-//// Initialize Firebase
-//firebase.initializeApp(firebaseConfig);
-
-
-function on() {
-
+function SaveData() {
+    var number_of_Q = 0;
     var firestore = firebase.firestore();
-    const docRef = firestore.collection("KI").doc("NA");
 
+    var access = makeid();
 
-    //const testbutton = document.getElementById("finish");
-    //testbutton.addEventListener("click", function () {
-    console.log("Im here Finally***************************************");
+    var name_quiz = document.getElementById("name_quiz").value;
+    var time_quiz = document.getElementById("time_quiz").value;
+    var point_quiz = document.getElementById("point").value;    
+    
+
+    const docRef = firestore.collection("Quiz").doc(access);
     docRef.set({
-        name: "Kiro"
+        name: name_quiz,
+        Time: time_quiz,
+        Points: point_quiz,
+        Instructor: "kerolos"
     });
 
+
+
+    for (i = 1; i <= num_Of_questions; i++) {
+        let correct = new Array();
+        let wrong = new Array();
+
+        let name = "question" + i;
+        var x = document.getElementById(name);
+        if (x != null) {
+            number_of_Q++;
+            var text_Question = x.getElementsByTagName('textarea')[0].value;
+            var y = x.getElementsByTagName('input');
+
+            for (k = 0; k < y.length; k += 2) {
+                if (y[k].checked == true) {
+                    correct.push(y[k + 1].value);
+                } else {
+                    wrong.push(y[k + 1].value);
+                }
+            }
+
+
+            var n = "Question" + number_of_Q;
+            const docRef1 = firestore.collection("Quiz").doc(access).collection("Questions").doc(n);
+            docRef1.set({
+                QuestionText: text_Question,
+                Wrong: wrong,
+                Correct: correct
+            });
+        }
+    }
+
 }
-//});
-
-//   
 
 
+function makeid() {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < 10; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
 
-//var loadbu=document.getElementById("getbutoon");
-//loadbu.addEventListener("click",function(){
-//docRef.get().then(function(doc){
-// if(doc && doc.exists){
-//     const mydata=doc.data();
-//     console.log(mydata.name);
-//     
-// }   
-//}
-//    )
+
+
+
+    
+//    var v = ["k","r"];
 //
-//});
+//
+//    const docRef = firestore.collection("J").doc("O");
+//    //const testbutton = document.getElementById("getbutoon");
+//    //testbutton.addEventListener("click", function () {
+//    console.log("Im here Finally***************************************");
+//    docRef.set({
+//        name:v
+//    });
+    
+
+
+
+
+//}
+
+
+//function vb() {
+//    var firestore = firebase.firestore();
+//    var docRef = firestore.collection("Hello").doc("namei");
+//
+//    docRef.get().then(function (doc) {
+//        if (doc.exists) {
+//            console.log("Document data:", doc.data());
+//            console.log("id data:", doc.id);
+//        } else {
+//            // doc.data() will be undefined in this case
+//            console.log("No such document!");
+//        }
+//    }).catch(function (error) {
+//        console.log("Error getting document:", error);
+//    });
+//
+//}
+//
+
+
+
+
+//function f(s) {
+//    var x = document.getElementById(s);
+//    var z = x.getElementsByTagName('textarea');
+//    var y = x.getElementsByTagName('input');
+//    console.log(z[0].value);
+//    for (i = 0; i < y.length; i += 2) {
+//        console.log(y[i].checked);
+//    }
+//    for (i = 1; i < y.length; i += 2) {
+//        console.log(y[i].value);
+//    }
+//
+//    var xd = document.getElementById("question1");
+//    var num = xd.getElementsByTagName("p")[0].innerHTML;
+//    console.log(num);
+//
+//}
