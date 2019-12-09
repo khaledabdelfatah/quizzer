@@ -93,95 +93,33 @@
 
             <br>
             <label for="time_id">
-                Time OF Quiz:- 
-                               <!-- <input type="number" class="form-control" style="margin: 15px" min="1" max="120">minutes -->
+                Time OF Quiz:-
+                <!-- <input type="number" class="form-control" style="margin: 15px" min="1" max="120">minutes -->
             </label><br>
             <div style="display: inline;" class="def-number-input number-input safari_only" id=time_id>
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                <input class="quantity" min="1" name="quantity" value="1" type="number">
+                <input class="quantity" min="1" name="quantity" value="1" type="number" id="time_quiz">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
             </div>
             Minutes
             <br>
             <label>
-                number of point for each question:- 
+                number of point for each question:-
             </label>
             <!-- <input type="number" class="quantity" style="margin: 15px" min="0.5" step="0.5">point -->
-            <br>    
-            <div  style="display: inline; " class="def-number-input number-input safari_only">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                        class="minus"></button>
-                    <input class="quantity" min="0.5" name="quantity" value="0.5" step="0.5" type="number">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                        class="plus"></button>
-                </div>
+            <br>
+            <div style="display: inline; " class="def-number-input number-input safari_only">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                <input class="quantity" min="0.5" name="quantity" value="0.5" step="0.5" type="number" id="point">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+            </div>
         </div>
     </div>
 
-    <!--    <form action="" method="post">-->
     <!--  quistions  -->
     <div class="container mt-3" id="questions">
 
-        <!--   quistion 1     -->
-        <!--
-        <div class='p-2 flex-fill text-center Qusistion' id='question1'>
-
-            <label for="uname">Quistion 1</label>
-            <button type="button" class="closeButton" onclick="this.parentNode.remove();" style="float: right">X</button>
-            <textarea class="form-control textA" rows="7" name="text" required></textarea>
-            <br />
-            <p class="collapse">3</p>
-            <div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-radio">
-                    <input type="text" class="form-control-sm styleinput">
-                    <button type="button" class="closeButton" onclick="this.parentNode.remove();delete_answer('question1');">X</button>
-                </div>
-
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-radio">
-                    <input type="text" class="form-control-sm styleinput">
-                    <button type="button" class="closeButton" onclick="this.parentNode.remove();delete_answer('question1');">X</button>
-                </div>
-
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-radio">
-                    <input type="text" class="form-control-sm styleinput">
-                    <button type="button" class="closeButton" onclick="this.parentNode.remove();delete_answer('question1');">X</button>
-                </div>
-            </div>
-            <button type="button" onclick="add_multi_Answer('question1')" class="btn btn-info" style="width: 20%">Add answer</button>
-        </div>
-
-
-
-
-                   quistion2     
-
-        <div class="p-2 flex-fill text-center Qusistion" id="question2">
-
-            <label for="uname">Quistion 2</label>
-            <button type="button" class="closeButton" onclick="this.parentNode.remove();" style="float: right">X</button>
-            <textarea class="form-control textA" rows="7" name="text" required></textarea>
-            <br />
-            <p class="collapse">2</p>
-            <div>
-                <div class="form-group form-check">
-                    <input type="radio" name="q2" class="form-radio">
-                    <input type="text" class="form-control-sm styleinput">
-                    <button type="button" class="closeButton" onclick="this.parentNode.remove();delete_answer('question2');">X</button>
-                </div>
-
-                <div class="form-group form-check">
-                    <input type="radio" name="q2" class="form-radio">
-                    <input type="text" class="form-control-sm styleinput">
-                    <button type="button" class="closeButton" onclick="this.parentNode.remove();delete_answer('question2');">X</button>
-                </div>
-            </div>
-            <button type="button" onclick="add_one_Answer('question2')" class="btn btn-info" style="width: 20%">Add answer</button>
-        </div>
--->
-
+        <!--    Questions in js file    -->
 
     </div>
 
@@ -195,7 +133,8 @@
         <div id="error" style="color: red; margin: 10px;font-size: large"></div>
         <button id="finish" class="btn btn-primary" onclick="validation()" style="width: 40%;">Finish</button>
     </div>
-    <!--</form>-->
+    
+    
     <!-- Start Footer -->
     <div>
         <!--UN USed-->
@@ -207,8 +146,7 @@
                         <h2 class="orange-text">Quizzer</h2>
                         <p class="pr-5 text-white-50"> web Application that help Instructors to generate their custom
                             Quiz <br>
-                            <span class="orange-text">Quizzer</span> Was made with <span
-                                style="color: red; font-size: 20px;">♥</span>
+                            <span class="orange-text">Quizzer</span> Was made with <span style="color: red; font-size: 20px;">♥</span>
                             by 5 Students as a part of Web-Programming
                             Course
                         </p>
@@ -231,8 +169,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col copyright">
-                        <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span
-                                    class="orange-text">Quizzer</span>.</small></p>
+                        <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span class="orange-text">Quizzer</span>.</small></p>
                     </div>
                 </div>
             </div>
