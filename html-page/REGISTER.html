@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148373129-1"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148373129-1"></script>
 
 
-<title>Quizzer :: Regestraion</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-	<!--Js Files -->
-	<script type="text/javascript"
-src="../js/REGISTER.js"></script>
- <!-- Css Files -->
-<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
-<link href="../css/REGISTER.css" rel="stylesheet" type="text/css" media="all"/>
- <link rel="stylesheet" href="../Header/css/headerstyl.css">
- <link rel="stylesheet" href="../css/home_footer_style.css">
-	  <!-- Fav Icon -->
-	 <link rel="shortcut icon" type="image/png" href="../img/favicon.png" />
-	 <!-- offline bootstrap links -->
+    <title>Quizzer :: Regestraion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <!--Js Files -->
+    <script type="text/javascript" src="../js/REGISTER.js"></script>
+    <!-- Css Files -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../css/REGISTER.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="../Header/css/headerstyl.css">
+    <link rel="stylesheet" href="../css/home_footer_style.css">
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" type="image/png" href="../img/favicon.png" />
+    <!-- offline bootstrap links -->
     <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="../Bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
     <script src="../Bootstrap/js/bootstrap.min.js"></script>
@@ -29,19 +29,20 @@ src="../js/REGISTER.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
 </head>
+
 <body>
-	 <div class="test">
+    <div class="test">
         <div class="header-area-style ">
             <nav class="navbar navbar-expand-md bg-dark navbar-dark bg-transparent   ">
                 <a class="navbar-brand" href="#">
-                    <img src="../img/logo/1.png"style=" width: 190px;" alt="Logo">
+                    <img src="../img/logo/1.png" style=" width: 190px;" alt="Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -68,142 +69,143 @@ src="../js/REGISTER.js"></script>
 
         <!-- Start img :) -->
 
-       
+
     </div>
     <div class="signupform">
-       <div class="container">
-	 		<div class="agile_info">
-			<div class="w3_info">
-				<h2>Register Here</h2>
-						<form action="#" method="post">
-						<div class="left margin">
-							<label>First Name</label>
-							<div class="input-group">
-								<span><i class="fa fa-user" aria-hidden="true"></i></span>
-								<input id="Fname"  maxlength="12" onfocusout="validationFname()" type="text" placeholder="First Name" required=""> 
-							</div>
-							<span id="errFname" class="text-danger font-weight-bold"></span>
-						</div>
-						<div class="left">
-							<label>Last Name</label>
-							<div class="input-group">
-								<span><i class="fa fa-user" aria-hidden="true"></i></span>
-								<input id="Lname" maxlength="12" onfocusout="validationLname()" type="text" placeholder="Last Name" required=""> 
-							</div>
-							<span id="errLname" class="text-danger font-weight-bold"></span>
-						</div>
-						<div class="left margin">
-							<label>Email Address</label>
-							<div class="input-group">
-								<span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-								<input id="Email" maxlength="30" onfocusout="validationEmail()" type="email" placeholder="Email" required=""> 
-							</div>
-							<span id="errEmail" class="text-danger font-weight-bold"></span>
-						</div>
-						<div class="left">
-							<label>Phone Number</label>
-							<div class="input-group">
-								<span><i class="fa fa-phone" aria-hidden="true"></i></span>
-								<input id="Phone" maxlength="11" onfocusout="validationPhone()" type="text" placeholder="Phone Number" required="">
-							</div>
-							<span id="errPhone" class="text-danger font-weight-bold"></span>
-						</div>
-						<div class="left margin">
-							<label>Password</label>
-							<div class="input-group">
-								<span><i class="fa fa-lock" aria-hidden="true"></i></span>
-								<input id="Password" maxlength="15" onchange="ValidationRePass()" onfocusout="ValidationPass()"  type="Password" placeholder="Password" required="">
-							</div>
-				            <span id="errPassword" class="font-weight-bold"></span>
-			             </div>
-						<div class="left">
-							<label>Confirm Password</label>
-							<div class="input-group">
-								<span><i class="fa fa-lock" aria-hidden="true"></i></span>
-								<input id="RePassword" maxlength="15" onfocusout="ValidationRePass()"  type="Password" placeholder="Confirm Password" required="">
-							</div>
-							 <span id="errRePassword" class="text-danger font-weight-bold"></span>
-						</div>
-						<div class="left margin">
-							<label>Address</label>
-							<div class="input-group">
-								<span><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
-								<input id="Address" maxlength="25" type="text" placeholder="Address" required="" onfocusout="ValidationAdress()"> 
-							</div>
-							<span id="errAddress" class="text-danger font-weight-bold"></span>
-						</div>
-						<div class="left">
-							<label>City</label>
-							<div class="input-group">
-								<span><i class="fa fa-building" aria-hidden="true"></i></span>
-								<input id="City" maxlength="25" onfocusout="ValidationCity()"type="text" placeholder="City" required="">
-							</div>
-							<span id="errCity" class="text-danger font-weight-bold"></span>
-						</div>
-						<div class="clear"></div>
-						<div style="padding-bottom: 3%;" required="">
-							<select class="mdb-select md-form" id="dropdown" onChange="showHide()">
+        <div class="container">
+            <div class="agile_info">
+                <div class="w3_info">
+                    <h2>Register Here</h2>
+                    <form action="#" method="post">
+                        <div class="left margin">
+                            <label>First Name</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                <input id="Fname" maxlength="12" onfocusout="validationFname()" type="text" placeholder="First Name" required="">
+                            </div>
+                            <span id="errFname" class="text-danger font-weight-bold"></span>
+                        </div>
+                        <div class="left">
+                            <label>Last Name</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                <input id="Lname" maxlength="12" onfocusout="validationLname()" type="text" placeholder="Last Name" required="">
+                            </div>
+                            <span id="errLname" class="text-danger font-weight-bold"></span>
+                        </div>
+                        <div class="left margin">
+                            <label>Email Address</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                <input id="Email" maxlength="30" onfocusout="validationEmail()" type="email" placeholder="Email" required="">
+                            </div>
+                            <span id="errEmail" class="text-danger font-weight-bold"></span>
+                        </div>
+                        <div class="left">
+                            <label>Phone Number</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                <input id="Phone" maxlength="11" onfocusout="validationPhone()" type="text" placeholder="Phone Number" required="">
+                            </div>
+                            <span id="errPhone" class="text-danger font-weight-bold"></span>
+                        </div>
+                        <div class="left margin">
+                            <label>Password</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                <input id="Password" maxlength="15" onchange="ValidationRePass()" onfocusout="ValidationPass()" type="Password" placeholder="Password" required="">
+                            </div>
+                            <span id="errPassword" class="font-weight-bold"></span>
+                        </div>
+                        <div class="left">
+                            <label>Confirm Password</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                <input id="RePassword" maxlength="15" onfocusout="ValidationRePass()" type="Password" placeholder="Confirm Password" required="">
+                            </div>
+                            <span id="errRePassword" class="text-danger font-weight-bold"></span>
+                        </div>
+                        <div class="left margin">
+                            <label>Address</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
+                                <input id="Address" maxlength="25" type="text" placeholder="Address" required="" onfocusout="ValidationAdress()">
+                            </div>
+                            <span id="errAddress" class="text-danger font-weight-bold"></span>
+                        </div>
+                        <div class="left">
+                            <label>City</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-building" aria-hidden="true"></i></span>
+                                <input id="City" maxlength="25" onfocusout="ValidationCity()" type="text" placeholder="City" required="">
+                            </div>
+                            <span id="errCity" class="text-danger font-weight-bold"></span>
+                        </div>
+                        <div class="clear"></div>
+                        <div style="padding-bottom: 3%;" required="">
+                            <select class="mdb-select md-form" id="dropdown" onChange="showHide()">
                              <option value="" disabled selected>Choose your option</option>
                               <option value="instructor">Instructor</option>
                              <option value="student">Student</option>
                              </select>
-						</div>
-							<div id="studentInfo" style="display: none">
-						<div class="left margin">
-							<label>University</label>
-							<div class="input-group">
-								<span><i class="fa fa-university"aria-hidden="true"></i></span>
-								<input id="University" maxlength="25" onfocusout="ValidationUniversity()"type="text" placeholder="University" required="">
-							</div>
-							<span id="errUniversity" class="text-danger font-weight-bold"></span>
-							</div>
-							<div class="left ">
-							<label>Specialty</label>
-							<div class="input-group">
-								<span><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-								<input id="Specialty" maxlength="25" onfocusout="ValidationSpecialty()"type="text" placeholder="what you study" required="">
-							</div>
-							<span id="errSpecialty" class="text-danger font-weight-bold"></span>
-							</div>	
-							</div>
-							<div id="instructorInfo"  style="display: none;">
-							<div class="left margin">
-							<label>University instructor</label>
-							<div class="input-group">
-								<span><i class="fa fa-university"aria-hidden="true"></i></span>
-								<input id="Universityinst" maxlength="25" onfocusout="ValidationUniversityinst()"type="text" placeholder="University" required="">
-							</div>
-							<span id="errUniversityinst" class="text-danger font-weight-bold"></span>
-							</div>
-							<div class="left ">
-							<label>Specialty</label>
-							<div class="input-group">
-								<span><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-								<input id="Specialtyinst" maxlength="25" onfocusout="ValidationSpecialtyinst()"type="text" placeholder="what you study" required="">
-							</div>
-							<span id="errSpecialtyinst" class="text-danger font-weight-bold"></span>
-							</div >
-							<div class="left margin">
-							<select id="degree level" class="mdb-select md-form" required>
+                        </div>
+                        <div id="studentInfo" style="display: none">
+                            <div class="left margin">
+                                <label>University</label>
+                                <div class="input-group">
+                                    <span><i class="fa fa-university"aria-hidden="true"></i></span>
+                                    <input id="University" maxlength="25" onfocusout="ValidationUniversity()" type="text" placeholder="University" required="">
+                                </div>
+                                <span id="errUniversity" class="text-danger font-weight-bold"></span>
+                            </div>
+                            <div class="left ">
+                                <label>Specialty</label>
+                                <div class="input-group">
+                                    <span><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                                    <input id="Specialty" maxlength="25" onfocusout="ValidationSpecialty()" type="text" placeholder="what you study" required="">
+                                </div>
+                                <span id="errSpecialty" class="text-danger font-weight-bold"></span>
+                            </div>
+                        </div>
+                        <div id="instructorInfo" style="display: none;">
+                            <div class="left margin">
+                                <label>University instructor</label>
+                                <div class="input-group">
+                                    <span><i class="fa fa-university"aria-hidden="true"></i></span>
+                                    <input id="Universityinst" maxlength="25" onfocusout="ValidationUniversityinst()" type="text" placeholder="University" required="">
+                                </div>
+                                <span id="errUniversityinst" class="text-danger font-weight-bold"></span>
+                            </div>
+                            <div class="left ">
+                                <label>Specialty</label>
+                                <div class="input-group">
+                                    <span><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                                    <input id="Specialtyinst" maxlength="25" onfocusout="ValidationSpecialtyinst()" type="text" placeholder="what you study" required="">
+                                </div>
+                                <span id="errSpecialtyinst" class="text-danger font-weight-bold"></span>
+                            </div>
+                            <div class="left margin">
+                                <select id="degree level" class="mdb-select md-form" required>
                              <option value="" disabled selected>Degree</option>
                               <option value="Master">Master</option>
                              <option value="profession">profession</option>
                              </select>
-								</div>	
-							<div class="left ">
-							<select id="exprienc" class="mdb-select md-form" required>
+                            </div>
+                            <div class="left ">
+                                <select id="exprienc" class="mdb-select md-form" required>
                             <option value="" disabled selected>years of exprienc</option>
                             <option value="less than1">0~1</option>
                             <option value="less than 3">1~3</option>
 							<option value="less than 5">3~5</option>
 							<option value="more than 5">more than 5 </option>	
                              </select>
-								</div>		
-							</div>
-							<div style="padding-top: 2%">
-							<input type="checkbox"  value="remember-me"required /> <h4> I agree to the terms & contidions </h4>
-								</div>
-							<button id="Register"  class="btn btn-danger btn-block" onclick="creat_account();" >Register Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button > 
+                            </div>
+                        </div>
+                        <div style="padding-top: 2%">
+                            <input type="checkbox" value="remember-me" required />
+                            <h4> I agree to the terms & contidions </h4>
+                        </div>
+                        <button id="Register" class="btn btn-danger btn-block" onclick="ValidationFinal();">Register Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button > 
 							<span id="sbmuterr" class="text-danger font-weight-bold"></span>
 					</form>
 			</div>
