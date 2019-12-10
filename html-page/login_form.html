@@ -3,24 +3,21 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
- <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-148373129-1');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-148373129-1');
+    </script>
 
     <title>Quizzer :: Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/png" href="../img/favicon.png" />
-
-    <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="../Bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
-    <script src="../Bootstrap/js/bootstrap.min.js"></script>
-    <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Online Links -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -29,13 +26,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Css Files -->
-    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
     <link href="../css/login_page_style.css" rel="stylesheet" type="text/css" media="all" />
-    <link
-        href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
-        rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
     <link rel="stylesheet" href="../Header/css/headerstyl.css">
     <link rel="stylesheet" href="../css/home_footer_style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
 </head>
 
 <body>
@@ -56,11 +54,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../html-page/profile.html">Profile</a>
                         </li>
-                        <li class="nav-item active" style="min-width: 96.016px;">
-                            <a class="nav-link" href="Contact_us.html">Contact-Us</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html-page/Contact_us.html">Contact-Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="min-width: 83.750px;" href="About_us.html">About-Us</a>
+                            <a class="nav-link" href="../html-page/About_us.html">About-Us</a>
                         </li>
                     </ul>
                 </div>
@@ -76,13 +74,13 @@
             <div class="agile_info">
                 <div class="w3_info">
                     <h2>Login</h2>
-                    <form action="#" method="post">
+                    <form method="post">
 
                         <div class="left margin">
                             <label>Email Address</label>
                             <div class="input-group">
                                 <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                <input type="email" placeholder="Email" maxlength="50" required="">
+                                <input type="email" id="Email" placeholder="Email" maxlength="50" required="">
                             </div>
                         </div>
 
@@ -90,22 +88,21 @@
                             <label>Password</label>
                             <div class="input-group">
                                 <span><i class="fa fa-lock" aria-hidden="true"></i></span>
-                                <input type="Password" placeholder="Password" maxlength="50" required="">
+                                <input type="Password" id="Password" placeholder="Password" maxlength="50" required="">
                             </div>
                         </div>
 
                         <div class="clear"></div>
-                        <input type="checkbox" value="remember-me" />
-                        <h4> Remmber Me </h4>
-                        <button class="btn btn-danger btn-block" type="submit">sign in <i class="fa fa-long-arrow-right"
-                                aria-hidden="true"></i></button>
+                        <div><input type="checkbox" id="Remmber"/>
+                        <h4> Remmber Me </h4></div>
+                        <button class="btn btn-danger btn-block" onclick="login();" type="button">sign in <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                        <div id="errMes" style="color: red;margin-top: 30px; float: right; width: 50%"></div>
                     </form>
                 </div>
                 <div class="w3l_form">
                     <div class="left_grid_info">
                         <h3>You don't have an account?</h3>
-                        <a href="REGISTER.html" class="btn">Sign Up Now <i class="fa fa-long-arrow-right"
-                                aria-hidden="true"></i></a>
+                        <a href="REGISTER.html" class="btn">Sign Up Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="clear"></div>
@@ -127,8 +124,7 @@
                         <h2 class="orange-text">Quizzer</h2>
                         <p class="pr-5 text-white-50"> web Application that help Instructors to generate their custom
                             Quiz <br>
-                            <span class="orange-text">Quizzer</span> Was made with <span
-                                style="color: red; font-size: 20px;">♥</span>
+                            <span class="orange-text">Quizzer</span> Was made with <span style="color: red; font-size: 20px;">♥</span>
                             by 5 Students as a part of Web-Programming
                             Course
                         </p>
@@ -151,16 +147,13 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col copyright">
-                        <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span
-                                    class="orange-text">Quizzer</span>.</small></p>
+                        <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span class="orange-text">Quizzer</span>.</small></p>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
-
+    <script src="../js/login.js"></script>
     <!-- End Footer  -->
-</body>
-
-</html>
+</body></html>
