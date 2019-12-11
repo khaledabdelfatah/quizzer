@@ -23,8 +23,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <!-- Css Files -->
     <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../Header/css/headerstyl.css">
@@ -32,6 +30,10 @@
     <!-- javascript Files -->
     <script src="../js/profile.js"></script>
     <script src="../js/REGISTER.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+
 </head>
 
 <body>
@@ -45,7 +47,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
-                    <ul class="navbar-nav" style="margin-right: 100px;">
+                    <ul class="navbar-nav" style="margin-right: 40px;">
                         <li class="nav-item">
                             <a class="nav-link" href="../index.html">Home</a>
                         </li>
@@ -63,57 +65,62 @@
                         <li id="info-bar">
                             <button id="general-button">
                                 <div class="dropdown">
-                                    <img class="rounded-circle photo" src="../img/profile/prof0.jpg"
+                                    <img id="profile-nav" class="rounded-circle photo" src="../img/profile/prof0.jpg"
                                         style="width:30px; height:30px" alt="personal photo">
                                     mahmoud-said
                                 </div>
                             </button>
                         </li>
+                        <input style="background-color:#447fec; border: 0px;" onclick="logOut()" type="button"
+                            value="signOut">
                     </ul>
                 </div>
             </nav>
         </div>
         <div class="header-area-style ">
-        <nav class="navbar navbar-expand-md navbar-dark sticky-top " id="mainNav">
-            <div class="nav-container">
-                <button style="float: right;" class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarResponsive">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
-                    <ul class="navbar-nav" style="float: left;">
-                        <li class="nav-item active">
-                            <a id="myTabContent-caller" style="min-width: 160px;" data-toggle="collapse"
-                                data-target=".navbar-collapse.show" onclick="changing('myTabContent')" class="nav-link">
-                                Personal-Information</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="quizzesContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
-                                onclick="changing('quizzesContent')" class="nav-link">
-                                Quizzes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="reviewContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
-                                onclick="changing('reviewContent')" class="nav-link">
-                                review</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="mediaContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
-                                onclick="changing('mediaContent')" class="nav-link">
-                                Media</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="newsContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
-                                onclick="changing('newsContent')" class="nav-link">
-                                News</a>
-                        </li>
-                    </ul>
+            <nav class="navbar navbar-expand-md navbar-dark sticky-top " id="mainNav">
+                <div style="margin-right:38% ;">
                 </div>
-            </div>
-        </nav>
+                <div class="nav-container">
+                    <button style="float: right;" class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarResponsive">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a id="myTabContent-caller" style="min-width: 160px;" data-toggle="collapse"
+                                    data-target=".navbar-collapse.show" onclick="changing('myTabContent')"
+                                    class="nav-link">
+                                    Personal-Information</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="quizzesContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
+                                    onclick="changing('quizzesContent')" class="nav-link">
+                                    Quizzes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="reviewContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
+                                    onclick="changing('reviewContent')" class="nav-link">
+                                    review</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="mediaContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
+                                    onclick="changing('mediaContent')" class="nav-link">
+                                    Media</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="newsContent-caller" data-toggle="collapse" data-target=".navbar-collapse.show"
+                                    onclick="changing('newsContent')" class="nav-link">
+                                    News</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </div>
-    </div>
-    
+
     <div class="container profile">
         <form method="POST" style="position: relative;">
             <div class="row">
@@ -146,14 +153,12 @@
                                             <img src="../img/profile/prof0.jpg" id="profile-image" class="photo" alt="">
                                             <div class="box-content">
                                                 <ul class="icon">
-
                                                     <li>
                                                         <a href="#">
                                                             <i>
-                                                                <image id="profileImage"
-                                                                    src="../img/profile/change.png">
-                                                                    <input id="imageUpload" type="file" value=""
-                                                                        style="display: none;" onclick="UploadPic()">
+                                                                <img id="profileImage" src="../img/profile/change.png">
+                                                                <input id="imageUpload" type="file" value=""
+                                                                    style="display: none;" onclick="UploadPic()">
                                                             </i>
                                                         </a>
                                                     </li>
@@ -173,10 +178,9 @@
                                 </th>
                             </tr>
 
-
                             <tr class="element" id="first-name">
-                                <th>first-name</th>
-                                <td id="efname">Mahmoud</td>
+                                <th id="f">first-name</th>
+                                <td class="td1" id="efname"></td>
                                 <td class="td2">
                                     <a onclick="toEdit('first-name')">
                                         <img src="../img/profile/edit.png" alt="edit">
@@ -187,14 +191,14 @@
                                 <th>first-name</th>
                                 <td>
                                     <input type="text" id="Fname" value="">
-                                    <input type="button" onclick="toSaveChanges('Fname')" value="save">
+                                    <input id="saver" type="button" onclick="toSaveChanges('Fname')" value="save">
                                     <span id="errFname" class="text-danger font-weight-bold"></span>
                                 </td>
                             </tr>
 
                             <tr class="element" id="second-name">
-                                <th>second-name</th>
-                                <td id="elname">Said</td>
+                                <th>last-name</th>
+                                <td class="td1" id="elname"></td>
                                 <td class="td2">
                                     <a onclick="toEdit('second-name')">
                                         <img src="../img/profile/edit.png" alt="edit">
@@ -202,7 +206,7 @@
                                 </td>
                             </tr>
                             <tr class="elementspan" id="span-second-name">
-                                <th>second-name</th>
+                                <th>last-name</th>
                                 <td>
                                     <input type="text" id="Lname" value="">
                                     <input type="button" onclick="toSaveChanges('Lname')" value="save">
@@ -212,7 +216,7 @@
 
                             <tr class="element" id="email">
                                 <th>Email</th>
-                                <td>
+                                <td class="td1">
                                     <a id="eemail" href="Ma7mouds3id0@gmail.com">Ma7mouds3id0@gmail.com</a>
                                 </td>
                                 <td class="td2">
@@ -231,7 +235,7 @@
 
                             <tr class="element" id="phone">
                                 <th>Phone</th>
-                                <td id="ephone">+201093630314</td>
+                                <td class="td1" id="ephone"></td>
                                 <td class="td2">
                                     <a onclick="toEdit('phone')">
                                         <img src="../img/profile/edit.png" alt="edit">
@@ -247,29 +251,9 @@
                                 </td>
                             </tr>
 
-                            <!-- <tr class="element" id="profession">
-                                <th>Profession</th>
-                                <td id="eprofession">Web Developer and Designer</td>
-                                <td class="td2">
-                                    <a onclick="toEdit('profession')">
-                                        <img src="../img/profile/edit.png" alt="edit">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="elementspan" id="span-profession">
-                                <th>profession</th>
-                                <td>
-                                    <input type="text" id="Profession" value="">
-                                    <input type="button" onclick="toSaveChanges('Profession')" value="save">
-                                    <span id="#" class="text-danger font-weight-bold"></span>
-                                </td>
-                            </tr> -->
-
                             <tr class="element" id="address">
-                                <th>
-                                    <Address>Address</Address>
-                                </th>
-                                <td id="eaddress">Qaluib meet-halfa (Al-Eslah)</td>
+                                <th>country</th>
+                                <td class="td1" id="eaddress"></td>
                                 <td class="td2">
                                     <a onclick="toEdit('address')">
                                         <img src="../img/profile/edit.png" alt="edit">
@@ -277,7 +261,7 @@
                                 </td>
                             </tr>
                             <tr class="elementspan" id="span-address">
-                                <th>Address</th>
+                                <th>country</th>
                                 <td>
                                     <input type="text" id="Address" value="">
                                     <input type="button" onclick="toSaveChanges('Address')" value="save">
@@ -287,7 +271,7 @@
 
                             <tr class="element" id="city">
                                 <th>City</th>
-                                <td id="ecity">Al-Eslah</td>
+                                <td class="td1" id="ecity"></td>
                                 <td class="td2">
                                     <a onclick="toEdit('city')">
                                         <img src="../img/profile/edit.png" alt="edit">
@@ -305,7 +289,7 @@
 
                             <tr class="element" id="university">
                                 <th>University</th>
-                                <td id="euniversity">Future Academy</td>
+                                <td class="td1" id="euniversity"></td>
                                 <td class="td2">
                                     <a onclick="toEdit('university')">
                                         <img src="../img/profile/edit.png" alt="edit">
@@ -323,7 +307,7 @@
 
                             <tr class="element" id="specialty">
                                 <th>Specialty</th>
-                                <td id="especialty">System Analysis</td>
+                                <td class="td1" id="especialty"></td>
                                 <td class="td2">
                                     <a onclick="toEdit('specialty')">
                                         <img src="../img/profile/edit.png" alt="edit">
@@ -339,47 +323,11 @@
                                 </td>
                             </tr>
 
-                            <!-- <tr class="element" id="universityinst">
-                                <th>Universityinst</th>
-                                <td id="euniversityinst">Ain Shams</td>
-                                <td class="td2">
-                                    <a onclick="toEdit('universityinst')">
-                                        <img src="../img/profile/edit.png" alt="edit">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="elementspan" id="span-universityinst">
-                                <th>Universityinst</th>
-                                <td>
-                                    <input type="text" id="Universityinst" value="">
-                                    <input type="button" onclick="toSaveChanges('Universityinst')" value="save">
-                                    <span id="errUniversityinst" class="text-danger font-weight-bold"></span>
-                                </td>
-                            </tr> -->
-
-                            <tr class="element" id="specialtyinst">
-                                <th>Specialtyinst</th>
-                                <td id="especialtyinst">System Analysis</td>
-                                <td class="td2">
-                                    <a onclick="toEdit('specialtyinst')">
-                                        <img src="../img/profile/edit.png" alt="edit">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="elementspan" id="span-specialtyinst">
-                                <th>Specialtyinst</th>
-                                <td>
-                                    <input type="text" id="Specialtyinst" value="">
-                                    <input type="button" onclick="toSaveChanges('Specialtyinst')" value="save">
-                                    <span id="errSpecialtyinst" class="text-danger font-weight-bold"></span>
-                                </td>
-                            </tr>
-
                             <tr class="element" id="password">
                                 <th>
                                     <Address>Password</Address>
                                 </th>
-                                <td id="epassword">Change your Password</td>
+                                <td class="td1" id="epassword">Change your Password</td>
                                 <td class="td2">
                                     <a onclick="toEdit('password')">
                                         <img src="../img/profile/edit.png" alt="edit">
@@ -395,6 +343,45 @@
                                         style="max-width: 200px;"></span>
                                 </td>
                             </tr>
+
+                            <tr class="element instractor" id="degree">
+                                <th>Degree</th>
+                                <td class="td1" id="edegree"></td>
+                                <td class="td2">
+                                    <a onclick="toEdit('degree')">
+                                        <img src="../img/profile/edit.png" alt="edit">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="elementspan" id="span-degree">
+                                <th>Degree</th>
+                                <td>
+                                    <input type="text" id="Degree" value="">
+                                    <input type="button" onclick="toSaveChanges('Degree')" value="save">
+                                    <span id="errDegree" class="text-danger font-weight-bold"
+                                        style="max-width: 200px;"></span>
+                                </td>
+                            </tr>
+
+                            <!-- <tr class="element" id="experience">
+                                <th>Experience</th>
+                                <td class="td1" id="eexperience"></td>
+                                <td class="td2">
+                                    <a onclick="toEdit('experience')">
+                                        <img src="../img/profile/edit.png" alt="edit">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="elementspan" id="span-experience">
+                                <th>Experience</th>
+                                <td>
+                                    <input type="text" id="Experience" value="">
+                                    <input type="button" onclick="toSaveChanges('Experience')" value="save">
+                                    <span id="errExperience" class="text-danger font-weight-bold"
+                                        style="max-width: 200px;"></span>
+                                </td>
+                            </tr> -->
+
                         </table>
                     </div>
                 </div>
@@ -404,7 +391,8 @@
                             <tr id="title-information">
                                 <th class="general" colspan="2">Quizzes Information</th>
                             </tr>
-                            <tr>
+
+                            <tr class="instractor">
                                 <th colspan="2">
                                     <div style="margin: 15px;">
                                         <a href="Create_Quiz.html" style="color: black;">
@@ -415,9 +403,18 @@
                                     </div>
                                 </th>
                             </tr>
+                            <tr class="student">
+                                <th colspan="2">
+                                    <div style="margin: 15px;">
+                                        <label for="access" style="color: black;font: italic;">Enroll In A Quiz</label> 
+                                        <input id="access" type="text" placeholder="enter access code" style="border-radius:10px;">
+                                        <input type="button" value="Enroll" class="btn-primary" style="border-radius:10px;" onclick="getQuiz()">
+                                    </div>
+                                </th>
+                            </tr>
                         </table>
 
-                        <div class="row" style="margin: 0%">
+                        <div id="showQuizzes" class="row" style="margin: 0%">
                             <div id="quiz1" class="col-md-6 col-sm-9 col-xs-12">
                                 <div class="card">
                                     <div style="float: left;">
@@ -433,7 +430,7 @@
                                         class="btn btn-primary strquiz">start Quiz</a>
                                 </div>
                             </div>
-                            <div id="quiz2" class="col-md-6 col-sm-9 col-xs-12">
+                            <!--<div id="quiz2" class="col-md-6 col-sm-9 col-xs-12">
                                 <div class="card">
                                     <div style="float: left;">
                                         <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
@@ -492,8 +489,7 @@
                                     <a href="databasequiz.html" style="width: 100px; text-align: center;"
                                         class="btn btn-primary strquiz">start Quiz</a>
                                 </div>
-                            </div>
-
+                            </div> -->
                         </div> <!-- end row -->
                     </div>
                 </div>
@@ -517,11 +513,9 @@
             </div>
         </form>
     </div>
-
-  <!-- Footer -->
+      <!-- Footer -->
   <div>
     <!--UN USed-->
-
     <div class="mt-5 pt-5 pb-5 footer">
         <div class="container">
             <div class="row">
@@ -558,10 +552,8 @@
             </div>
         </div>
     </div>
-
 </div>
-
-
+    <input id="btn" type="button" value="nnnnn" onclick="removeQuiz('quiz1')">
     <script>
         $("#profileImage").click(function (e) {
             $("#imageUpload").click();
@@ -569,12 +561,16 @@
         function fasterPreview(uploader) {
             if (uploader.files && uploader.files[0]) {
                 $('#profile-image').attr('src', window.URL.createObjectURL(uploader.files[0]));
+                $('#profile-nav').attr('src', window.URL.createObjectURL(uploader.files[0]));
+                document.getElementById("profileImage").attr("src", "../img/profile/change.png");
             }
         }
         $("#imageUpload").change(function () {
             fasterPreview(this);
+            
         });
     </script>
+    <script src="../app.js"></script>
 </body>
 
 </html>
