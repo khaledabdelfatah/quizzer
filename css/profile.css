@@ -5,7 +5,7 @@
 
 .test
 {
-    min-width: 485px;
+    min-width: 834.167px;
 }
 #info-bar
 {
@@ -25,7 +25,7 @@
 body
 {
     min-width: 100%;
-    /* overflow-x: hidden; */
+    overflow-x: hidden; 
 }
 
 #myTabContent, #quizzesContent, #reviewContent, #mediaContent, #newsContent
@@ -55,17 +55,14 @@ body
 }
 
 
-.profile .profile-image
-{
-    display: block;
 
-}
 
-.profile .profile-image img
+.profile #profile-image
 {
-    width: 150px;
-    height: 150px;
-    display: block;
+    max-width: 250px;
+    max-height: 250px;
+    min-width: 250px;
+    min-height: 250px;
 
 }
 
@@ -154,6 +151,10 @@ th {
     padding: 10px 0;
     padding-left: 15px;
 }
+.td1
+{
+    float: left;
+}
 
 .general
 {
@@ -163,7 +164,7 @@ th {
 
 .td2
 {
-    float: left;
+    float: right;
 }
 
 .td2 img
@@ -307,7 +308,7 @@ th {
 
 
 
-.box19 img
+.box19 ul img
 {
     height:100%;width:100%;
     max-width: 250px;
@@ -396,7 +397,7 @@ th {
 }
 @media only screen and (max-width:300px)
 {
-    .box19{margin-bottom:30px;
+    .box19{margin-bottom:30px};
 }
 @media only screen and (max-width:300px)
 {
