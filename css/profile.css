@@ -20,7 +20,7 @@
 
 body
 {
-    /* min-width: 100%; */
+    min-width: 100%;
     overflow-x: hidden;
 }
 
@@ -45,7 +45,7 @@ body
     background: #fff;
     height: auto;
     min-height: 700px;
-    /* min-width: 485px; */
+    min-width: 100%;
     margin-top: 100px;
     margin-bottom: 20px;
 }
