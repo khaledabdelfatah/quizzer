@@ -1,5 +1,19 @@
 let quizNumber = 0;
-firebase.autho.onAuthStateChanged(function (user) {
+var firebaseConfig = {
+    apiKey: "AIzaSyD0tMq6ZWGaJcG4VFWcmETbTxO7IOdDE3Q",
+    authDomain: "quizzer-a0c6e.firebaseapp.com",
+    databaseURL: "https://quizzer-a0c6e.firebaseio.com",
+    projectId: "quizzer-a0c6e",
+    storageBucket: "quizzer-a0c6e.appspot.com",
+    messagingSenderId: "235551414761",
+    appId: "1:235551414761:web:cb2e8ef047394bf666d378",
+    measurementId: "G-GBG3VNHGE6"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var autho = firebase.auth();
+var firestore = firebase.firestore();
+autho.onAuthStateChanged(function (user) {
     if (user) {
         firestore.collection("User").doc(autho.getUid()).get().then(function (doc) {
             if (doc.exists) {
@@ -8,6 +22,7 @@ firebase.autho.onAuthStateChanged(function (user) {
                     document.getElementById("efname").innerHTML = mydata.fname;
                     document.getElementById("elname").innerHTML = mydata.lname;
                     document.getElementById("eemail").innerHTML = mydata.email;
+                    document.getElementById("eemail").innerHTML = mydata.email; /////*//*//
                     document.getElementById("ephone").innerHTML = mydata.phone;
                     document.getElementById("eaddress").innerHTML = mydata.street;
                     document.getElementById("ecity").innerHTML = mydata.city;
@@ -21,7 +36,7 @@ function toEdit(id) {
     var sps = ["span-first-name", "span-second-name", "span-email",
         "span-phone", "span-address", "span-degree", "span-experience",
         "span-city", "span-university", "span-specialty",
-        "span-universityinst", "span-specialtyinst", "span-password"]; 
+        "span-universityinst", "span-specialtyinst", "span-password"];
     document.getElementById(id).style.display = "none";
     document.getElementById("span-" + id).style.display = "table-row";
     for (i in sps) {
@@ -169,23 +184,22 @@ function toSaveChanges(id) {
     }
 }
 
-function ValidationDegree()
-{
+function ValidationDegree() {
     var degree = document.getElementById('Degree').value;
-	var regName = /^[A-Za-z]+$/;
-	if (degree == "" ||degree.length<2){
-		document.getElementById('errDegree').style.display="block";
-		document.getElementById('errDegree').innerHTML ="** Please fill this field or it not vaild";
-		return false;
-	} else if (!degree.match(regName)){
-		document.getElementById('errDegree').style.display="block";
-				document.getElementById('errDegree').innerHTML ="** only characters are allowed";
-				return false;
-			}
-	else{
-		document.getElementById('errDegree').style.display="none";
-		return true;
-	}
+    var regName = /^[A-Za-z]+$/;
+    if (degree == "" || degree.length < 2) {
+        document.getElementById('errDegree').style.display = "block";
+        document.getElementById('errDegree').innerHTML = "** Please fill this field or it not vaild";
+        return false;
+    } else if (!degree.match(regName)) {
+        document.getElementById('errDegree').style.display = "block";
+        document.getElementById('errDegree').innerHTML = "** only characters are allowed";
+        return false;
+    }
+    else {
+        document.getElementById('errDegree').style.display = "none";
+        return true;
+    }
 }
 
 //under construction
@@ -202,9 +216,29 @@ function disappear() {
     document.getElementsByClassName("change-remove-icons")[1].style.cursor = "context-menu";
 }
 
-function getQuiz()
-{
-    //////////////////////
+function pushQuiz() {
+    var autho = firebase.auth();
+    var firestore = firebase.firestore();
+    var docRef = firestore.collection("User").doc(autho.getUid());
+    autho.onAuthStateChanged(function (user) {
+        if (user) {
+            docRef.get().then(function (doc) {
+                if (doc.exists) {
+                    const mydata = doc.data();
+                    if (mydata.type === "student") {
+                       var arr = mydata.quizzes;
+                       arr.push(document.getElementById("access").value);
+                        docRef.update(
+                            {
+                                quizzes: arr
+                            });
+                        localStorage.setItem("access", document.getElementById("access").value);
+                        window.location.href = "Exam_page.html";
+                    }
+                }
+            })
+        }
+    });
 }
 
 // function validateimg(ctrl) { 
@@ -241,11 +275,11 @@ function getQuiz()
 
 function logOut() {
     window.location.href = "../html-page/login_form.html";
-    firebase.auth().signOut().then(function() {
+    firebase.auth().signOut().then(function () {
         console.log('Signed Out');
-      }, function(error) {
+    }, function (error) {
         console.error('Sign Out Error', error);
-      });
+    });
 }
 
 
@@ -263,6 +297,7 @@ function getData() {
             document.getElementById("ecity").innerHTML = mydata.city;
             document.getElementById("euniversity").innerHTML = mydata.university;
             document.getElementById("especialty").innerHTML = mydata.specialty;
+
         }
     });
 }
@@ -355,7 +390,7 @@ function quizAsInstractor(quizName, time, quizURL) {
     document.getElementById("showQuizzes").appendChild(child);
 }
 
-function quizAsStudent(quizName,grade) {
+function quizAsStudent(quizName, grade) {
     quizNumber++;
     var quiz =
         "<div id=\"quiz" + quizNumber + "\" class=\"col-md-6 col-sm-9 col-xs-12\">" +
@@ -376,11 +411,11 @@ function quizAsStudent(quizName,grade) {
 function removeQuiz(id) {
     var firestore = firebase.firestore();
     deleteAtPath(firestore.collection("User").doc("ashraf"));
-    firestore.collection("User").doc("ashraf").delete().then(function() {
-            console.log("Document successfully deleted!");
-        }).catch(function(error) {
-            console.error("Error removing document: ", error);
-        });
+    firestore.collection("User").doc("ashraf").delete().then(function () {
+        console.log("Document successfully deleted!");
+    }).catch(function (error) {
+        console.error("Error removing document: ", error);
+    });
     document.getElementById(id).remove();
 }
 
@@ -398,10 +433,10 @@ function removeQuiz(id) {
 function deleteAtPath(path) {
     var deleteFn = firebase.functions().httpsCallable('recursiveDelete');
     deleteFn({ path: path })
-        .then(function(result) {
+        .then(function (result) {
             logMessage('Delete success: ' + JSON.stringify(result));
         })
-        .catch(function(err) {
+        .catch(function (err) {
             logMessage('Delete failed, see console,');
             console.warn(err);
         });
