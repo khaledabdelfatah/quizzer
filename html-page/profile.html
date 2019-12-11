@@ -28,11 +28,11 @@
     <link rel="stylesheet" href="../Header/css/headerstyl.css">
     <link rel="stylesheet" href="../css/home_footer_style.css">
     <!-- javascript Files -->
-    <script src="../js/profile.js"></script>
-    <script src="../js/REGISTER.js"></script>
+    <!-- <script src="../js/REGISTER.js"></script> -->
 
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
 
 </head>
 
@@ -71,8 +71,7 @@
                                 </div>
                             </button>
                         </li>
-                        <input style="background-color:#447fec; border: 0px;" onclick="logOut()" type="button"
-                            value="signOut">
+
                     </ul>
                 </div>
             </nav>
@@ -132,22 +131,6 @@
                             </tr>
                             <tr>
                                 <th colspan="2">
-                                    <!-- <div style="margin: 15px; position: relative; width: 150px;" onmouseover="appear()"
-                                        onmouseout="disappear()">
-                                        <img id="profile-image" class="photo" src="../img/profile/prof0.jpg"
-                                            style="width: 150px; height: 150px; display: block; margin: 0px;">
-
-                                        <div id="change">
-                                            <image id="profileImage" class="change-remove-icons"
-                                                src="../img/profile/change.png">
-                                                <input id="imageUpload" type="file" value="" style="display: none;"
-                                                    onclick="UploadPic()">
-                                        </div>
-                                        <div id="remove">
-                                            <img class="change-remove-icons" src="../img/profile/remove.png"
-                                                onclick="removePhoto('photo')">
-                                        </div>
-                                    </div> -->
                                     <div class="col-md-4 col-sm-6" style="padding-left: 0px;padding-right: 0px;">
                                         <div class="box19">
                                             <img src="../img/profile/prof0.jpg" id="profile-image" class="photo" alt="">
@@ -171,13 +154,11 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- <h3 class="title">willimson</h3> -->
                                             </div>
                                         </div>
                                     </div>
                                 </th>
                             </tr>
-
                             <tr class="element" id="first-name">
                                 <th id="f">first-name</th>
                                 <td class="td1" id="efname"></td>
@@ -217,7 +198,7 @@
                             <tr class="element" id="email">
                                 <th>Email</th>
                                 <td class="td1">
-                                    <a id="eemail" href="Ma7mouds3id0@gmail.com">Ma7mouds3id0@gmail.com</a>
+                                    <a id="eemail" href=""></a>
                                 </td>
                                 <td class="td2">
                                     <a onclick="toEdit('email')">
@@ -362,6 +343,13 @@
                                         style="max-width: 200px;"></span>
                                 </td>
                             </tr>
+                            <tr>
+                                <th class="general" colspan="2">
+                                    <input style="background-color:#447fec; border-radius: 15px; float: right;" onclick="logOut()"
+                                        type="button" value="signOut">
+                                </th>
+
+                            </tr>
 
                             <!-- <tr class="element" id="experience">
                                 <th>Experience</th>
@@ -406,9 +394,11 @@
                             <tr class="student">
                                 <th colspan="2">
                                     <div style="margin: 15px;">
-                                        <label for="access" style="color: black;font: italic;">Enroll In A Quiz</label> 
-                                        <input id="access" type="text" placeholder="enter access code" style="border-radius:10px;">
-                                        <input type="button" value="Enroll" class="btn-primary" style="border-radius:10px;" onclick="getQuiz()">
+                                        <label for="access" style="color: black;font: italic;">Enroll In A Quiz</label>
+                                        <input id="access" type="text" placeholder="enter access code"
+                                            style="border-radius:10px;">
+                                        <input id="enroll" type="button" value="Enroll" class="btn-primary"
+                                            style="border-radius:10px;" onclick="pushQuiz()">
                                     </div>
                                 </th>
                             </tr>
@@ -430,66 +420,6 @@
                                         class="btn btn-primary strquiz">start Quiz</a>
                                 </div>
                             </div>
-                            <!--<div id="quiz2" class="col-md-6 col-sm-9 col-xs-12">
-                                <div class="card">
-                                    <div style="float: left;">
-                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
-                                            alt="quiz">
-                                        <img class="delete" onclick="removeQuiz('quiz2')"
-                                            src="../img/profile/delete.png" alt="delete">
-                                    </div>
-                                    <h2>Databasequiz</h2>
-                                    <h5><small>Instractor</small>: Diaa salama</h5>
-                                    <h5>time: 2 hour</h5>
-                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
-                                        class="btn btn-primary strquiz">start Quiz</a>
-                                </div>
-                            </div>
-                            <div id="quiz3" class="col-md-6 col-sm-9 col-xs-12">
-                                <div class="card">
-                                    <div style="float: left;">
-                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
-                                            alt="quiz">
-                                        <img class="delete" onclick="removeQuiz('quiz3')"
-                                            src="../img/profile/delete.png" alt="delete">
-                                    </div>
-                                    <h2>Databasequiz</h2>
-                                    <h5><small>Instractor</small>: Diaa salama</h5>
-                                    <h5>time: 3 hour</h5>
-                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
-                                        class="btn btn-primary strquiz">start Quiz</a>
-                                </div>
-                            </div>
-                            <div id="quiz4" class="col-md-6 col-sm-9 col-xs-12">
-                                <div class="card">
-                                    <div style="float: left;">
-                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
-                                            alt="quiz">
-                                        <img class="delete" onclick="removeQuiz('quiz4')"
-                                            src="../img/profile/delete.png" alt="delete">
-                                    </div>
-                                    <h2>Databasequiz</h2>
-                                    <h5><small>Instractor</small>: Diaa salama</h5>
-                                    <h5>time: 4 hour</h5>
-                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
-                                        class="btn btn-primary strquiz">start Quiz</a>
-                                </div>
-                            </div>
-                            <div id="quiz5" class="col-md-6 col-sm-9 col-xs-12">
-                                <div class="card">
-                                    <div style="float: left;">
-                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
-                                            alt="quiz">
-                                        <img class="delete" onclick="removeQuiz('quiz5')"
-                                            src="../img/profile/delete.png" alt="delete">
-                                    </div>
-                                    <h2>Databasequiz</h2>
-                                    <h5><small>Instractor</small>: Diaa salama</h5>
-                                    <h5>time: 5 hour</h5>
-                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
-                                        class="btn btn-primary strquiz">start Quiz</a>
-                                </div>
-                            </div> -->
                         </div> <!-- end row -->
                     </div>
                 </div>
@@ -513,47 +443,47 @@
             </div>
         </form>
     </div>
-      <!-- Footer -->
-  <div>
-    <!--UN USed-->
-    <div class="mt-5 pt-5 pb-5 footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-xs-12 about-company">
-                    <h2 class="orange-text">Quizzer</h2>
-                    <p class="pr-5 text-white-50"> web Application that help Instructors to generate their custom
-                        Quiz <br>
-                        <span class="orange-text">Quizzer</span> Was made with <span style="color: red; font-size: 20px;">♥</span> 
-                        by 5 Students as a part of Web-Programming
-                        Course
-                    </p>
-                </div>
-                <div class="col-lg-3 col-xs-12 links">
-                    <h4 class="mt-lg-0 mt-sm-3 orange-text">Quick Links</h4>
-                    <ul class="m-0 p-0">
+    <!-- Footer -->
+    <div>
+        <div class="mt-5 pt-5 pb-5 footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-xs-12 about-company">
+                        <h2 class="orange-text">Quizzer</h2>
+                        <p class="pr-5 text-white-50"> web Application that help Instructors to generate their custom
+                            Quiz <br>
+                            <span class="orange-text">Quizzer</span> Was made with <span
+                                style="color: red; font-size: 20px;">♥</span>
+                            by 5 Students as a part of Web-Programming
+                            Course
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-xs-12 links">
+                        <h4 class="mt-lg-0 mt-sm-3 orange-text">Quick Links</h4>
+                        <ul class="m-0 p-0">
                             <li><a href="../index.html">Home</a></li>
-                        <li><a href="REGISTER.html">Register</a></li>
-                        <li><a href="login_form.html">Log IN</a></li>
-                        <li><a href="Contact_us.html">Contact Us</a></li>
-                        <li><a href="About_us.html">About US</a></li>
-                    </ul>
+                            <li><a href="REGISTER.html">Register</a></li>
+                            <li><a href="login_form.html">Log IN</a></li>
+                            <li><a href="Contact_us.html">Contact Us</a></li>
+                            <li><a href="About_us.html">About US</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-xs-12 location">
+                        <h4 class="mt-lg-0 mt-sm-4 orange-text">Location</h4>
+                        <p><i class="fa fa-map-marker  mr-3"></i> Cairo,Egypt </p>
+                        <p><i class="fa fa-envelope-o mr-3 "></i>quizzer2019@gmail.com</p>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-xs-12 location">
-                    <h4 class="mt-lg-0 mt-sm-4 orange-text">Location</h4>
-                    <p><i class="fa fa-map-marker  mr-3"></i> Cairo,Egypt </p>
-                    <p><i class="fa fa-envelope-o mr-3 "></i>quizzer2019@gmail.com</p>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col copyright">
-                    <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span
-                                class="orange-text">Quizzer</span>.</small></p>
+                <div class="row mt-5">
+                    <div class="col copyright">
+                        <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span
+                                    class="orange-text">Quizzer</span>.</small></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-    <input id="btn" type="button" value="nnnnn" onclick="removeQuiz('quiz1')">
+    <input id="btn" type="button" value="nnnnn" onclick="getData('quiz1')">
     <script>
         $("#profileImage").click(function (e) {
             $("#imageUpload").click();
@@ -567,10 +497,11 @@
         }
         $("#imageUpload").change(function () {
             fasterPreview(this);
-            
+
         });
     </script>
-    <script src="../app.js"></script>
+    <script src="../js/profile.js"></script>
+
 </body>
 
 </html>
