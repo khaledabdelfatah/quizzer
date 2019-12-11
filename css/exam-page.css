@@ -35,7 +35,7 @@ body {
   font-weight: 600;
   font-size: 36px;
   text-transform: uppercase;
-  text-align: left;
+/*  text-align: left;*/
   line-height: 44px;
 }
 
@@ -73,7 +73,7 @@ body {
   font-size: 20px;
 }
 
-#question input[type=radio] {
+#question input {
   display: none;
 }
 
@@ -92,13 +92,14 @@ body {
   background: #EBBB67;
 }
 
-#question input[type=radio]:checked + label {
+#question input:checked + label {
   background: #CB8306;
   color: #FAFAFA;
 }
 
 #quiz-results {
   display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   position: absolute;
