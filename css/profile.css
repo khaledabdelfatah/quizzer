@@ -8,7 +8,7 @@
     margin: 0px;
     padding: 0px;
     height: 100%;
-    min-width: 180px;
+    /* min-width: 180px; */
 }
 
 #general-button
@@ -236,7 +236,7 @@ th {
 
 .row
 {
-    min-width: 485px;
+    /* min-width: 485px; */
     max-width: 94%;
 }
 
