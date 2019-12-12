@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-     
-   
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,10 +21,17 @@
     <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- online bootstrap links -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -32,7 +39,8 @@
     <!-- Normalization and foundation files  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css'>
+    <link rel='stylesheet prefetch'
+        href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css'>
     <!-- Font Awosem v5 icons -->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
@@ -52,7 +60,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
 
 
 
@@ -79,7 +87,8 @@
                             <a class="nav-link" href="html-page/profile.html">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="min-width: 96.016px;" href="html-page/Contact_us.html">Contact-Us</a>
+                            <a class="nav-link" style="min-width: 96.016px;"
+                                href="html-page/Contact_us.html">Contact-Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="min-width: 83.750px;" href="html-page/About_us.html">About-Us</a>
@@ -94,7 +103,8 @@
                         <li style="min-width: 116.458px;">
 
 
-                            <a style="min-width: 116.458px;" class="boxed_btn_orange nav-item" href="#" onclick="document.getElementById('id01').style.display='block'">
+                            <a style="min-width: 116.458px;" class="boxed_btn_orange nav-item" href="#"
+                                onclick="document.getElementById('id01').style.display='block'">
                                 <span>Log-in </span>
                             </a>
 
@@ -107,18 +117,23 @@
 
                                     <div class="container">
                                         <label for="uname"><b>Username</b></label>
-                                        <input type="text" placeholder="Enter Username" name="uname" id="Email" maxlength="30" required>
+                                        <input type="text" placeholder="Enter Username" name="uname" id="Email"
+                                            maxlength="30" required>
 
                                         <label for="psw"><b>Password</b></label>
-                                        <input type="password" placeholder="Enter Password" id="Password" name="psw" maxlength="30" required>
+                                        <input type="password" placeholder="Enter Password" id="Password" name="psw"
+                                            maxlength="30" required>
                                         <div id="errMes" style="color: red;margin: 30px; display: block"></div>
                                         <button class="login" type="button" onclick="login();">Login</button>
                                     </div>
 
                                     <div class="container">
 
-                                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                                        <span class="psw">Don't have an account? <a href="html-page/REGISTER.html" style="color: orange;">Sign
+                                        <button type="button"
+                                            onclick="document.getElementById('id01').style.display='none'"
+                                            class="cancelbtn">Cancel</button>
+                                        <span class="psw">Don't have an account? <a href="html-page/REGISTER.html"
+                                                style="color: orange;">Sign
                                                 up</a></span>
                                     </div>
                                 </form>
@@ -197,7 +212,8 @@
     <div class="meet-inst">
         <div class="container " style="width: 100%;">
             <h1 class="text-center meet-head-style" style="font-size: 50px;color: #5491AC;">
-                Meet Our <span style="font-size: larger; display: inline;">3</span> Top Instructors <span style="color: red;display: inline;">♥</span></h1>
+                Meet Our <span style="font-size: larger; display: inline;">3</span> Top Instructors <span
+                    style="color: red;display: inline;">♥</span></h1>
             <div class="row" style="padding: 5px; ">
 
                 <!-- First img -->
@@ -263,7 +279,8 @@
                     <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                         <img class="img-fluid rounded-circle mb-3" src="img/profile/test.png" alt="">
                         <h5>Margaret E.</h5>
-                        <p class="font-weight-light mb-0">"Logic will get you from A to Z; imagination will get you every where"</p>
+                        <p class="font-weight-light mb-0">"Logic will get you from A to Z; imagination will get you
+                            every where"</p>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -277,7 +294,8 @@
                     <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                         <img class="img-fluid rounded-circle mb-3" src="img/profile/test.png" alt="">
                         <h5>Fred S.</h5>
-                        <p class="font-weight-light mb-0">"Logic will get you from A to Z; imagination will get you every where"</p>
+                        <p class="font-weight-light mb-0">"Logic will get you from A to Z; imagination will get you
+                            every where"</p>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -291,7 +309,8 @@
                     <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                         <img class="img-fluid rounded-circle mb-3" src="img/profile/test.png" alt="">
                         <h5>Sarah W.</h5>
-                        <p class="font-weight-light mb-0">"Logic will get you from A to Z; imagination will get you every where"</p>
+                        <p class="font-weight-light mb-0">"Logic will get you from A to Z; imagination will get you
+                            every where"</p>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -317,7 +336,8 @@
                         <h2 class="orange-text">Quizzer</h2>
                         <p class="pr-5 text-white-50"> web Application that help Instructors to generate their custom
                             Quiz <br>
-                            <span class="orange-text">Quizzer</span> Was made with <span style="color: red; font-size: 20px;">♥</span>
+                            <span class="orange-text">Quizzer</span> Was made with <span
+                                style="color: red; font-size: 20px;">♥</span>
                             by 5 Students as a part of Web-Programming
                             Course
                         </p>
@@ -339,7 +359,8 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col copyright">
-                        <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span class="orange-text">Quizzer</span>.</small></p>
+                        <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span
+                                    class="orange-text">Quizzer</span>.</small></p>
                     </div>
                 </div>
             </div>
@@ -349,7 +370,7 @@
 
     <!-- End Footer  -->
 
- 
+
 
 
 
