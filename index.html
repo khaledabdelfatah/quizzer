@@ -53,17 +53,20 @@
     <link rel="stylesheet" href="css/home_meet_instrauctor.css">
     <link rel="stylesheet" href="css/home_test_monial.css">
     <link rel="stylesheet" href="css/home_footer_style.css">
-    <!-- exteranl js file -->
+    <link rel="stylesheet" href="css/watson-style.css">
+     <!-- exteranl js file -->
     <script src="js/home.js"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
 
-
-
+<!-- just test -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -116,7 +119,7 @@
                                     </div>
 
                                     <div class="container">
-                                        <label for="uname"><b>Username</b></label>
+                                        <label for="uname"><b>E-Mail</b></label>
                                         <input type="text" placeholder="Enter Username" name="uname" id="Email"
                                             maxlength="30" required>
 
@@ -171,8 +174,7 @@
         <!--  -->
     </div>
     <!-- Staet of Second Part    -->
-
-    <div class="about_area">
+     <div class="about_area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-6">
@@ -208,6 +210,39 @@
 
     <!-- END about section -->
     <hr />
+
+    <!--Floating Button -->
+     <a href="#"   id="myBtn" class="float">
+        <i class="fa fa-envelope my-float"></i>
+        </a>
+        <div class="label-container">
+        <div class="label-text">Feedback</div>
+        <i class="fa fa-play label-arrow"></i>
+        </div>
+        
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>  
+    
+        <div class='Chat__holder'>
+            <div class='Chat__body Chat__body--loading' role='main'>
+              <div data-loading class="bx--loading">
+                  <svg class="bx--loading__svg" viewBox="-75 -75 150 150">
+                    <title>Loading</title>
+                    <circle class="bx--loading__stroke" cx="0" cy="0" r="37.5" />
+                  </svg>
+              </div>
+            </div>
+        </div>
+    
+    </div>
+    
+    </div>
+        
+    <!-- END  -->
     <!-- Start meet instructors section -->
     <div class="meet-inst">
         <div class="container " style="width: 100%;">
@@ -264,6 +299,39 @@
         </div>
     </div>
     <!-- End meet instructo -->
+
+    <div class="container">
+  
+  
+        <a href="#" class="float" data-toggle="modal" data-target="#myModal">
+          <i class="fa fa-envelope my-float"></i>
+          </a>
+          <div class="label-container">
+          <div class="label-text">Feedback</div>
+          <i class="fa fa-play label-arrow"></i>
+          </div>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            
+              <div class='Chat__holder' style="max-width: 50pxs;">
+                  <div class='Chat__body Chat__body--loading' role='main'>
+                    <div data-loading class="bx--loading">
+                        <svg class="bx--loading__svg" viewBox="-75 -75 150 150">
+                          <title>Loading</title>
+                          <circle class="bx--loading__stroke" cx="0" cy="0" r="37.5" />
+                        </svg>
+                    </div>
+                  </div>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+        
+      </div>
     <!-- ******************************************************************************************* -->
     <hr>
 
@@ -323,8 +391,13 @@
             </div>
         </div>
     </section>
+     <!-- end testmonial -->
 
-    <!-- end testmonial -->
+  
+         
+       
+            
+        
     <!-- Start Footer -->
     <div>
         <!--UN USed-->
@@ -369,21 +442,42 @@
     </div>
 
     <!-- End Footer  -->
-
-
+ 
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=218036350"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', '218036350');
+
+
+<script src="https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js"></script>
+<script>
+  var hostElement = document.querySelector('.Chat__body');
+  var loadingElement = document.querySelector('.bx--loading');
+  window.loadWatsonAssistantChat({
+    element: hostElement,
+    integrationID: '011b1c21-cb9c-443b-ae3c-ff6f451d0da2',
+    showLauncher: false,
+    openChatByDefault: true,
+    region: 'eu-gb',
+    subscriptionID: 'public',
+    __ibm__: {
+      cdnEndpoint: 'https://assistant-web.watsonplatform.net',
+      versionsUrl: 'https://assistant-web.watsonplatform.net/versions.json',
+      isPreviewLink: true
+    }
+  }).then(function (instance) {
+    window.instance = instance;
+    instance.render().then(function () {
+      loadingElement.parentNode.removeChild(loadingElement);
+      hostElement.classList.remove('Chat__body--loading');
+      hostElement.classList.add('Chat__body--background');
+    });
+  });
 </script>
-f
-    <script src="app.js"></script>
+
+
+
 </body>
 
 </html>
