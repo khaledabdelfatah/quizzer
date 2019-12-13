@@ -6,11 +6,11 @@ var firebaseConfig = {
     storageBucket: "quizzer-a0c6e.appspot.com",
     messagingSenderId: "235551414761",
     appId: "1:235551414761:web:cb2e8ef047394bf666d378",
-    measurementId: "G-GBG3VNHGE6"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+    measurementId: "G-LHDCE10DHV"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
 
 //
