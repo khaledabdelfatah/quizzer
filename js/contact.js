@@ -1,5 +1,4 @@
-
-// check validation on the information of the e-mail
+  // check validation on the information of the e-mail
 function checkValidation()
 {
     
@@ -40,9 +39,9 @@ function checkValidation()
         anii.style.height = "150px";
         anii.style.top = "-800px";
         anii.style.webkitTransition = "top 5s";
-        anii.style.transition = "top 5s"
-
-    }
+        anii.style.transition = "top 5s";
+        
+     }
 }
 
 
@@ -56,4 +55,4 @@ function rotateback()
     var ani = document.getElementById("mail-box");
     ani.style.transform = "rotateY(0deg)";
 }
-
+ 
