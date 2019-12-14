@@ -27,7 +27,7 @@ firebase.initializeApp(firebaseConfig);
 
 function validationFname() {
     var Fuser = document.getElementById('Fname').value;
-    var regName = /^[A-Za-z]+$/;
+    var regName = /^[A-Za-z_ ]+$/;
     if (Fuser == "" || Fuser.length < 2) {
         document.getElementById('errFname').style.display = "block";
 
@@ -45,7 +45,7 @@ function validationFname() {
 
 function validationLname() {
     var Luser = document.getElementById('Lname').value;
-    var regName = /^[A-Za-z]+$/;
+    var regName = /^[A-Za-z_ ]+$/;
     if (Luser == "" || Luser.length < 2) {
         document.getElementById('errLname').style.display = "block";
         document.getElementById('errLname').innerHTML = divs[0];
@@ -144,7 +144,7 @@ function ValidationRePass() {
 
 function ValidationAdress() {
     var addrees = document.getElementById('Address').value;
-    var regaddrees = /^[a-zA-Z0-9]+$/;
+    var regaddrees = /^[a-zA-Z0-9_ ]+$/;
     var number = /^[0-9]/;
     if (!isNaN(addrees) || !addrees.match(regaddrees)) {
         document.getElementById('errAddress').style.display = "block";
@@ -159,7 +159,7 @@ function ValidationAdress() {
 
 function ValidationCity() {
     var city = document.getElementById('City').value;
-    var regcity = /^[a-zA-Z0-9]+$/;
+    var regcity = /^[a-zA-Z0-9_ ]+$/;
     if (!isNaN(city) || !city.match(regcity)) {
         document.getElementById('errCity').style.display = "block";
         document.getElementById('errCity').innerHTML = divs[0];
@@ -172,7 +172,7 @@ function ValidationCity() {
 
 function ValidationUniversity() {
     var University = document.getElementById('University').value;
-    var regUniversity = /^[a-zA-Z0-9]+$/;
+    var regUniversity = /^[a-zA-Z0-9_ ]+$/;
     if (!isNaN(University) || !University.match(regUniversity)) {
         document.getElementById('errUniversity').style.display = "block";
         document.getElementById('errUniversity').innerHTML = divs[0];
@@ -185,7 +185,7 @@ function ValidationUniversity() {
 
 function ValidationSpecialty() { //
     var specialty = document.getElementById('Specialty').value; //
-    var regspecialty = /^[a-zA-Z0-9]+$/;
+    var regspecialty = /^[a-zA-Z0-9_ ]+$/;
     if (!isNaN(specialty) || !specialty.match(regspecialty)) {
         document.getElementById('errSpecialty').style.display = "block"; //
         document.getElementById('errSpecialty').innerHTML = divs[0]; //
@@ -198,7 +198,7 @@ function ValidationSpecialty() { //
 
 function ValidationUniversityinst() {
     var University = document.getElementById('Universityinst').value;
-    var regUniversity = /^[a-zA-Z0-9]+$/;
+    var regUniversity = /^[a-zA-Z0-9_ ]+$/;
     if (!isNaN(University) || !University.match(regUniversity)) {
         document.getElementById('errUniversityinst').style.display = "block";
         document.getElementById('errUniversityinst').innerHTML = divs[0];
@@ -211,7 +211,7 @@ function ValidationUniversityinst() {
 
 function ValidationSpecialtyinst() { //
     var specialty = document.getElementById('Specialtyinst').value; //
-    var regspecialty = /^[a-zA-Z0-9]+$/;
+    var regspecialty = /^[a-zA-Z0-9_ ]+$/;
     if (!isNaN(specialty) || !specialty.match(regspecialty)) {
         document.getElementById('errSpecialtyinst').style.display = "block"; //
         document.getElementById('errSpecialtyinst').innerHTML = divs[0]; //
@@ -296,7 +296,12 @@ function ValidationFinal() {
                         university: document.getElementById('Universityinst').value,
                         specialty: document.getElementById('Specialtyinst').value,
                         degree: document.getElementById("degree level").value,
-                        exprienc: document.getElementById("exprienc").value
+                        exprienc: document.getElementById("exprienc").value,
+                        remember_me: null,
+                    }).then(function() {
+                        window.location.href = "../html-page/profile.html";
+                    }).catch(function(error) {
+                        console.error("Error writing document: ", error);
                     });
                 } else {
                     docRef.set({
@@ -308,6 +313,11 @@ function ValidationFinal() {
                         state: states,
                         university: document.getElementById('University').value,
                         specialty: document.getElementById('Specialty').value,
+                        remember_me: null,
+                    }).then(function() {
+                        window.location.href = "../html-page/profile.html";
+                    }).catch(function(error) {
+                        console.error("Error writing document: ", error);
                     });
                 }
 
