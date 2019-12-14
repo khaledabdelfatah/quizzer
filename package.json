@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/khaledabdelfatah/quizzer#readme",
   "dependencies": {
-    "firebase": "^7.5.2"
+    "firebase": "^7.5.2",
+    "nodemailer": "^6.4.2"
   }
 }
