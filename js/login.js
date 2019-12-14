@@ -16,23 +16,20 @@ const autho = firebase.auth();
 var firestore = firebase.firestore();
 
 autho.onAuthStateChanged(function (user) {
-
     if (user) {
-
-        firestore.collection("User").doc(autho.getUid()).get().then(function (doc) {
-            if (doc.exists) {
-
-                if (doc.data().remmber == true) {
-                    window.location.href = "profile.html";
-                } else {
-                    autho.signOut();
-                }
-
+        console.log("there is user");
+        firestore.collection("User").doc(autho.currentUser.uid).get().then(function (doc) {
+            console.log("in profile");
+            if (doc.data().remember_me == true) {
+                window.location.href = "profile.html";
+            } else {
+                autho.signOut();
             }
         })
+    } else {
+        console.log("no user here");
     }
 });
-
 
 function login() {
 
@@ -43,32 +40,19 @@ function login() {
     autho.signInWithEmailAndPassword(email, password).catch(function (error) {
 
         document.getElementById("errMes").innerHTML = error.message;
+        console.log("go with user");
 
+    }).then(function () {
+        console.log("go with remmber user");
         if (Remmber) {
-            firestore.collection("User").doc(autho.getUid()).add({
-                remmber: true
+            firestore.collection("User").doc(autho.getUid()).update({
+                remember_me: true
             });
         } else {
-            firestore.collection("User").doc(autho.getUid()).add({
-                remmber: false
+            firestore.collection("User").doc(autho.getUid()).update({
+                remember_me: false
             });
-
-        }
-    });
-
-    autho.onAuthStateChanged(function (user) {
-        if (user) {
-
-            window.location.href = "profile.html";
-
-        } else {
 
         }
     });
 }
-//
-//firestore.collection("User").get().then(function(querySnapshot) {
-//    querySnapshot.forEach(function(doc) {
-//       console.log(doc.data());
-//    });
-//});
