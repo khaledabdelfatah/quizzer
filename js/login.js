@@ -15,6 +15,9 @@ const autho = firebase.auth();
 
 var firestore = firebase.firestore();
 
+var firestorage = firebase.storage();
+var storageRef = firestorage.ref();
+
 autho.onAuthStateChanged(function (user) {
     if (user) {
         console.log("there is user");
@@ -22,10 +25,8 @@ autho.onAuthStateChanged(function (user) {
             console.log("in profile");
             if (doc.data().remember_me == true) {
                 window.location.href = "profile.html";
-            } else {
-                autho.signOut();
             }
-        })
+        });
     } else {
         console.log("no user here");
     }
@@ -40,19 +41,20 @@ function login() {
     autho.signInWithEmailAndPassword(email, password).catch(function (error) {
 
         document.getElementById("errMes").innerHTML = error.message;
-        console.log("go with user");
 
     }).then(function () {
-        console.log("go with remmber user");
-        if (Remmber) {
-            firestore.collection("User").doc(autho.getUid()).update({
-                remember_me: true
-            });
-        } else {
-            firestore.collection("User").doc(autho.getUid()).update({
-                remember_me: false
-            });
+        if (autho.currentUser) {
+            if (Remmber) {
+                firestore.collection("User").doc(autho.getUid()).update({
+                    remember_me: true
+                });
+            } else {
+                firestore.collection("User").doc(autho.getUid()).update({
+                    remember_me: false
+                });
 
+            }
+            window.location.href = "profile.html";
         }
     });
 }
