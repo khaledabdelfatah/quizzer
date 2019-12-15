@@ -29,58 +29,22 @@ testbutton.addEventListener("click", function () {
     });
 
 });
-
+/// login 
 const autho = firebase.auth();
-
-autho.onAuthStateChanged(function (user) {
-
-    if (user) {
-
-        firestore.collection("User").doc(autho.getUid()).get().then(function (doc) {
-            if (doc.exists) {
-
-                if (doc.data().remmber == true) {
-                    //  window.location.href = "html-page/profile.html";
-                } else {
-                    autho.signOut();
-                }
-
-            }
-        })
-    }
-});
-
-autho.signOut();
 
 function login() {
 
     const email = document.getElementById("Email").value;
     const password = document.getElementById("Password").value;
-    // const Remmber = document.getElementById("Remmber").checked;
-
+   
     autho.signInWithEmailAndPassword(email, password).catch(function (error) {
 
         document.getElementById("errMes").innerHTML = error.message;
 
-        //        if (Remmber) {
-        //            firestore.collection("User").doc(autho.getUid()).add({
-        //                remmber: true
-        //            });
-        //        } else {
-        //            firestore.collection("User").doc(autho.getUid()).add({
-        //                remmber: false
-        //            });
-        //
-        //        }
-    });
-
-    autho.onAuthStateChanged(function (user) {
-        if (user) {
-
-            window.location.href = "html-page/profile.html";
-
-        } else {
-
+    }).then(function () {
+        if (autho.currentUser) {
+            window.location.href = "profile.html";
         }
     });
 }
+// login 
