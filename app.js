@@ -43,7 +43,7 @@ function login() {
 
     }).then(function () {
         if (autho.currentUser) {
-            window.location.href = "profile.html";
+            window.location.href = "html-page/profile.html";
         }
     });
 }
