@@ -25,10 +25,8 @@ autho.onAuthStateChanged(function (user) {
             console.log("in profile");
             if (doc.data().remember_me == true) {
                 window.location.href = "profile.html";
-            } else {
-                autho.signOut();
             }
-        })
+        });
     } else {
         console.log("no user here");
     }
