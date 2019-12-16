@@ -452,7 +452,7 @@ function quizAsInstractor(quizName, time, quizAccess) {
         "<a " + "href=\"#\"" + " onclick=\"open('" + quizAccess + "')\"" +
         " style=\"width: 100px; text-align: center;\"" +
         "class=\"btn btn-primary strquiz\">show Quiz</a>" +
-        "<a " + "href=\"#\"" + "onclick=\"getEnrolled('" + quizAccess + "'); document.getElementById('myModal').style.display='block';\"" +
+        "<a id=\"myBtn\"" + "href=\"#\"" + "onclick=\"getEnrolled('" + quizAccess + "'); document.getElementById('myModal').style.display='block';\"" +
         " style=\"text-align: center;\"" +
         "class=\"btn strquiz enroll\">show enrolled</a>" +
         "</div>" +
