@@ -14,11 +14,13 @@ firebase.initializeApp(firebaseConfig);
 var autho = firebase.auth();
 var firestore = firebase.firestore();
 
+
 autho.onAuthStateChanged(function (user) {
     if (user) {
         firestore.collection("User").doc(autho.getUid()).get().then(function (doc) {
             if (doc.exists) {
                 const mydata = doc.data();
+                // console.log(mydata);
                 if (mydata.state === "student") {
                     var check = document.getElementsByClassName("instractor");
                     for (i = 0; i < check.length; i++) {
@@ -33,7 +35,6 @@ autho.onAuthStateChanged(function (user) {
                     document.getElementById("ecity").innerHTML = mydata.city;
                     document.getElementById("euniversity").innerHTML = mydata.university;
                     document.getElementById("especialty").innerHTML = mydata.specialty;
-                    
                     var quizNum;
                     var quizGrade;
                     var n;
@@ -42,11 +43,12 @@ autho.onAuthStateChanged(function (user) {
                         quizNum = n;
                         quizAccess = mydata.studQuizzes[n].access;
                         quizGrade = mydata.studQuizzes[n].degree;
-
                         findQuiz(quizAccess, quizGrade);
 
+
+                       
                     }
-                    
+                   
                 }
                 else {
                     if (mydata.state === "instructor") {
@@ -120,8 +122,34 @@ function clear(id) {
     child11[1].value = "";
     child11[5].style.display = "none";
 }
+//change active class on the side par
+function changing(id) {
+    var conts = ["myTabContent", "quizzesContent", "reviewContent", "mediaContent", "newsContent"];
+    document.getElementById(id).style.display = "block";
+    for (i in conts) {
+        if (conts[i] != id) {
+            document.getElementById(conts[i]).style.display = "none";
+        }
+    }
+}
 
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
 
+// Close the dropdown if the user clicks outside it
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
 //remove photo from personal info. and nav par and replace it with a default one
 function removePhoto(cls) {
     document.getElementsByClassName(cls)[0].src = "../img/profile/test.png";
@@ -265,6 +293,19 @@ function ValidationExperience() {
     }
 }
 
+//under construction
+function appear() {
+    document.getElementsByClassName("change-remove-icons")[0].style.display = "inline-block";
+    document.getElementsByClassName("change-remove-icons")[0].style.cursor = "pointer";
+    document.getElementsByClassName("change-remove-icons")[1].style.display = "inline-block";
+    document.getElementsByClassName("change-remove-icons")[1].style.cursor = "pointer";
+}
+function disappear() {
+    document.getElementsByClassName("change-remove-icons")[0].style.display = "none";
+    document.getElementsByClassName("change-remove-icons")[0].style.cursor = "context-menu";
+    document.getElementsByClassName("change-remove-icons")[1].style.display = "none";
+    document.getElementsByClassName("change-remove-icons")[1].style.cursor = "context-menu";
+}
 
 function pushQuiz() {
     var accessValue = document.getElementById("access").value;
@@ -274,7 +315,7 @@ function pushQuiz() {
             if (doc.exists) {
                 if (doc2.exists) {
                     const mydata = doc2.data();
-                    
+                
                     var arr = mydata.enrolled;
                     userId = firebase.auth().currentUser.uid;
                     var checkPoint = false;
@@ -290,17 +331,22 @@ function pushQuiz() {
                     }
 
                     if (checkPoint == false) {
+                    
 
                         setTimeout(() => {
                             console.log("we waited");
                             open(accessValue);
                         }, 2000);
+
+
+
                     }
                 }
             }
         });
     });
 }
+
 
 
 function logOut() {
@@ -388,6 +434,8 @@ function setData(id) {
 }
 
 
+
+
 function quizAsInstractor(quizName, time, quizAccess) {
 
     var quiz =
@@ -414,7 +462,6 @@ function quizAsInstractor(quizName, time, quizAccess) {
 }
 
 
-/*to get pepole who enrolled in the quiz*/
 function getEnrolled(quizAccess) {
     firestore.collection("Quiz").doc(quizAccess).get().then(function (doc1) {
         if (doc1 && doc1.exists) {
@@ -450,7 +497,14 @@ function open(quizAccess) {
 }
 
 
-function quizAsStudent(quizName, instractorName, grade, quizAccess) {    
+function quizAsStudent(quizName, instractorName, grade, quizAccess) {
+    var gradelook;
+    if (grade > 3) {
+        gradelook = "<h3 style =\"color:green;\">Grade: " + grade + "<h3>";
+    }
+    else {
+        gradelook = "<h3 style =\"color:red;\">Grade: " + grade + "<h3>";
+    }
     var quiz =
         "<div id=\"" + quizAccess + "\" class=\"col-md-4 col-sm-6 col-xs-12\">" +
         "<div class=\"card\">" +
@@ -459,18 +513,23 @@ function quizAsStudent(quizName, instractorName, grade, quizAccess) {
         "</div>" +
         "<h2>" + quizName + "</h2>" +
         "<h5><small>Instractor</small>: " + instractorName + "</h5>" +
-        "<h3>Grade: " + grade + "<h3>" +
+        gradelook +
         "</div>" +
         "</div>";
+
+
 
     document.getElementById("showQuizzes").innerHTML += quiz;
 }
 
 function removeQuiz() {
 
+    
     var id = document.getElementById("sp").innerHTML;
     var userId = firebase.auth().currentUser.uid;
 
+
+    // deleteAtPath(firestore.collection("Quiz").doc(id));
     firestore.collection("Quiz").doc(id).delete().then(function (doc) {
         console.log("questions collection successfully deleted!");
     }).catch(function (error) {
@@ -505,6 +564,16 @@ function removeQuiz() {
 }
 
 
+
+
+
+
+function countProps(obj) {
+    var count = 0;
+    for (i in obj) count++;
+    return count;
+}
+
 function findQuiz(quizAccess1, quizGrade1) {
     firestore.collection("Quiz").doc(quizAccess1).get().then(function (doc1) {
         if (doc1 && doc1.exists) {
@@ -530,3 +599,5 @@ function findInstQuiz(quizAccess1) {
         }
     });
 }
+
+
