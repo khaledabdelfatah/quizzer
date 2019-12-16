@@ -180,15 +180,31 @@ function SaveData() {
 
     var name_quiz = document.getElementById("name_quiz").value;
     var time_quiz = document.getElementById("time_quiz").value;
-    var point_quiz = document.getElementById("point").value;    
-    
+    var point_quiz = document.getElementById("point").value;
 
-    const docRef = firestore.collection("Quiz").doc(access);
-    docRef.set({
-        name: name_quiz,
-        Time: time_quiz,
-        Points: point_quiz,
-        Instructor: "kerolos"
+    var arra = new Array();
+    
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+//enrolled
+            const docRef = firestore.collection("Quiz").doc(access);
+            docRef.set({
+                name: name_quiz,
+                Time: time_quiz,
+                Points: point_quiz,
+                Instructor: user.uid,
+                enrolled: arra
+            });
+            
+            var docRef5 = firestore.collection("User").doc(user.uid);
+            docRef5.update({
+                instQuizzes: firebase.firestore.FieldValue.arrayUnion(access)
+            });
+            
+            //            console.log(user.uid);
+        } else {
+            // User not logged in or has just logged out.
+        }
     });
 
 
@@ -235,65 +251,3 @@ function makeid() {
     }
     return result;
 }
-
-
-
-
-    
-//    var v = ["k","r"];
-//
-//
-//    const docRef = firestore.collection("J").doc("O");
-//    //const testbutton = document.getElementById("getbutoon");
-//    //testbutton.addEventListener("click", function () {
-//    console.log("Im here Finally***************************************");
-//    docRef.set({
-//        name:v
-//    });
-    
-
-
-
-
-//}
-
-
-//function vb() {
-//    var firestore = firebase.firestore();
-//    var docRef = firestore.collection("Hello").doc("namei");
-//
-//    docRef.get().then(function (doc) {
-//        if (doc.exists) {
-//            console.log("Document data:", doc.data());
-//            console.log("id data:", doc.id);
-//        } else {
-//            // doc.data() will be undefined in this case
-//            console.log("No such document!");
-//        }
-//    }).catch(function (error) {
-//        console.log("Error getting document:", error);
-//    });
-//
-//}
-//
-
-
-
-
-//function f(s) {
-//    var x = document.getElementById(s);
-//    var z = x.getElementsByTagName('textarea');
-//    var y = x.getElementsByTagName('input');
-//    console.log(z[0].value);
-//    for (i = 0; i < y.length; i += 2) {
-//        console.log(y[i].checked);
-//    }
-//    for (i = 1; i < y.length; i += 2) {
-//        console.log(y[i].value);
-//    }
-//
-//    var xd = document.getElementById("question1");
-//    var num = xd.getElementsByTagName("p")[0].innerHTML;
-//    console.log(num);
-//
-//}
