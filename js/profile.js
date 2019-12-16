@@ -450,14 +450,7 @@ function open(quizAccess) {
 }
 
 
-function quizAsStudent(quizName, instractorName, grade, quizAccess) {
-    var gradelook;
-    if (grade > 3) {
-        gradelook = "<h3 style =\"color:green;\">Grade: " + grade + "<h3>";
-    }
-    else {
-        gradelook = "<h3 style =\"color:red;\">Grade: " + grade + "<h3>";
-    }
+function quizAsStudent(quizName, instractorName, grade, quizAccess) {    
     var quiz =
         "<div id=\"" + quizAccess + "\" class=\"col-md-4 col-sm-6 col-xs-12\">" +
         "<div class=\"card\">" +
@@ -466,7 +459,7 @@ function quizAsStudent(quizName, instractorName, grade, quizAccess) {
         "</div>" +
         "<h2>" + quizName + "</h2>" +
         "<h5><small>Instractor</small>: " + instractorName + "</h5>" +
-        gradelook +
+        "<h3>Grade: " + grade + "<h3>" +
         "</div>" +
         "</div>";
 
