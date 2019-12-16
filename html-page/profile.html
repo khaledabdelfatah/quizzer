@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="../Header/css/headerstyl.css">
     <link rel="stylesheet" href="../css/home_footer_style.css">
     <!-- javascript Files -->
-    
 
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
@@ -233,7 +232,7 @@
                             </tr>
 
                             <tr class="element" id="address">
-                                <th>country</th>
+                                <th>Address</th>
                                 <td class="td1" id="eaddress"></td>
                                 <td class="td2">
                                     <a onclick="toEdit('address')">
@@ -242,7 +241,7 @@
                                 </td>
                             </tr>
                             <tr class="elementspan" id="span-address">
-                                <th>country</th>
+                                <th>Address</th>
                                 <td>
                                     <input type="text" id="Address" value="">
                                     <input type="button" onclick="toSaveChanges('Address')" value="save">
@@ -304,29 +303,8 @@
                                 </td>
                             </tr>
 
-                            <tr class="element" id="password">
-                                <th>
-                                    <Address>Password</Address>
-                                </th>
-                                <td class="td1" id="epassword">Change your Password</td>
-                                <td class="td2">
-                                    <a onclick="toEdit('password')">
-                                        <img src="../img/profile/edit.png" alt="edit">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="elementspan" id="span-password">
-                                <th>New Password</th>
-                                <td>
-                                    <input type="text" id="Password" value="">
-                                    <input type="button" onclick="toSaveChanges('Password')" value="save">
-                                    <span id="errPassword" class="text-danger font-weight-bold"
-                                        style="max-width: 200px;"></span>
-                                </td>
-                            </tr>
-
                             <tr class="element instractor" id="degree">
-                                <th>Degree</th>
+                                <th>scientific degree</th>
                                 <td class="td1" id="edegree"></td>
                                 <td class="td2">
                                     <a onclick="toEdit('degree')">
@@ -335,7 +313,7 @@
                                 </td>
                             </tr>
                             <tr class="elementspan" id="span-degree">
-                                <th>Degree</th>
+                                <th>scientific degree</th>
                                 <td>
                                     <input type="text" id="Degree" value="">
                                     <input type="button" onclick="toSaveChanges('Degree')" value="save">
@@ -343,15 +321,8 @@
                                         style="max-width: 200px;"></span>
                                 </td>
                             </tr>
-                            <tr>
-                                <th class="general" colspan="2">
-                                    <input style="background-color:#447fec; border-radius: 15px; float: right;" onclick="logOut()"
-                                        type="button" value="signOut">
-                                </th>
 
-                            </tr>
-
-                            <!-- <tr class="element" id="experience">
+                            <tr class="element instractor" id="experience">
                                 <th>Experience</th>
                                 <td class="td1" id="eexperience"></td>
                                 <td class="td2">
@@ -368,7 +339,35 @@
                                     <span id="errExperience" class="text-danger font-weight-bold"
                                         style="max-width: 200px;"></span>
                                 </td>
-                            </tr> -->
+                            </tr>
+
+                            <tr class="element" id="password">
+                                <th>
+                                    <Address>Password</Address>
+                                </th>
+                                <td class="td1" id="epassword">Change Password</td>
+                                <td class="td2">
+                                    <a onclick="toEdit('password')">
+                                        <img src="../img/profile/edit.png" alt="edit">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="elementspan" id="span-password">
+                                <th>New Password</th>
+                                <td>
+                                    <input type="text" id="Password" value="">
+                                    <input type="button" onclick="toSaveChanges('Password')" value="save">
+                                    <span id="errPassword" class="text-danger font-weight-bold"
+                                        style="max-width: 200px;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th class="general" colspan="2">
+                                    <input style="background-color:#447fec; border-radius: 15px; float: right;"
+                                        onclick="logOut()" type="button" value="signOut">
+                                </th>
+                            </tr>
 
                         </table>
                     </div>
@@ -405,21 +404,7 @@
                         </table>
 
                         <div id="showQuizzes" class="row" style="margin: 0%">
-                            <div id="quiz1" class="col-md-6 col-sm-9 col-xs-12">
-                                <div class="card">
-                                    <div style="float: left;">
-                                        <img src="../img/profile/quiz.jpg" style="width: 50px; height: 50px;"
-                                            alt="quiz">
-                                        <img class="delete" onclick="removeQuiz('quiz1')"
-                                            src="../img/profile/delete.png" alt="delete">
-                                    </div>
-                                    <h2>Databasequiz</h2>
-                                    <h5><small>Instractor</small>: Diaa salama</h5>
-                                    <h5>time: 1 hour</h5>
-                                    <a href="databasequiz.html" style="width: 100px; text-align: center;"
-                                        class="btn btn-primary strquiz">start Quiz</a>
-                                </div>
-                            </div>
+                            
                         </div> <!-- end row -->
                     </div>
                 </div>
@@ -483,7 +468,40 @@
             </div>
         </div>
     </div>
-    <input id="btn" type="button" value="nnnnn" onclick="getData('quiz1')">
+
+    <!-- ensure pop up-->
+    <div id="id01" class="modal">
+
+        <div id="id02" class="modal-content animate" style="text-align: center;">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="Close Modal">&times;</span>
+            </div>
+            are you sure that you want to delete this?
+            <div style="display: inline;">
+                <button type="button" onclick="removeQuiz()" id="yesbtn">yes</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                    id="nobtn">No</button>
+            </div>
+            <span id="sp" style="display: none;"></span>
+
+        </div>
+    </div>
+
+    <!--enrolled pop up-->
+    <div id="myModal" class="modalEnrolled">
+
+        <!-- Modal content -->
+        <div class="modalEnrolled-content">
+            <span class="closeEnrolled">&times;</span>
+            <div id="innerModal" style="padding-top: 30px;">
+
+            </div>
+        </div>
+
+    </div>
+
+
     <script>
         $("#profileImage").click(function (e) {
             $("#imageUpload").click();
@@ -499,6 +517,40 @@
             fasterPreview(this);
 
         });
+        /*pop up*/
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        // window.onclick = function (event) {
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        //     }
+        // }
+        // Get the modal
+        var modalEnrolled = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("closeEnrolled")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modalEnrolled.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modalEnrolled.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modalEnrolled) {
+                modalEnrolled.style.display = "none";
+            }
+        }
     </script>
     <script src="../js/profile.js"></script>
     <script src="../js/REGISTER.js"></script>

@@ -298,6 +298,7 @@ function ValidationFinal() {
                         degree: document.getElementById("degree level").value,
                         exprienc: document.getElementById("exprienc").value,
                         remember_me: null,
+                        instQuizzes: [],
                     }).then(function() {
                         window.location.href = "../html-page/profile.html";
                     }).catch(function(error) {
@@ -314,6 +315,7 @@ function ValidationFinal() {
                         university: document.getElementById('University').value,
                         specialty: document.getElementById('Specialty').value,
                         remember_me: null,
+                        studQuizzes: [],
                     }).then(function() {
                         window.location.href = "../html-page/profile.html";
                     }).catch(function(error) {
