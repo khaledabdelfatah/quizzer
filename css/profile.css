@@ -8,7 +8,6 @@
     margin: 0px;
     padding: 0px;
     height: 100%;
-    /* min-width: 180px; */
 }
 
 #general-button
@@ -174,44 +173,6 @@ th {
     display: none;
 }
 
-.dropbtn
-{
-    border: none;
-    background-color: transparent;
-    overflow: hidden;
-    background-image: url("../img/profile/down-arrow.png");
-    background-size: 10px 10px;
-    width: 10px;
-    height: 10px;
-}
-
-.dropdown
-{
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content
-{
-    display: none;
-    position: absolute;
-    border-radius: 10px;
-    background-color: #a057db;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    width: 160px;
-} 
-
-.dropdown-content a
-{
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-} 
-
-
 .show
 {
     display: block;
@@ -220,7 +181,6 @@ th {
 .card{
     border: #0062cc solid 2px;
     width: 90%;
-    height: 230px;
     margin: 20px auto;
     padding-left: 10px;
     float: left;
@@ -236,11 +196,10 @@ th {
 
 .row
 {
-    /* min-width: 485px; */
     max-width: 94%;
 }
 
-.sidebar a, #general-button, input, .dropbtn, .delete
+.sidebar a, #general-button, input, .dropbtn, .delete, .strquiz
 {
   cursor: pointer;
 }
@@ -300,10 +259,7 @@ th {
     margin-right: 5px;
 }
 
-
-
-
-
+/*profile icons*/
 .box19 ul img
 {
     height:100%;width:100%;
@@ -325,25 +281,13 @@ th {
     left:0;
     transition:all .3s ease 0s;
 }
+
 .box19 .icon,
-.box19 .title
-{
-    transition:all .2s ease 0s;
-}
 .box19:hover .box-content
 {
     background:rgba(0,0,0,.5);
 }
-.box19 .title
-{
-    font-size:24px;
-    color:#fff;
-    transform:scale(0);
-}
-.box19:hover .title
-{
-    transform:scale(1);
-}
+
 .box19 .icon
 {
     list-style:none;
@@ -351,6 +295,7 @@ th {
     margin:0;
     opacity:0;
 }
+
 .box19:hover .icon
 {
     opacity:1;
@@ -402,3 +347,165 @@ th {
         padding-top:20%;
     }
 }
+
+/*enroll*/
+.enroll
+{
+    float: left;
+    padding: 7px 0px;
+    text-align: left;
+    width: 101.979166px;
+}
+
+
+
+/*ensure pop up*/
+/* Set a style for all buttons */
+#id01 button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+}
+
+#id01 button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+#id01 #yesbtn, #id01 #nobtn {
+  padding: 10px 18px;
+  display: inline;
+  text-align: center;
+  margin:7px 0px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+}
+
+#id01 #yesbtn {
+    background-color: #f44336;
+  }
+#id01 #yesbtn {
+    background-color: #0062cc;
+  }
+  
+#id01 .container {
+  padding: 16px;
+}
+
+
+/* The Modal (background) */
+#id01 .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(255, 255, 255); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+#id01 .modal-content {
+  background-color: #fefefe;
+  margin: 10% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+  min-width: 401.354 px;
+}
+
+/* The Close Button (x) */
+#id01 .close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+#id01 .close:hover,
+#id01 .close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+#id01 .animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  
+  #yesbtn, #nobtn {
+     width: 100%;
+  }
+}
+
+
+/*enrolled pop up*/
+.modalEnrolled {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modalEnrolled-content {
+    background-color: #ffffff;
+    margin: 10% auto 15% auto;
+    padding: 8px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .closeEnrolled {
+    color: #aaaaaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .closeEnrolled:hover,
+  .closeEnrolled:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #innerModal label
+  {
+      margin: 10px auto 2px auto;
+      float: left;
+  }
