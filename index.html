@@ -53,7 +53,7 @@
     <link rel="stylesheet" href="css/home_meet_instrauctor.css">
     <link rel="stylesheet" href="css/home_test_monial.css">
     <link rel="stylesheet" href="css/home_footer_style.css">
-    <link rel="stylesheet" href="css/watson-style.css">
+    <!-- <link rel="stylesheet" href="css/watson-style.css"> -->
      <!-- exteranl js file -->
     <script src="js/home.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
@@ -207,41 +207,7 @@
     </div>
 
 
-
-    <!-- END about section -->
-    <hr />
-
-    <!--Floating Button -->
-     <a href="#"   id="myBtn" class="float">
-        <i class="fa fa-envelope my-float"></i>
-        </a>
-        <div class="label-container">
-        <div class="label-text">Feedback</div>
-        <i class="fa fa-play label-arrow"></i>
-        </div>
-        
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-    
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>  
-    
-        <div class='Chat__holder'>
-            <div class='Chat__body Chat__body--loading' role='main'>
-              <div data-loading class="bx--loading">
-                  <svg class="bx--loading__svg" viewBox="-75 -75 150 150">
-                    <title>Loading</title>
-                    <circle class="bx--loading__stroke" cx="0" cy="0" r="37.5" />
-                  </svg>
-              </div>
-            </div>
-        </div>
-    
-    </div>
-    
-    </div>
-        
+ 
     <!-- END  -->
     <!-- Start meet instructors section -->
     <div class="meet-inst">
@@ -299,39 +265,7 @@
         </div>
     </div>
     <!-- End meet instructo -->
-
-    <div class="container">
-  
-  
-        <a href="#" class="float" data-toggle="modal" data-target="#myModal">
-          <i class="fa fa-envelope my-float"></i>
-          </a>
-          <div class="label-container">
-          <div class="label-text">Talk Now To Our Assisstant</div>
-          <i class="fa fa-play label-arrow"></i>
-          </div>
-        <!-- The Modal -->
-        <div class="modal fade" id="myModal">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-            
-              <div class='Chat__holder' style="max-width: 50pxs;">
-                  <div class='Chat__body Chat__body--loading' role='main'>
-                    <div data-loading class="bx--loading">
-                        <svg class="bx--loading__svg" viewBox="-75 -75 150 150">
-                          <title>Loading</title>
-                          <circle class="bx--loading__stroke" cx="0" cy="0" r="37.5" />
-                        </svg>
-                    </div>
-                  </div>
-              </div>
-              
-              
-            </div>
-          </div>
-        </div>
-        
-      </div>
+ 
     <!-- ******************************************************************************************* -->
     <hr>
 
@@ -450,32 +384,8 @@
 
 
 
-<script src="https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js"></script>
-<script>
-  var hostElement = document.querySelector('.Chat__body');
-  var loadingElement = document.querySelector('.bx--loading');
-  window.loadWatsonAssistantChat({
-    element: hostElement,
-    integrationID: '011b1c21-cb9c-443b-ae3c-ff6f451d0da2',
-    showLauncher: false,
-    openChatByDefault: true,
-    region: 'eu-gb',
-    subscriptionID: 'public',
-    __ibm__: {
-      cdnEndpoint: 'https://assistant-web.watsonplatform.net',
-      versionsUrl: 'https://assistant-web.watsonplatform.net/versions.json',
-      isPreviewLink: true
-    }
-  }).then(function (instance) {
-    window.instance = instance;
-    instance.render().then(function () {
-      loadingElement.parentNode.removeChild(loadingElement);
-      hostElement.classList.remove('Chat__body--loading');
-      hostElement.classList.add('Chat__body--background');
-    });
-  });
-</script>
 
+<script src="js/watson.js"></script>
 <script src="app.js"></script>
 
 </body>
