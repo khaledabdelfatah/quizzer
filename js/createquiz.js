@@ -42,8 +42,6 @@ function validation() {
 
 
                 for (k = 0; k < y.length; k += 2) {
-                    console.log(y[k].checked);
-
                     if (y[k].checked == true) {
                         boolCheck = false;
                     }
@@ -178,15 +176,15 @@ function SaveData() {
 
     var access = makeid();
 
-    var name_quiz = document.getElementById("name_quiz").value;
-    var time_quiz = document.getElementById("time_quiz").value;
-    var point_quiz = document.getElementById("point").value;
 
-    var arra = new Array();
-    
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-//enrolled
+            var arra = new Array();
+            var name_quiz = document.getElementById("name_quiz").value;
+            var time_quiz = document.getElementById("time_quiz").value;
+            var point_quiz = document.getElementById("point").value;
+            
+            
             const docRef = firestore.collection("Quiz").doc(access);
             docRef.set({
                 name: name_quiz,
@@ -195,12 +193,12 @@ function SaveData() {
                 Instructor: user.uid,
                 enrolled: arra
             });
-            
+
             var docRef5 = firestore.collection("User").doc(user.uid);
             docRef5.update({
                 instQuizzes: firebase.firestore.FieldValue.arrayUnion(access)
             });
-            
+
             //            console.log(user.uid);
         } else {
             // User not logged in or has just logged out.
@@ -211,7 +209,7 @@ function SaveData() {
 
     for (i = 1; i <= num_Of_questions; i++) {
         let correct = new Array();
-        let wrong = new Array();
+        let all = new Array();
 
         let name = "question" + i;
         var x = document.getElementById(name);
@@ -223,9 +221,8 @@ function SaveData() {
             for (k = 0; k < y.length; k += 2) {
                 if (y[k].checked == true) {
                     correct.push(y[k + 1].value);
-                } else {
-                    wrong.push(y[k + 1].value);
                 }
+                all.push(y[k + 1].value);
             }
 
 
@@ -233,11 +230,20 @@ function SaveData() {
             const docRef1 = firestore.collection("Quiz").doc(access).collection("Questions").doc(n);
             docRef1.set({
                 QuestionText: text_Question,
-                Wrong: wrong,
+                All: all,
                 Correct: correct
             });
         }
     }
+
+
+    document.getElementById("b1").style.display = "none";
+    document.getElementById("b2").style.display = "none";
+    document.getElementById("b3").style.display = "none";
+
+    var cd = "<h1>The Access Code is :  " + access + "</h1><br><button class=\"btn btn-primary\" onclick=\"window.location.href = 'profile.html';\" style=\"width: 40%;\">go to profile</button>";
+
+    document.getElementById("questions").innerHTML = cd;
 
 }
 
