@@ -15,20 +15,7 @@ var firebaseConfig = {
 
 //
 
-var firestore = firebase.firestore();
-const docRef = firestore.collection("try").doc("name1");
-const testbutton = document.getElementById("getbutoon");
-testbutton.addEventListener("click", function () {
-
-    firebase.auth().createUserWithEmailAndPassword("eslam@gmail.com", "jhgjhgjhgj").catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorMessage);
-        // ...
-    });
-
-});
+ 
 /// login 
 const autho = firebase.auth();
 

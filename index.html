@@ -53,29 +53,22 @@
     <link rel="stylesheet" href="css/home_meet_instrauctor.css">
     <link rel="stylesheet" href="css/home_test_monial.css">
     <link rel="stylesheet" href="css/home_footer_style.css">
-    <!-- <link rel="stylesheet" href="css/watson-style.css"> -->
-     <!-- exteranl js file -->
+      <!-- exteranl js file -->
     <script src="js/home.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
-
-<!-- just test -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+ 
 
 </head>
 
 <body>
-    <!--  -->
     <div class="home_header_style">
         <div class="header-area-style">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark bg-transparent   ">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#">
                     <img src="img/logo/1.png" style=" width: 190px;" alt="Logo" srcset="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -90,8 +83,7 @@
                             <a class="nav-link" href="html-page/profile.html">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="min-width: 96.016px;"
-                                href="html-page/Contact_us.html">Contact-Us</a>
+                            <a class="nav-link" style="min-width: 96.016px;" href="html-page/Contact_us.html">Contact-Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="min-width: 83.750px;" href="html-page/About_us.html">About-Us</a>
@@ -106,8 +98,7 @@
                         <li style="min-width: 116.458px;">
 
 
-                            <a style="min-width: 116.458px;" class="boxed_btn_orange nav-item" href="#"
-                                onclick="document.getElementById('id01').style.display='block'">
+                            <a style="min-width: 116.458px;" class="boxed_btn_orange nav-item" href="#" onclick="document.getElementById('id01').style.display='block'">
                                 <span>Log-in </span>
                             </a>
 
@@ -119,24 +110,19 @@
                                     </div>
 
                                     <div class="container">
-                                        <label for="uname"><b>E-Mail</b></label>
-                                        <input type="text" placeholder="Enter Username" name="uname" id="Email"
-                                            maxlength="30" required>
+                                        <label for="uname"><b>Username</b></label>
+                                        <input type="text" placeholder="Enter Username" name="uname" id="Email" maxlength="20" required>
 
                                         <label for="psw"><b>Password</b></label>
-                                        <input type="password" placeholder="Enter Password" id="Password" name="psw"
-                                            maxlength="30" required>
+                                        <input type="password" placeholder="Enter Password" id="Password" name="psw" maxlength="20" required>
                                         <div id="errMes" style="color: red;margin: 30px; display: block"></div>
                                         <button class="login" type="button" onclick="login();">Login</button>
                                     </div>
 
                                     <div class="container">
 
-                                        <button type="button"
-                                            onclick="document.getElementById('id01').style.display='none'"
-                                            class="cancelbtn">Cancel</button>
-                                        <span class="psw">Don't have an account? <a href="html-page/REGISTER.html"
-                                                style="color: orange;">Sign
+                                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                        <span class="psw">Don't have an account? <a href="html-page/REGISTER.html" style="color: orange;">Sign
                                                 up</a></span>
                                     </div>
                                 </form>
