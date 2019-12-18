@@ -4,12 +4,12 @@ var firestore = firebase.firestore();
 
 autho.onAuthStateChanged(function (user) {
     if (user) {
-        
+
         document.getElementById("nav-avatar").style.display = "block";
-            firebase.firestore().collection("User").doc(firebase.auth().getUid()).get().then(function (doc) {
-                document.getElementById("profile-name-avatar").innerHTML = doc.data().firstname +" " + doc.data().lastName;
-            });
-        
+        firebase.firestore().collection("User").doc(firebase.auth().getUid()).get().then(function (doc) {
+            document.getElementById("profile-name-avatar").innerHTML = doc.data().firstname + " " + doc.data().lastName;
+        });
+
         firestore.collection("User").doc(autho.getUid()).get().then(function (doc) {
             if (doc.exists) {
                 const mydata = doc.data();
@@ -32,18 +32,17 @@ autho.onAuthStateChanged(function (user) {
                     var quizGrade;
                     var n;
                     for (n = 0; n < mydata.studQuizzes.length; n++) {
-                        
+
                         quizNum = n;
                         quizAccess = mydata.studQuizzes[n].access;
                         quizGrade = mydata.studQuizzes[n].degree;
                         findQuiz(quizAccess, quizGrade);
 
 
-                       
+
                     }
-                   
-                }
-                else {
+
+                } else {
                     if (mydata.state === "instructor") {
                         var check = document.getElementsByClassName("student");
                         for (i = 0; i < check.length; i++) {
@@ -87,8 +86,7 @@ function toEdit(id) {
                 sps = ["span-first-name", "span-second-name", "span-email",
                     "span-phone", "span-address", "span-city", "span-university",
                     "span-specialty", "span-password"];
-            }
-            else {
+            } else {
                 sps = ["span-first-name", "span-second-name", "span-email",
                     "span-phone", "span-address", "span-degree", "span-experience",
                     "span-city", "span-university", "span-specialty",
@@ -158,8 +156,7 @@ function toSaveChanges(id) {
             document.getElementById("span-first-name").style.display = "none";
             clear("span-first-name");
         }
-    }
-    else if (id === "Lname") {
+    } else if (id === "Lname") {
         if (validationLname()) {
             setData(id);
             document.getElementById("elname").innerHTML = document.getElementById("Lname").value;
@@ -167,8 +164,7 @@ function toSaveChanges(id) {
             document.getElementById("span-second-name").style.display = "none";
             clear("span-second-name");
         }
-    }
-    else if (id === "Email") {
+    } else if (id === "Email") {
         if (validationEmail()) {
             setData(id);
             document.getElementById("eemail").innerHTML = document.getElementById("Email").value;
@@ -177,8 +173,7 @@ function toSaveChanges(id) {
             document.getElementById("eemail").setAttribute("href", document.getElementById("Email").value);
             clear("span-email");
         }
-    }
-    else if (id === "Phone") {
+    } else if (id === "Phone") {
         if (validationPhone()) {
             setData(id);
             document.getElementById("ephone").innerHTML = document.getElementById("Phone").value;
@@ -186,8 +181,7 @@ function toSaveChanges(id) {
             document.getElementById("span-phone").style.display = "none";
             clear("span-phone");
         }
-    }
-    else if (id === "Address") {
+    } else if (id === "Address") {
         if (ValidationAdress()) {
             setData(id);
             document.getElementById("eaddress").innerHTML = document.getElementById("Address").value;
@@ -195,8 +189,7 @@ function toSaveChanges(id) {
             document.getElementById("span-address").style.display = "none";
             clear("span-address");
         }
-    }
-    else if (id === "City") {
+    } else if (id === "City") {
         if (ValidationCity()) {
             setData(id);
             document.getElementById("ecity").innerHTML = document.getElementById("City").value;
@@ -204,8 +197,7 @@ function toSaveChanges(id) {
             document.getElementById("span-city").style.display = "none";
             clear("span-city");
         }
-    }
-    else if (id === "University") {
+    } else if (id === "University") {
         if (ValidationUniversity()) {
             setData(id);
             document.getElementById("euniversity").innerHTML = document.getElementById("University").value;
@@ -213,8 +205,7 @@ function toSaveChanges(id) {
             document.getElementById("span-university").style.display = "none";
             clear("span-university");
         }
-    }
-    else if (id === "Specialty") {
+    } else if (id === "Specialty") {
         if (ValidationSpecialty()) {
             setData(id);
             document.getElementById("especialty").innerHTML = document.getElementById("Specialty").value;
@@ -222,25 +213,21 @@ function toSaveChanges(id) {
             document.getElementById("span-specialty").style.display = "none";
             clear("span-specialty");
         }
-    }
-
-    else if (id === "Password") {
+    } else if (id === "Password") {
         if (ValidationPass()) {
             setData(id);
             document.getElementById("password").style.display = "table-row";
             document.getElementById("span-password").style.display = "none";
             clear("span-password");
         }
-    }
-    else if (id === "Degree") {
+    } else if (id === "Degree") {
         if (ValidationDegree()) {
             setData(id);
             document.getElementById("degree").style.display = "table-row";
             document.getElementById("span-degree").style.display = "none";
             clear("span-degree");
         }
-    }
-    else if (id === "Experience") {
+    } else if (id === "Experience") {
         if (ValidationExperience()) {
             setData(id);
             document.getElementById("experience").style.display = "table-row";
@@ -261,8 +248,7 @@ function ValidationDegree() {
         document.getElementById('errDegree').style.display = "block";
         document.getElementById('errDegree').innerHTML = "** only characters are allowed";
         return false;
-    }
-    else {
+    } else {
         document.getElementById('errDegree').style.display = "none";
         return true;
     }
@@ -279,8 +265,7 @@ function ValidationExperience() {
         document.getElementById('errExperience').style.display = "block";
         document.getElementById('errExperience').innerHTML = "** only characters are allowed";
         return false;
-    }
-    else {
+    } else {
         document.getElementById('errExperience').style.display = "none";
         return true;
     }
@@ -293,6 +278,7 @@ function appear() {
     document.getElementsByClassName("change-remove-icons")[1].style.display = "inline-block";
     document.getElementsByClassName("change-remove-icons")[1].style.cursor = "pointer";
 }
+
 function disappear() {
     document.getElementsByClassName("change-remove-icons")[0].style.display = "none";
     document.getElementsByClassName("change-remove-icons")[0].style.cursor = "context-menu";
@@ -308,7 +294,7 @@ function pushQuiz() {
             if (doc.exists) {
                 if (doc2.exists) {
                     const mydata = doc2.data();
-                
+
                     var arr = mydata.enrolled;
                     userId = firebase.auth().currentUser.uid;
                     var checkPoint = false;
@@ -324,7 +310,7 @@ function pushQuiz() {
                     }
 
                     if (checkPoint == false) {
-                    
+
 
                         setTimeout(() => {
                             console.log("we waited");
@@ -343,12 +329,9 @@ function pushQuiz() {
 
 
 function logOut() {
+
+    firebase.auth().signOut();
     window.location.href = "../html-page/login_form.html";
-    firebase.auth().signOut().then(function () {
-        console.log('Signed Out');
-    }, function (error) {
-        console.error('Sign Out Error', error);
-    });
 }
 
 
@@ -356,18 +339,14 @@ function setData(id) {
     userId = firebase.auth().currentUser.uid;
     docRef = firestore.collection("User").doc(userId);
     if (id === "Fname") {
-        docRef.update(
-            {
-                firstname: document.getElementById("Fname").value
-            });
-    }
-    else if (id === "Lname") {
-        docRef.update(
-            {
-                lastName: document.getElementById("Lname").value
-            });
-    }
-    else if (id === "Email") {
+        docRef.update({
+            firstname: document.getElementById("Fname").value
+        });
+    } else if (id === "Lname") {
+        docRef.update({
+            lastName: document.getElementById("Lname").value
+        });
+    } else if (id === "Email") {
 
         autho.currentUser.updateEmail(document.getElementById("Email").value).then(function () {
 
@@ -375,48 +354,34 @@ function setData(id) {
 
         });
     } else if (id === "Phone") {
-        docRef.update(
-            {
-                phone: document.getElementById("Phone").value
-            });
-    }
-    else if (id === "Specialty") {
-        docRef.update(
-            {
-                specialty: document.getElementById("Specialty").value
-            });
-    }
-    else if (id === "Address") {
-        docRef.update(
-            {
-                addrees: document.getElementById("Address").value
-            });
-    }
-    else if (id === "University") {
-        docRef.update(
-            {
-                university: document.getElementById("University").value
-            });
-    }
-    else if (id === "City") {
-        docRef.update(
-            {
-                city: document.getElementById("City").value
-            });
-    }
-    else if (id === "Degree") {
-        docRef.update(
-            {
-                degree: document.getElementById("Degree").value
-            });
-    }
-    else if (id === "Experience") {
-        docRef.update(
-            {
-                exprienc: document.getElementById("Experience").value
-            });
-    }
-    else if (id === "Password") {
+        docRef.update({
+            phone: document.getElementById("Phone").value
+        });
+    } else if (id === "Specialty") {
+        docRef.update({
+            specialty: document.getElementById("Specialty").value
+        });
+    } else if (id === "Address") {
+        docRef.update({
+            addrees: document.getElementById("Address").value
+        });
+    } else if (id === "University") {
+        docRef.update({
+            university: document.getElementById("University").value
+        });
+    } else if (id === "City") {
+        docRef.update({
+            city: document.getElementById("City").value
+        });
+    } else if (id === "Degree") {
+        docRef.update({
+            degree: document.getElementById("Degree").value
+        });
+    } else if (id === "Experience") {
+        docRef.update({
+            exprienc: document.getElementById("Experience").value
+        });
+    } else if (id === "Password") {
 
         autho.currentUser.updatePassword(document.getElementById("Password").value).then(function () {
 
@@ -472,7 +437,7 @@ function getEnrolled(quizAccess) {
                                 var addenroll = "<div class=\"row\" style=\"border-bottom: 1px silver solid; margin-left:5px \">" +
                                     "<label class=\"col-md-4 col-sm-6 col-xs-6\" >" + enrol.firstname + "</label>" +
                                     "<label class=\"col-md-4 col-sm-6 col-xs-6\" >" + dgr[i].degree + "</label>" +
-                                "</div>"
+                                    "</div>"
                                 document.getElementById("innerModal").innerHTML += addenroll;
                             }
                         }
@@ -494,30 +459,34 @@ function quizAsStudent(quizName, instractorName, grade, quizAccess) {
     var gradelook;
     if (grade > 3) {
         gradelook = "<h3 style =\"color:green;\">Grade: " + grade + "<h3>";
-    }
-    else {
+    } else {
         gradelook = "<h3 style =\"color:red;\">Grade: " + grade + "<h3>";
     }
-    var quiz =
-        "<div id=\"" + quizAccess + "\" class=\"col-md-4 col-sm-6 col-xs-12\">" +
-        "<div class=\"card\">" +
-        "<div style=\"float: left;\">" +
-        "<img src=\"../img/profile/quiz.jpg\" style=\"width: 50px; height: 50px;\" alt=\"quiz\">" +
-        "</div>" +
-        "<h2>" + quizName + "</h2>" +
-        "<h5><small>Instractor</small>: " + instractorName + "</h5>" +
+
+    firebase.firestore().collection("User").doc(instractorName).get().then(function (doc) {
+
+        var quiz =
+            "<div id=\"" + quizAccess + "\" class=\"col-md-4 col-sm-6 col-xs-12\">" +
+            "<div class=\"card\">" +
+            "<div style=\"float: left;\">" +
+            "<img src=\"../img/profile/quiz.jpg\" style=\"width: 50px; height: 50px;\" alt=\"quiz\">" +
+            "</div>" +
+            "<h2>" + quizName + "</h2>" +
+            "<h5><small>Instractor</small>: " + doc.data().firstname + " " + doc.data().lastName; + "</h5>" +
         gradelook +
-        "</div>" +
-        "</div>";
+            "</div>" +
+            "</div>";
 
 
 
-    document.getElementById("showQuizzes").innerHTML += quiz;
+        document.getElementById("showQuizzes").innerHTML += quiz;
+
+    });
 }
 
 function removeQuiz() {
 
-    
+
     var id = document.getElementById("sp").innerHTML;
     var userId = firebase.auth().currentUser.uid;
 
@@ -536,16 +505,14 @@ function removeQuiz() {
         for (i in arr) {
             if (id == arr[i]) {
                 continue;
-            }
-            else {
+            } else {
                 x++;
                 newArr[x] = arr[i];
             }
         }
-        firestore.collection("User").doc(userId).update(
-            {
-                instQuizzes: newArr
-            });
+        firestore.collection("User").doc(userId).update({
+            instQuizzes: newArr
+        });
 
         console.log("Document successfully deleted!");
     }).catch(function (error) {
@@ -569,13 +536,12 @@ function countProps(obj) {
 
 function findQuiz(quizAccess1, quizGrade1) {
     firestore.collection("Quiz").doc(quizAccess1).get().then(function (doc1) {
-        if (doc1 && doc1.exists) {
+        if (doc1.exists) {
             const quiz = doc1.data();
             var name = quiz.name;
             var instructor = quiz.Instructor;
             quizAsStudent(name, instructor, quizGrade1, quizAccess1);
-        }
-        else {
+        } else {
             var name = "undefined";
             var instructor = "undefined";
             quizAsStudent(name, instructor, quizGrade1, quizAccess1);
@@ -592,5 +558,3 @@ function findInstQuiz(quizAccess1) {
         }
     });
 }
-
-
