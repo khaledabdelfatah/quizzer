@@ -8,11 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <title>Quizzer :: Home</title>
     <!-- Fav Icon -->
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-
     <!-- Offline Bootstrap links -->
     <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
@@ -52,14 +50,14 @@
     <link rel="stylesheet" href="css/home_meet_instrauctor.css">
     <link rel="stylesheet" href="css/home_test_monial.css">
     <link rel="stylesheet" href="css/home_footer_style.css">
-      <!-- exteranl js file -->
+    <!-- exteranl js file -->
     <script src="js/home.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
- 
+
 
 </head>
 
@@ -79,13 +77,14 @@
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="min-width: 96.016px;" href="html-page/Contact_us.html">Contact-Us</a>
+                            <a class="nav-link" style="min-width: 96.016px;"
+                                href="html-page/Contact_us.html">Contact-Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="min-width: 83.750px;" href="html-page/About_us.html">About-Us</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav"  id="nav-noUser" style="float: left; margin-left: 0px;">
+                    <ul class="navbar-nav" id="nav-noUser" style="float: left; margin-left: 0px;">
                         <li>
                             <a class="boxed_btn_orange nav-item" href="html-page/REGISTER.html">
                                 <span>Register </span>
@@ -94,7 +93,8 @@
                         <li style="min-width: 116.458px;">
 
 
-                            <a style="min-width: 116.458px;" class="boxed_btn_orange nav-item" href="#" onclick="document.getElementById('id01').style.display='block'">
+                            <a style="min-width: 116.458px;" class="boxed_btn_orange nav-item" href="#"
+                                onclick="document.getElementById('id01').style.display='block'">
                                 <span>Log-in </span>
                             </a>
 
@@ -107,18 +107,23 @@
 
                                     <div class="container">
                                         <label for="uname"><b>E-Mail</b></label>
-                                        <input type="text" placeholder="Enter Username" name="uname" id="Email" maxlength="40" required>
+                                        <input type="text" placeholder="Enter Username" name="uname" id="Email"
+                                            maxlength="40" required>
 
                                         <label for="psw"><b>Password</b></label>
-                                        <input type="password" placeholder="Enter Password" id="Password" name="psw" maxlength="40" required>
+                                        <input type="password" placeholder="Enter Password" id="Password" name="psw"
+                                            maxlength="40" required>
                                         <div id="errMes" style="color: red;margin: 30px; display: block"></div>
                                         <button class="login" type="button" onclick="login();">Login</button>
                                     </div>
 
                                     <div class="container">
 
-                                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                                        <span class="psw">Don't have an account? <a href="html-page/REGISTER.html" style="color: orange;">Sign
+                                        <button type="button"
+                                            onclick="document.getElementById('id01').style.display='none'"
+                                            class="cancelbtn">Cancel</button>
+                                        <span class="psw">Don't have an account? <a href="html-page/REGISTER.html"
+                                                style="color: orange;">Sign
                                                 up</a></span>
                                     </div>
                                 </form>
@@ -131,10 +136,12 @@
                         <li id="info-bar">
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle"
-                                 style=" border-radius: 15px ; border: 0 ; background-color: transparent ;" 
-                                 type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    style=" border-radius: 15px ; border: 0 ; background-color: transparent ;"
+                                    type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
                                     <i class="fa fa-user" style="font-size: 25px  "></i>
-                                    <label id="profile-name-avatar" style="margin-left: 7px ; font-size: 17px ; text-transform: none; color: white;"></label>
+                                    <label id="profile-name-avatar"
+                                        style="margin-left: 7px ; font-size: 17px ; text-transform: none; color: white;"></label>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="html-page/profile.html">Profile</a>
@@ -142,7 +149,7 @@
                                 </div>
                             </div>
                         </li>
-                    </ul> 
+                    </ul>
 
                 </div>
             </nav>
@@ -167,24 +174,24 @@
                         font-size: 40px;
                         font-family: 'Times New Roman', Times, serif;">
                         The Easyiest way to generate your online Quiz.</p>
-                    <button style="margin-bottom: 5px;" class="btn btn-info" id="getbutoon">Get Started</button>
+                    <button onclick="window.location.href = '../html-page/REGISTER.html'; " style="margin-bottom: 5px;" class="btn btn-info" id="getbutoon">Get Started</button>
                 </div>
             </div>
         </div>
         <!--  -->
     </div>
     <!-- Staet of Second Part    -->
-     <div class="about_area">
+    <div class="about_area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-6">
                     <div class="single_about_info">
-                        <h3>Over 500 Quiz From 65 Instructur</h3>
+                        <h3>Over 20 Quiz From 5 Instructur</h3>
                         <p>Our Website Made It Easy for All Instructors to create their Quiz
                             and for Students From All over The World To Participate and Get Their Quiz
-                            Results More Easily. <br> <b>Join US Now.. It's Free</b>
+                            Results More Easily And Can Also get Certificate of completion of the Quiz . <br> <b>Join US Now.. It's Free</b>
                         </p>
-                        <a href="#" class="btn btn-info">Enroll Now</a>
+                        <a href="html-page/About_us.html" class="btn btn-info">Learn More About Quizzer</a>
                     </div>
                 </div>
                 <div class="col-xl-6 offset-xl-1 col-lg-6  column small-12 large-9" id="MainContent">
@@ -193,10 +200,10 @@
                             <p class="circle__header">+20 Quiz</p>
                         </div>
                         <div class="circle top-right green">
-                            <p class="circle__header">+50 Instractor</p>
+                            <p class="circle__header">+5 Instractor</p>
                         </div>
                         <div class="circle bottom light-blue">
-                            <p class="circle__header">+500 Student</p>
+                            <p class="circle__header">+15 Student</p>
                         </div>
 
                     </section>
@@ -207,7 +214,7 @@
     </div>
 
 
- 
+
     <!-- END  -->
     <!-- Start meet instructors section -->
     <div class="meet-inst">
@@ -265,7 +272,7 @@
         </div>
     </div>
     <!-- End meet instructo -->
- 
+
     <!-- ******************************************************************************************* -->
     <hr>
 
@@ -282,7 +289,7 @@
                         <img class="img-fluid rounded-circle mb-3" src="img/profile/test.png" alt="">
                         <h5>Mahmoud Said</h5>
                         <p class="font-weight-light mb-0">"Logic will get you from A to Z; imagination will get you
-                            every where"</p>
+                            every where,I love This Site"</p>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -297,7 +304,8 @@
                         <img class="img-fluid rounded-circle mb-3" src="img/profile/test.png" alt="">
                         <h5>Kerlos Kamal</h5>
                         <p class="font-weight-light mb-0">
-                            “If you can't explain it to a six year old, you don't understand it yourself.”</p>
+                            “If you can't explain it to a six year old, you don't understand it yourself
+                            . Good Job in this awsome site”</p>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -311,7 +319,8 @@
                     <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                         <img class="img-fluid rounded-circle mb-3" src="img/profile/test.png" alt="">
                         <h5>Ahmed Mostafa</h5>
-                        <p class="font-weight-light mb-0"> “Anyone who has never made a mistake has never tried anything new.” </p>
+                        <p class="font-weight-light mb-0"> “Anyone who has never made a mistake has never tried anything
+                            new. keep Trying” </p>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -324,13 +333,13 @@
             </div>
         </div>
     </section>
-     <!-- end testmonial -->
+    <!-- end testmonial -->
 
-  
-         
-       
-            
-        
+
+
+
+
+
     <!-- Start Footer -->
     <div>
         <!--UN USed-->
@@ -373,17 +382,13 @@
     </div>
 
     <!-- End Footer  -->
- 
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=218036350"></script>
 
 
 
-
-<script src="js/watson.js"></script>
-<script src="app.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=218036350"></script>
+    <script src="js/watson.js"></script>
+    <script src="app.js"></script>
 
 </body>
 
