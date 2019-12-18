@@ -35,3 +35,21 @@ function login() {
     });
 }
 // login 
+
+// Nav Avatar
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+
+            document.getElementById("nav-avatar").style.display = "block";
+            document.getElementById("nav-noUser").style.display = "none";
+            firebase.firestore().collection("User").doc(firebase.auth().getUid()).get().then(function (doc) {
+                document.getElementById("profile-name-avatar").innerHTML = 
+                doc.data().firstname+" "+doc.data().lastName;
+            });
+}
+});
+
+function logOut(){
+    firebase.auth().signOut();
+    window.location.href = "html-page/login_form.html";
+}
