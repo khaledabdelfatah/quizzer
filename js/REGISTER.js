@@ -266,6 +266,7 @@ function ValidationFinal() {
         var email = document.getElementById('Email').value;
         var password = document.getElementById('Password').value;
         let userUID;
+        var errorShow;
         firebase.auth().signOut().then(function() {
             console.log(" Sign-out successful");
         }).catch(function(error) {
@@ -276,6 +277,8 @@ function ValidationFinal() {
             // Handle Errors here.
             console.log(error.code);
             console.log(error.message);
+            document.getElementById('sbmuterr').innerHTML = error.message;
+            document.getElementById('Register').innerHTML = "Register Now ";
             // ...
         });
 
@@ -302,7 +305,9 @@ function ValidationFinal() {
                     }).then(function() {
                         window.location.href = "../html-page/profile.html";
                     }).catch(function(error) {
+
                         console.error("Error writing document: ", error);
+                        document.getElementById('sbmuterr').innerHTML = error.message;
                     });
                 } else {
                     docRef.set({
@@ -320,6 +325,7 @@ function ValidationFinal() {
                         window.location.href = "../html-page/profile.html";
                     }).catch(function(error) {
                         console.error("Error writing document: ", error);
+                        document.getElementById('sbmuterr').innerHTML = error.message;
                     });
                 }
 
@@ -327,8 +333,7 @@ function ValidationFinal() {
                 console.log("no user is here");
             }
         });
-        document.getElementById('sbmuterr').innerHTML = "all good";
-        //   window.location.href = "../html-page/profile.html";
+        document.getElementById('Register').innerHTML = "Loading . . .";
     } else {
         document.getElementById('sbmuterr').innerHTML = "some fild is missing";
     }
