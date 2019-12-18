@@ -12,12 +12,6 @@
     <title>Quizzer :: Profile Page</title>
     <!-- Fav Icon -->
     <link rel="shortcut icon" type="image/png" href="../img/favicon.png" />
-    <!-- offline bootstrap links -->
-    <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="../Bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
-    <script src="../Bootstrap/js/bootstrap.min.js"></script>
-    <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Online Links -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -27,6 +21,7 @@
     <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../Header/css/headerstyl.css">
     <link rel="stylesheet" href="../css/home_footer_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- javascript Files -->
 
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
@@ -50,9 +45,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../index.html">Home</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="profile.html">Profile</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" style="min-width: 96.016px;" href="Contact_us.html">Contact-Us</a>
                         </li>
@@ -60,18 +52,17 @@
                             <a class="nav-link" style="min-width: 83.750px;" href="About_us.html">About-Us</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav" style="float: left; margin-left: 0px;">
+                    <ul class="navbar-nav" id="nav-avatar" style="float: left; display: none;">
                         <li id="info-bar">
-                            <button id="general-button">
-                                <div class="dropdown">
-                                    <img id="profile-nav" class="rounded-circle photo" src="../img/profile/test.png"
-                                        style="width:30px; height:30px" alt="personal photo">
-                                    mahmoud-said
-                                </div>
-                            </button>
+                            <div >
+                                <button class="btn btn-secondar" style=" border-radius: 30px; border: 0; background-color: transparent;color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user" style="font-size: 25px;"></i>
+                                    <label id="profile-name-avatar" style="margin-left: 7px; font-size: 17px; text-transform: none;"></label>
+                                </button>
+                            </div>
                         </li>
-
                     </ul>
+
                 </div>
             </nav>
         </div>
@@ -447,8 +438,6 @@
                         <h4 class="mt-lg-0 mt-sm-3 orange-text">Quick Links</h4>
                         <ul class="m-0 p-0">
                             <li><a href="../index.html">Home</a></li>
-                            <li><a href="REGISTER.html">Register</a></li>
-                            <li><a href="login_form.html">Log IN</a></li>
                             <li><a href="Contact_us.html">Contact Us</a></li>
                             <li><a href="About_us.html">About US</a></li>
                         </ul>
@@ -556,8 +545,9 @@
         }
         }
     </script>
-    <script src="../js/profile.js"></script>
+    
     <script src="../js/REGISTER.js"></script>
+    <script src="../js/profile.js"></script>
 
 </body>
 
