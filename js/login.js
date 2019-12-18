@@ -15,25 +15,19 @@ const autho = firebase.auth();
 
 var firestore = firebase.firestore();
 
-var firestorage = firebase.storage();
-var storageRef = firestorage.ref();
-
 autho.onAuthStateChanged(function (user) {
     if (user) {
-        console.log("there is user");
         firestore.collection("User").doc(autho.currentUser.uid).get().then(function (doc) {
-            console.log("in profile");
             if (doc.data().remember_me == true) {
                 window.location.href = "profile.html";
             }
         });
-    } else {
-        console.log("no user here");
     }
 });
 
 function login() {
 
+    autho.signOut();
     const email = document.getElementById("Email").value;
     const password = document.getElementById("Password").value;
     const Remmber = document.getElementById("Remmber").checked;
