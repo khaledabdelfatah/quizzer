@@ -19,7 +19,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
 </head>
 
 <body>
@@ -48,7 +51,7 @@
                             <a class="nav-link" style="min-width: 83.750px;" href="About_us.html">About-Us</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav" style="float: left; margin-left: 0px;">
+                    <ul class="navbar-nav" id="nav-noUser" style="float: left; margin-left: 0px;">
                         <li>
                             <a class="boxed_btn_orange nav-item" href="REGISTER.html">
                                 <span>Register</span>
@@ -58,6 +61,21 @@
                             <a class="boxed_btn_orange nav-item" href="login_form.html">
                                 <span>Log-in</span>
                             </a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav" id="nav-avatar" style="float: left; display: none;">
+                        <li id="info-bar">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" style=" border-radius: 30px; border: 0; background-color: transparent;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user" style="font-size: 25px;"></i>
+                                    <label id="profile-name-avatar" style="margin-left: 7px; font-size: 17px; text-transform: none; color: white;"></label>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="profile.html">Profile</a>
+                                    <a class="dropdown-item" onclick="logOut();">Log Out</a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -102,11 +120,9 @@
                             <h3 class="title">Khaled Abd El-Fatah</h3>
                             <span class="post">Team leader</span>
                             <ul class="social">
-                                <li><a href="https://facebook.com/khaloooda.abdelfatah"><i
-                                            class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://facebook.com/khaloooda.abdelfatah"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/khaled-abd-elfatah"><i
-                                            class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/khaled-abd-elfatah"><i class="fa fa-linkedin"></i></a></li>
                                 <li><a href="https://github.com/khaledabdelfatah"><i class="fa fa-github"></i></a></li>
                             </ul>
                         </div>
@@ -145,8 +161,7 @@
                             <h3 class="title">kerolos Kmal</h3>
                             <span class="post">Team Member</span>
                             <ul class="social">
-                                <li><a href="https://www.facebook.com/profile.php?id=100002540650196"><i
-                                            class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100002540650196"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                 <li><a href="https://github.com/KerolosKmal"><i class="fa fa-github"></i></a></li>
@@ -165,8 +180,7 @@
                                 <li><a href="https://www.facebook.com/ma7mouds3id0"><i class="fa fa-facebook"></i></a>
                                 </li>
                                 <li><a href="https://twitter.com/Ma7moud_s3id"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/mahmoud-said-ramadan-391b35155/"><i
-                                            class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/mahmoud-said-ramadan-391b35155/"><i class="fa fa-linkedin"></i></a></li>
                                 <li><a href="https://github.com/mahmoud-said-ramadan"><i class="fa fa-github"></i></a>
                                 </li>
                             </ul>
@@ -182,11 +196,9 @@
                             <h3 class="title">Ahmed Mostafa</h3>
                             <span class="post">Team Member</span>
                             <ul class="social">
-                                <li><a href="https://www.facebook.com/Ahmed.ua.mustafa"><i
-                                            class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.facebook.com/Ahmed.ua.mustafa"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="https://twitter.com/maxshell1"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/ahmed-mostafa-54b402197/"><i
-                                            class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/ahmed-mostafa-54b402197/"><i class="fa fa-linkedin"></i></a></li>
                                 <li><a href="https://github.com/ahmedmostafa914"><i class="fa fa-github"></i></a></li>
                             </ul>
                         </div>
@@ -198,51 +210,48 @@
     </div>
 
 
-        <!-- Start Footer -->
-        <div>
-                <!--UN USed-->
-        
-                <div class="mt-5 pt-5 pb-5 footer">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-5 col-xs-12 about-company">
-                                <h2 class="orange-text">Quizzer</h2>
-                                <p class="pr-5 text-white-50"> web Application that help Instructors to generate their custom
-                                    Quiz <br>
-                                    <span class="orange-text">Quizzer</span> Was made with <span
-                                        style="color: red; font-size: 20px;">♥</span>
-                                    by 5 Students as a part of Web-Programming
-                                    Course
-                                </p>
-                            </div>
-                            <div class="col-lg-3 col-xs-12 links">
-                                <h4 class="mt-lg-0 mt-sm-3 orange-text">Quick Links</h4>
-                                <ul class="m-0 p-0">
-                                    <li><a href="../index.html">Home</a></li>
-                                    <li><a href="REGISTER.html">Register</a></li>
-                                    <li><a href="login_form.html">Log IN</a></li>
-                                    <li><a href="Contact_us.html">Contact Us</a></li>
-                                    <li><a href="About_us.html">About US</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 col-xs-12 location">
-                                <h4 class="mt-lg-0 mt-sm-4 orange-text">Location</h4>
-                                <p><i class="fa fa-map-marker  mr-3"></i> Cairo,Egypt </p>
-                                <p><i class="fa fa-envelope-o mr-3 "></i>quizzer2019@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col copyright">
-                                <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span
-                                            class="orange-text">Quizzer</span>.</small></p>
-                            </div>
-                        </div>
+    <!-- Start Footer -->
+    <div>
+        <!--UN USed-->
+
+        <div class="mt-5 pt-5 pb-5 footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-xs-12 about-company">
+                        <h2 class="orange-text">Quizzer</h2>
+                        <p class="pr-5 text-white-50"> web Application that help Instructors to generate their custom
+                            Quiz <br>
+                            <span class="orange-text">Quizzer</span> Was made with <span style="color: red; font-size: 20px;">♥</span>
+                            by 5 Students as a part of Web-Programming
+                            Course
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-xs-12 links">
+                        <h4 class="mt-lg-0 mt-sm-3 orange-text">Quick Links</h4>
+                        <ul class="m-0 p-0">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="Contact_us.html">Contact Us</a></li>
+                            <li><a href="About_us.html">About US</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-xs-12 location">
+                        <h4 class="mt-lg-0 mt-sm-4 orange-text">Location</h4>
+                        <p><i class="fa fa-map-marker  mr-3"></i> Cairo,Egypt </p>
+                        <p><i class="fa fa-envelope-o mr-3 "></i>quizzer2019@gmail.com</p>
                     </div>
                 </div>
-        
+                <div class="row mt-5">
+                    <div class="col copyright">
+                        <p class=""><small class="text-white-50">© 2019. All Rights Reserved For <span class="orange-text">Quizzer</span>.</small></p>
+                    </div>
+                </div>
             </div>
-        
-            <!-- End Footer  -->
+        </div>
+
+    </div>
+    
+<script src="../js/user.js"></script>
+    <!-- End Footer  -->
 </body>
 
 </html>
